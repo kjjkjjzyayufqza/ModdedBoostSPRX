@@ -1,0 +1,1 @@
+void barbatos_mace_throw_spawn();

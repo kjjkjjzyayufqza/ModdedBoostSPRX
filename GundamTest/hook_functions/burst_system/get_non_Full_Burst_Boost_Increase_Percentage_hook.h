@@ -1,0 +1,3 @@
+
+void get_non_Full_Burst_Boost_Increase_Percentage_hook();
+void set_constant_non_full_Burst_Boost_Recover_Percentage();

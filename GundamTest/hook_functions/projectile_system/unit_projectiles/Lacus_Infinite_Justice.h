@@ -1,0 +1,1 @@
+void lacus_infinite_justice_strike_freedom_following_assist_spawn();
