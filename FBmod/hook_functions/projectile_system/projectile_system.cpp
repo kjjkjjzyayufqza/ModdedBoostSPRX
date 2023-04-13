@@ -16,6 +16,10 @@
 #include "unit_projectiles/Tallgeese_III.h"
 #include "unit_projectiles/Lacus_Infinite_Justice.h"
 #include "unit_projectiles/Nu_HWS.h"
+#include "unit_projectiles/Perfect_Strike.h"
+#include "unit_projectiles/Excellia.h"
+#include "unit_projectiles/Dark_Hound.h"
+#include "unit_projectiles/Heine_Destiny.h"
 #include "../registers.h"
 
 int MBON_Added_Unit_ID[5000];
@@ -36,8 +40,26 @@ void projectile_ID_Check_hook()
 		case 0x3750: // Exia EX Attack despawn
 			exia_EX_Attack_no_hit_despawn();
 			break;
+		case 0x3764:
+			exia_dagger_throw_spawn();
+			break;
 		case 0x530c: // Infinite Justice EX Attack despawn
 			infinite_justice_EX_Attack_despawn();
+			break;
+		case 0x5140:
+			perfect_strike_boomerang_spawn();
+			break;
+		case 0x33964:
+			heine_destiny_boomerang_spawn();
+			break;
+		case 0x3396e:
+			heine_destiny_sword_throw_spawn();
+			break;
+		case 0x50C30:
+			dark_hound_sword_throw_spawn();
+			break;
+		case 0x50C3A:
+			dark_hound_boomerang_spawn();
 			break;
 		case 0x77b3c: // Bael's CSa
 			bael_CSa();
@@ -59,6 +81,9 @@ void projectile_ID_Check_hook()
 			break;
 		case 0x42072:
 			quanta_full_saber_arrow_wave_beam_spawn();
+			break;
+		case 0x53214:
+			excellia_boomerang_spawn();
 			break;
 		case 0x66a94:
 			montero_JAVELIN_MADA_ARU_spawn();
@@ -93,6 +118,9 @@ void projectile_ID_Check_hook()
 		case 0x6903C:
 			barbatos_mace_throw_spawn();
 			break;
+		case 0x69046:
+			barbatos_ex_mace_throw_spawn();
+			break;
 		case 0x31132:
 			raider_nuclear_missile_spawn();
 			break;
@@ -110,9 +138,6 @@ void projectile_ID_Check_hook()
 			break;
 		case 0xA00005:
 			nu_gundam_hws_re_gz_shoot_assist_spawn();
-			break;
-		case 0xA00006:
-			nu_gundam_hws_saber_throw_spawn();
 			break;
 		default:
 			break;
@@ -150,6 +175,14 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[26] = 0xA00004;
 	custom_projectile_ID[27] = 0xA00005;
 	custom_projectile_ID[28] = 0xA00006;
+	custom_projectile_ID[29] = 0x5140;
+	custom_projectile_ID[30] = 0x53214;
+	custom_projectile_ID[31] = 0x50C3A;
+	custom_projectile_ID[32] = 0x33964;
+	custom_projectile_ID[33] = 0x69046;
+	custom_projectile_ID[34] = 0x3764;
+	custom_projectile_ID[35] = 0x3396E;
+	custom_projectile_ID[36] = 0x50C30;
 }
 
 

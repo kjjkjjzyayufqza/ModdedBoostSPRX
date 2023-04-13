@@ -2,6 +2,7 @@
 #include "../../registers.h"
 #include "../../../stdafx.h"
 #include "../../../ida_macros.h"
+#include "../../../helpers/helpers.h"
 
 int barbatos_mace_throw_spawn_script_pointers[500];
 
@@ -166,6 +167,50 @@ void barbatos_mace_throw_spawn() // 0x7D7218
 	v2111[1] = 0;
 	v1310 = GameCall<int>(0x9EE338, 0xd8fe60)(17536LL, 128LL, v2111);
 	result = barbatos_mace_throw_spawn_supp_1((_DWORD *)v1310);
+	*v2 = v1310;
+
+	// set return
+	temp_registers[3] = result;
+}
+
+
+int barbatos_ex_mace_throw_spawn_script_pointers[500];
+
+bool barbatos_ex_mace_spawn_script_pointers_initialized;
+
+__int64 sub_9F1138_barbatos(_DWORD *a1)
+{
+	__int64 result; // r3
+
+	if (barbatos_ex_mace_spawn_script_pointers_initialized == false)
+	{
+		copyJumptable((int *)0xcce700, barbatos_ex_mace_throw_spawn_script_pointers);
+		barbatos_ex_mace_spawn_script_pointers_initialized = true;
+
+		barbatos_ex_mace_throw_spawn_script_pointers[18] = 0x00D3E660; // 0xd421c8, makes 0x74C154 have r21 from 0x74bf04, and finally get to 0x55e5a0 to write 41xx0000 + 1ed4
+		barbatos_ex_mace_throw_spawn_script_pointers[35] = 0x00D41F80; // 0xD42050, makes 0x74bf08 r3 check will go through more stuff
+		barbatos_ex_mace_throw_spawn_script_pointers[58] = (int)barbatos_mace_throw_spawn_model_hash;
+		barbatos_ex_mace_throw_spawn_script_pointers[67] = 0x00D494b0; // 0xd54c18, makes the projectile not staying if hit ground or buildings
+	    barbatos_ex_mace_throw_spawn_script_pointers[106] = 0x00d42478; // original 0xd42370, changed to 0xd42478 make 0x772F1C jump to write 41xx0000 + 1edc when hit, thus making sys_55 return correct stuff
+	}
+
+	GameCall<int>(0x9F1C78, 0xd8fe60)(a1, 430150LL);
+	result = (unsigned int)barbatos_ex_mace_throw_spawn_script_pointers;
+	*a1 = (unsigned int)barbatos_ex_mace_throw_spawn_script_pointers;
+	return result;
+}
+
+void barbatos_ex_mace_throw_spawn()
+{
+	_DWORD *v2 = (_DWORD*)temp_registers[3];
+	char v2111[4];
+	int v1310;
+	int result;
+
+	v2111[0] = -1;
+	v2111[1] = 0;
+	v1310 = GameCall<int>(0x9EE338, 0xd8fe60)(17536LL, 128LL, v2111);
+	result = sub_9F1138_barbatos((_DWORD *)v1310);
 	*v2 = v1310;
 
 	// set return

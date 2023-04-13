@@ -62,6 +62,9 @@
       <AdditionalOptions>
       </AdditionalOptions>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /y "I:\Full Boost\MBON Reimport Project\ModdedBoostSPRX\PS3_Debug\FBmod.sprx" "I:\Full Boost\rpcs3\dev_hdd0\customSPRX"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
     <ClCompile>
@@ -89,12 +92,16 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Barbatos_Lupus.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Barbatos_Lupus_Rex.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Bound_Doc.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Dark_Hound.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Excellia.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Exia.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Heine_Destiny.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Hyaku_Shiki.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Infinite_Justice.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Lacus_Infinite_Justice.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Montero.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Nu_HWS.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Perfect_Strike.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Quanta_Full_Saber.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Raider_Gundam.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Reborns.h" />
@@ -202,12 +209,16 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Barbatos_Lupus.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Barbatos_Lupus_Rex.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Bound_Doc.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Dark_Hound.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Excellia.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Exia.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Heine_Destiny.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Hyaku_Shiki.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Infinite_Justice.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Lacus_Infinite_Justice.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Montero.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Nu_HWS.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Perfect_Strike.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Quanta_Full_Saber.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Raider_Gundam.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Reborns.cpp" />

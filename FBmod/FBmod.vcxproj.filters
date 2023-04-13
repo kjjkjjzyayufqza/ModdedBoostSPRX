@@ -114,6 +114,10 @@
     <ClCompile Include="unit_list\custom_units\Wing_Gundam_Zero_Rebellion.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Nu_HWS.cpp" />
     <ClCompile Include="helpers\helpers.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Perfect_Strike.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Excellia.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Dark_Hound.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Heine_Destiny.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -229,5 +233,9 @@
     <ClInclude Include="unit_list\custom_units\Wing_Gundam_Zero_Rebellion.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Nu_HWS.h" />
     <ClInclude Include="helpers\helpers.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Perfect_Strike.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Excellia.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Dark_Hound.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Heine_Destiny.h" />
   </ItemGroup>
 </Project>

@@ -2,6 +2,8 @@
 #include "../../registers.h"
 #include "../../../stdafx.h"
 #include "../../../ida_macros.h"
+#include "../../../helpers/helpers.h"
+
 
 int exia_EX_Attack_despawn_script_pointers[500];
 int exia_EX_Attack_no_hit_despawn_script_pointers[500];
@@ -360,6 +362,50 @@ void exia_EX_Attack_no_hit_despawn()
 	v1114 = GameCall<int>(0x9EE338, 0xd8fe60)(17664LL, 128LL, v1406);
 	result = sub_800840((_DWORD *)v1114);
 	*v2 = v1114;
+
+	// set return
+	temp_registers[3] = result;
+}
+
+int exia_dagger_throw_spawn_script_pointers[500];
+
+bool exia_dagger_spawn_script_pointers_initialized;
+
+void exia_dagger_throw_spawn_model_hash()
+{
+	int hash = 0x21F82295;
+}
+
+__int64 sub_9F1138_exia(_DWORD *a1)
+{
+	__int64 result; // r3
+
+	if (exia_dagger_spawn_script_pointers_initialized == false)
+	{
+		copyJumptable((int *)0xd1bc00, exia_dagger_throw_spawn_script_pointers);
+		exia_dagger_spawn_script_pointers_initialized = true;
+
+		exia_dagger_throw_spawn_script_pointers[58] = (int)exia_dagger_throw_spawn_model_hash;
+	}
+
+	GameCall<int>(0x9F4188, 0xdafdfc)(a1, 140180LL);
+	result = (unsigned int)exia_dagger_throw_spawn_script_pointers;
+	*a1 = (unsigned int)exia_dagger_throw_spawn_script_pointers;
+	return result;
+}
+
+void exia_dagger_throw_spawn()
+{
+	_DWORD *v2 = (_DWORD*)temp_registers[3];
+	char v2111[4];
+	int v1310;
+	int result;
+
+	v2111[0] = -1;
+	v2111[1] = 0;
+	v1310 = GameCall<int>(0x9EE338, 0xd8fe60)(17536LL, 128LL, v2111);
+	result = sub_9F1138_exia((_DWORD *)v1310);
+	*v2 = v1310;
 
 	// set return
 	temp_registers[3] = result;
