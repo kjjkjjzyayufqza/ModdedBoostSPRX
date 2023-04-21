@@ -1,0 +1,1 @@
+void AGE_FX_Funnel_SwordType_spawn();

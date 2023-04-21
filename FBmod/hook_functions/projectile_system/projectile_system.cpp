@@ -23,6 +23,7 @@
 #include "../registers.h"
 #include "unit_projectiles/test.h"
 #include "unit_projectiles/Zabanya.h"
+#include "unit_projectiles/age_fx.h"
 
 int MBON_Added_Unit_ID[5000];
 int custom_projectile_ID[5000];
@@ -147,6 +148,15 @@ void projectile_ID_Check_hook()
 		case 0x420A4:
 			Zabanya_Funnel_TypeNormal_spawn();
 			break;
+		case 0x50AB4:
+			AGE_FX_Funnel_SwordType_spawn();
+			break;
+		case 0x33A72:
+			test_spawn();
+			break;
+		case 0x33A3B:
+			test_spawn();
+			break;
 		default:
 			break;
 	}
@@ -193,6 +203,9 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[36] = 0x50C30;
 	custom_projectile_ID[37] = 0xB00000;
 	custom_projectile_ID[38] = 0x420A4;
+	custom_projectile_ID[39] = 0x50AB4;
+	custom_projectile_ID[40] = 0x33A72;
+	custom_projectile_ID[41] = 0x33A3B;
 }
 
 
