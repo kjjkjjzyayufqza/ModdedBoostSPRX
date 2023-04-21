@@ -120,6 +120,7 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Heine_Destiny.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\test.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Zabanya.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\age_fx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -241,5 +242,6 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Heine_Destiny.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\test.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Zabanya.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\age_fx.h" />
   </ItemGroup>
 </Project>
