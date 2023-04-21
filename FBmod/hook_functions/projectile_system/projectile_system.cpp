@@ -22,7 +22,6 @@
 #include "unit_projectiles/Heine_Destiny.h"
 #include "../registers.h"
 #include "unit_projectiles/test.h"
-#include "unit_projectiles/Zabanya.cpp"
 
 int MBON_Added_Unit_ID[5000];
 int custom_projectile_ID[5000];
@@ -145,23 +144,8 @@ void projectile_ID_Check_hook()
 			test_spawn();
 			break;
 		case 0x420A4:
-			Zabanya_Funnel_TypeNormal_spawn();
+			test_spawn();
 			break;
-		//case 0x420C2:
-		//	test_spawn();
-		//	break;
-		//case 0x420DB:
-		//	test_spawn();
-		//	break;
-		//case 0x420D6:
-		//	test_spawn();
-		//	break;
-		//case 0x420EA:
-		//	test_spawn();
-		//	break;
-		//case 0x420CC:
-		//	test_spawn();
-		//	break;
 		default:
 			break;
 	}
@@ -208,11 +192,6 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[36] = 0x50C30;
 	custom_projectile_ID[37] = 0xB00000;
 	custom_projectile_ID[38] = 0x420A4;
-	//custom_projectile_ID[39] = 0x420C2;
-	//custom_projectile_ID[40] = 0x420DB;
-	//custom_projectile_ID[41] = 0x420D6;
-	//custom_projectile_ID[42] = 0x420EA;
-	//custom_projectile_ID[43] = 0x420CC;
 }
 
 
