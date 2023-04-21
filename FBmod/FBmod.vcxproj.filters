@@ -121,6 +121,7 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\test.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Zabanya.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\age_fx.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\AKATSUKI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -243,5 +244,6 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\test.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Zabanya.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\age_fx.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\AKATSUKI.h" />
   </ItemGroup>
 </Project>

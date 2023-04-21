@@ -24,6 +24,7 @@
 #include "unit_projectiles/test.h"
 #include "unit_projectiles/Zabanya.h"
 #include "unit_projectiles/age_fx.h"
+#include "unit_projectiles/AKATSUKI.h"
 
 int MBON_Added_Unit_ID[5000];
 int custom_projectile_ID[5000];
@@ -152,10 +153,22 @@ void projectile_ID_Check_hook()
 			AGE_FX_Funnel_SwordType_spawn();
 			break;
 		case 0x33A72:
-			test_spawn();
+			akatsuki_NotMoveType_spawn();
 			break;
 		case 0x33A3B:
-			test_spawn();
+			akatsuki_NormalType_spawn();
+			break;
+		case 0x33A45:
+			akatsuki_NormalType_spawn();
+			break;
+		case 0x33A40:
+			akatsuki_NormalType_spawn();
+			break;
+		case 0x33A2C:
+			akatsuki_NotMoveType_spawn();
+			break;
+		case 0x33A36:
+			akatsuki_NormalType_spawn();
 			break;
 		default:
 			break;
