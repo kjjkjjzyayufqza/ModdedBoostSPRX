@@ -119,6 +119,7 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Dark_Hound.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Heine_Destiny.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\test.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Zabanya.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
