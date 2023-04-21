@@ -107,6 +107,7 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Reborns.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Tallgeese_III.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\test.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Zabanya.h" />
     <ClInclude Include="hook_functions\registers.h" />
     <ClInclude Include="hook_functions\unit_initializations.h" />
     <ClInclude Include="hook_functions\unit_initializations\unit_initializations_func_scripts.h" />
@@ -226,6 +227,7 @@
     <ClCompile Include="hook_functions\projectile_system\script_pointers.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Tallgeese_III.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\test.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Zabanya.cpp" />
     <ClCompile Include="hook_functions\registers.cpp" />
     <ClCompile Include="hook_functions\unit_initializations.cpp" />
     <ClCompile Include="hook_functions\unit_initializations\unit_initializations_func_scripts.cpp" />
