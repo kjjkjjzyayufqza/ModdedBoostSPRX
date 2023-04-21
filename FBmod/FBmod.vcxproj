@@ -63,7 +63,7 @@
       </AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y "I:\Full Boost\MBON Reimport Project\ModdedBoostSPRX\PS3_Debug\FBmod.sprx" "I:\Full Boost\rpcs3\dev_hdd0\customSPRX"</Command>
+      <Command>copy /y "D:\rpcs3\dev_hdd0\customSPRX"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
@@ -106,6 +106,7 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Raider_Gundam.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Reborns.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Tallgeese_III.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\test.h" />
     <ClInclude Include="hook_functions\registers.h" />
     <ClInclude Include="hook_functions\unit_initializations.h" />
     <ClInclude Include="hook_functions\unit_initializations\unit_initializations_func_scripts.h" />
@@ -224,6 +225,7 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Reborns.cpp" />
     <ClCompile Include="hook_functions\projectile_system\script_pointers.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Tallgeese_III.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\test.cpp" />
     <ClCompile Include="hook_functions\registers.cpp" />
     <ClCompile Include="hook_functions\unit_initializations.cpp" />
     <ClCompile Include="hook_functions\unit_initializations\unit_initializations_func_scripts.cpp" />

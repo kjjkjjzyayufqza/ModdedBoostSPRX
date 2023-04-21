@@ -118,6 +118,7 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Excellia.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Dark_Hound.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Heine_Destiny.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -237,5 +238,6 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Excellia.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Dark_Hound.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Heine_Destiny.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\test.h" />
   </ItemGroup>
 </Project>

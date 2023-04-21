@@ -21,6 +21,7 @@
 #include "unit_projectiles/Dark_Hound.h"
 #include "unit_projectiles/Heine_Destiny.h"
 #include "../registers.h"
+#include "unit_projectiles/test.h"
 
 int MBON_Added_Unit_ID[5000];
 int custom_projectile_ID[5000];
@@ -139,6 +140,12 @@ void projectile_ID_Check_hook()
 		case 0xA00005:
 			nu_gundam_hws_re_gz_shoot_assist_spawn();
 			break;
+		case 0xB00000:
+			test_spawn();
+			break;
+		case 0x420A4:
+			test_spawn();
+			break;
 		default:
 			break;
 	}
@@ -183,6 +190,8 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[34] = 0x3764;
 	custom_projectile_ID[35] = 0x3396E;
 	custom_projectile_ID[36] = 0x50C30;
+	custom_projectile_ID[37] = 0xB00000;
+	custom_projectile_ID[38] = 0x420A4;
 }
 
 
