@@ -311,3 +311,46 @@ void nu_gundam_hws_saber_throw_spawn() // originally lacus infinite justice's bo
 	temp_registers[3] = result;
 }
 
+int nu_hws_funnels_launch_spawn_script_pointers[500];
+
+bool nu_hws_funnels_launch_spawn_script_pointers_initialized;
+
+int nu_hws_funnels_launch_spawn_ammo_index_script()
+{
+	return 0x4;
+}
+
+void nu_hws_funnels_launch_spawn()
+{
+	if (nu_hws_funnels_launch_spawn_script_pointers_initialized == false)
+	{
+		copyJumptable((int *)0xca7cf0, nu_hws_funnels_launch_spawn_script_pointers);
+		nu_hws_funnels_launch_spawn_script_pointers_initialized = true;
+
+		nu_hws_funnels_launch_spawn_script_pointers[143] = (int)nu_hws_funnels_launch_spawn_ammo_index_script;
+	}
+
+	int TOC = 0xd8fe60;
+
+	_DWORD *tempR3Pointer = (_DWORD*)temp_registers[3];
+	char tempArray[4];
+	int *temporaryPointer;
+	int result;
+
+	tempArray[0] = -1;
+	tempArray[1] = 0;
+	temporaryPointer = (int *)GameCall<int>(0x9EE338, TOC)(17664LL, 128LL, tempArray);
+	GameCall<int>(0x7D9F08, TOC)(temporaryPointer, 17100);
+
+	result = (int)(temporaryPointer) + 17632;
+	*(int *)(result + 4) = (int)temporaryPointer;
+	*(int *)temporaryPointer = (int)nu_hws_funnels_launch_spawn_script_pointers;
+
+	int funnelProperties = *(int *)(TOC - 0x453C);
+	*(int *)((int)temporaryPointer + 17632) = funnelProperties;
+
+	*tempR3Pointer = (int)temporaryPointer;
+
+	// set return
+	temp_registers[3] = result;
+}

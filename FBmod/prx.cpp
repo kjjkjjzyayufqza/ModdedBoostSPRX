@@ -373,8 +373,8 @@ extern "C" int _gundam_prx_entry(void)
 	// Strike Freedom surround static funnel aiming bone index 
 	write_protected_memory(0x0080DCD4, (int)0x3880001e); // 0x1e = ATH_E_MAINBEAM
 
-	// Change Nu Gundam's funnel's ammo index
-	write_protected_memory(0x00ac1e68, (int)0x38600004); // 0x4 = 5th ammo slot
+	//// Change Nu Gundam's funnel's ammo index
+	//write_protected_memory(0x00ac1e68, (int)0x38600004); // 0x4 = 5th ammo slot
 
     return SYS_PRX_RESIDENT;
 }

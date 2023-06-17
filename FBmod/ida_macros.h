@@ -53,6 +53,10 @@ typedef float __m128 __attribute__((__vector_size__(16), __aligned__(16)));
 #define _WORD  uint16
 #define _DWORD uint32
 #define _QWORD uint64
+#define undefined4 uint32
+#define ulonglong uint64
+#define longlong long long
+#define code __fastcall
 #if !defined(_MSC_VER)
 #define _LONGLONG __int128
 #endif
