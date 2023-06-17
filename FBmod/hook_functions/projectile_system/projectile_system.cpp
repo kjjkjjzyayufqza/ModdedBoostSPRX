@@ -34,6 +34,7 @@
 #include "unit_projectiles/Double_X.h"
 #include "unit_projectiles/Infinite_Justice_Lacus.h"
 #include "../registers.h"
+#include "unit_projectiles/test.h"
 
 int MBON_Added_Unit_ID[5000];
 int custom_projectile_ID[5000];
@@ -223,6 +224,12 @@ void projectile_ID_Check_hook()
 		case 0xA00005:
 			nu_gundam_hws_re_gz_shoot_assist_spawn();
 			break;
+		case 0xB00000:
+			test_spawn();
+			break;
+		case 0x420A4:
+			test_spawn();
+			break;
 		default:
 			break;
 	}
@@ -267,6 +274,7 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[34] = 0x3764;
 	custom_projectile_ID[35] = 0x3396E;
 	custom_projectile_ID[36] = 0x50C30;
+<<<<<<< HEAD
 	custom_projectile_ID[37] = 0x1D650;
 	custom_projectile_ID[38] = 0x70544;
 	custom_projectile_ID[39] = 0x70549;
@@ -292,6 +300,10 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[59] = 0x1BF8;
 	custom_projectile_ID[60] = 0x55BE;
 	custom_projectile_ID[61] = 0x53246;
+=======
+	custom_projectile_ID[37] = 0xB00000;
+	custom_projectile_ID[38] = 0x420A4;
+>>>>>>> f6ae13b5de9c01b703f48d34ac701f1f8bbc5812
 }
 
 
