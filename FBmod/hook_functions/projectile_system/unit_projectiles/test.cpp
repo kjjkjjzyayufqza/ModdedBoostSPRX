@@ -16,7 +16,12 @@ void test_spawn_model_hash()
 	int hash = 0x71908BA1;
 }
 
-void test_spawn_wep()
+void test_spawn_wep_L()
+{
+	int hash = 0x73FCF825;
+}
+
+void test_spawn_wep_R()
 {
 	int hash = 0xA7BDC7FA;
 }
@@ -96,17 +101,20 @@ unsigned int sub_851C34(__int64 a1, unsigned int* a2, int a3)
 
 unsigned int sub_851BB4(__int64 a1)
 {
-	copyJumptable((int*)0xCC25B0, test_spawn_script_pointers_test1);
+	copyJumptable((int*)0xCC2D68, test_spawn_script_pointers_test1);//钢坦克0xCC25B0，小飞机0xCC2D68
 	//test_spawn_script_pointers_test1[5] = 0x00D424D0;//撞到东西就触发暴风id
 	test_spawn_script_pointers_test1[58] = (int)test_spawn_model_hash;//模型id
 	//test_spawn_script_pointers_test1[65] = 0x00D499F0;//撞到东西就触发暴风id
+	//test_spawn_script_pointers_test1[66] = 0x00D499F0;//座天使两下近战援护
 	//test_spawn_script_pointers_test1[71] = 0x00D499B8;//撞到东西就触发暴风id
 	//test_spawn_script_pointers_test1[88] = 0x00D49990;//撞到东西就触发暴风id
 	//test_spawn_script_pointers_test1[89] = 0x00D49998;//撞到东西就触发暴风id
 	//test_spawn_script_pointers_test1[98] = 0x00D499A0;//撞到东西就触发暴风id
-	test_spawn_script_pointers_test1[158] = (int)sub_851C34;//控制射出什么
-	//test_spawn_script_pointers_test1[169] = (int)test_spawn_wep;//控制射出什么
-	//test_spawn_script_pointers_test1[170] = (int)test_spawn_wep;//控制射出什么
+	//test_spawn_script_pointers_test1[154] = (int)sub_851C34;//鋼伊吉 先射击，后近战，可能是用来是否混合动作的func    正常都是用00D45A30
+	//test_spawn_script_pointers_test1[158] = (int)sub_851C34;//控制射出什么，和怎么读取射出多少   正常都是用00D42548
+	test_spawn_script_pointers_test1[166] = 0x00D45AA0;//DX 高达 6发火箭筒援护同时射出6发00D49CE8  钢坦克00D498E0    正常都是用00D45AA0
+	test_spawn_script_pointers_test1[168] = (int)test_spawn_wep_R;//控制射出什么
+	test_spawn_script_pointers_test1[169] = (int)test_spawn_wep_L;//控制射出什么
 
 	__int64 result; // r3
 	double v3; // fp0
@@ -114,7 +122,6 @@ unsigned int sub_851BB4(__int64 a1)
 	__int64 saved_toc; // [sp+28h] [-68h]
 
 	GameCall<int>(0x9F1BE8, 0xd8fe60)((unsigned int)a1, 1190LL);
-	//GameCall<int>(0x7ED70C, 0xd8fe60)((unsigned int)a1, 1180LL);
 	result = (unsigned int)test_spawn_script_pointers_test1;//处理模型，和运作逻辑
 	v3 = *(float*)(0xd8fe60 + 21024);
 	v4 = *(_DWORD*)(0xd8fe60 + 21032);
