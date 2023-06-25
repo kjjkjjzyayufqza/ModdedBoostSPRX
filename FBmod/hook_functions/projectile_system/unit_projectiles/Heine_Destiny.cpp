@@ -13,7 +13,7 @@ void heine_destiny_boomerang_spawn_model_hash()
 	int hash = 0x7A2F7689;
 }
 
-__int64 sub_874B7C_heine_destiny(unsigned int *a1, unsigned int *a2, unsigned int a3, unsigned int a4)
+__int64 sub_874B7C_heine_destiny(unsigned int *a1, unsigned int *a2, unsigned int a3, unsigned int a4) // effects
 {
 	GameCall<int>(0x7F18A0, 0xd8fe60)(a1, a2, a3, a4);
 	GameCall<int>(0x9F21B8, 0xd9fe1c)((__int64)a1, 2u);

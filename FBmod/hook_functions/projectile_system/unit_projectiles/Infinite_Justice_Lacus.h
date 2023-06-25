@@ -1,0 +1,2 @@
+
+void infinite_justice_lacus_shoot_assist_spawn();

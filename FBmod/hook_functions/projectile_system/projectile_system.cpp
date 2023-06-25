@@ -20,6 +20,19 @@
 #include "unit_projectiles/Excellia.h"
 #include "unit_projectiles/Dark_Hound.h"
 #include "unit_projectiles/Heine_Destiny.h"
+#include "unit_projectiles/Kampfer.h"
+#include "unit_projectiles/Full_Armor_Gundam.h"
+#include "unit_projectiles/Kimaris_Tropper.h"
+#include "unit_projectiles/Marasai.h"
+#include "unit_projectiles/Hyperion.h"
+#include "unit_projectiles/Age-1.h"
+#include "unit_projectiles/Age-3.h"
+#include "unit_projectiles/Leos_II_Vs.h"
+#include "unit_projectiles/Gato_Gelgoog.h"
+#include "unit_projectiles/Astray_Red_Frame_Custom.h"
+#include "unit_projectiles/Phantom.h"
+#include "unit_projectiles/Double_X.h"
+#include "unit_projectiles/Infinite_Justice_Lacus.h"
 #include "../registers.h"
 #include "unit_projectiles/test.h"
 #include "unit_projectiles/Zabanya.h"
@@ -31,12 +44,20 @@ int custom_projectile_ID[5000];
 
 void projectile_ID_Check_hook()
 {
+	printf("debug_projectile: %d \n", *(unsigned int*)lacus_infinite_justice_strike_freedom_following_assist_spawn);
+
 	int projectile_ID = temp_registers[4];
 
 	switch (projectile_ID)
 	{
 		case 0x8c0: // Hyaku Shiki's rick dom assist spawn
 			hyaku_shiki_rick_dias_spawn();
+			break;
+		case 0x1BF8:
+			double_x_javelin_throw_spawn();
+			break;
+		case 0x34C6:
+			gato_gelgoog_naginata_throw_spawn();
 			break;
 		case 0x3746: // Exia EX Attack despawn
 			exia_EX_Attack_despawn();
@@ -47,17 +68,46 @@ void projectile_ID_Check_hook()
 		case 0x3764:
 			exia_dagger_throw_spawn();
 			break;
+		case 0x42cc: // nu gundam's funnel, to be changed in the future.
+			nu_hws_funnels_launch_spawn();
+			break;
 		case 0x530c: // Infinite Justice EX Attack despawn
 			infinite_justice_EX_Attack_despawn();
 			break;
 		case 0x5140:
 			perfect_strike_boomerang_spawn();
 			break;
+		case 0x5212:
+			marasai_sword_throw_spawn();
+			break;
+		case 0x55BE:
+			infinite_justice_lacus_shoot_assist_spawn();
+			break; 
+		case 0x1D650:
+			kampfer_chainmine_spawn();
+			break;
 		case 0x33964:
 			heine_destiny_boomerang_spawn();
 			break;
 		case 0x3396e:
 			heine_destiny_sword_throw_spawn();
+			break;
+		case 0x35D54:
+			hyperion_sword_throw_spawn();
+			break;
+		case 0x35DB8:
+		case 0x35DB9:
+			astray_red_frame_custom_sword_throw_spawn();
+			break;
+		case 0x35DC2:
+			astray_red_frame_custom_boomerang_throw_spawn();
+			break;
+		case 0x35DCC:
+			astray_red_frame_custom_sword_wave_spawn();
+			break;
+		case 0x38464:
+		case 0x3846E:
+			phantom_sword_throw_spawn();
 			break;
 		case 0x50C30:
 			dark_hound_sword_throw_spawn();
@@ -86,7 +136,26 @@ void projectile_ID_Check_hook()
 		case 0x42072:
 			quanta_full_saber_arrow_wave_beam_spawn();
 			break;
+		case 0x50974:
+			age1_sword_throw_spawn();
+			break;
+		case 0x50992:
+			age1_wave_spawn();
+			break;
+		case 0x509A1:
+			age1_boomerang_throw_spawn();
+			break;
+		case 0x50988:
+			age1_small_rock_throw_spawn();
+			break;
+		case 0x5098D:
+			age1_big_rock_throw_spawn();
+			break;
+		case 0x50A50:
+			age3_net_throw_spawn();
+			break;
 		case 0x53214:
+		case 0x53246:
 			excellia_boomerang_spawn();
 			break;
 		case 0x66a94:
@@ -103,6 +172,15 @@ void projectile_ID_Check_hook()
 			break;
 		case 0x66ac6:
 			montero_G_Self_gerobi_shoot_spawn();
+			break;
+		case 0x69140:
+			kimaris_trooper_mine_field_spawn();
+			break;
+		case 0x70544:
+			full_armor_gundam_missile_spawn(false);
+			break;
+		case 0x70549:
+			full_armor_gundam_missile_spawn(true);
 			break;
 		case 0x77bc8:
 			barbatos_lupus_rex_tomahawk_throw_spawn();
@@ -127,6 +205,12 @@ void projectile_ID_Check_hook()
 			break;
 		case 0x31132:
 			raider_nuclear_missile_spawn();
+			break;
+		case 0x531E2:
+			leos_II_vs_wave_spawn();
+			break;
+		case 0x531F6:
+			leos_II_vs_boomerang_throw_spawn();
 			break;
 		case 0xA00001:
 			reborns_2ABC(); 
@@ -214,6 +298,33 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[34] = 0x3764;
 	custom_projectile_ID[35] = 0x3396E;
 	custom_projectile_ID[36] = 0x50C30;
+<<<<<<< HEAD
+	custom_projectile_ID[37] = 0x1D650;
+	custom_projectile_ID[38] = 0x70544;
+	custom_projectile_ID[39] = 0x70549;
+	custom_projectile_ID[40] = 0x69140;
+	custom_projectile_ID[41] = 0x5212;
+	custom_projectile_ID[42] = 0x35d54;
+	custom_projectile_ID[43] = 0x509A1;
+	custom_projectile_ID[44] = 0x50974;
+	custom_projectile_ID[45] = 0x531E2;
+	custom_projectile_ID[46] = 0x531F6;
+	custom_projectile_ID[47] = 0x50992;
+	custom_projectile_ID[48] = 0x50988;
+	custom_projectile_ID[49] = 0x5098D;
+	custom_projectile_ID[50] = 0x34C6;
+	custom_projectile_ID[51] = 0x42CC; // nu gundam's funnel, to be changed in the future.
+	custom_projectile_ID[52] = 0x50A50;
+	custom_projectile_ID[53] = 0x35DB8;
+	custom_projectile_ID[54] = 0x35DB9;
+	custom_projectile_ID[55] = 0x35DC2;
+	custom_projectile_ID[56] = 0x35DCC;
+	custom_projectile_ID[57] = 0x3846E;
+	custom_projectile_ID[58] = 0x38464; 
+	custom_projectile_ID[59] = 0x1BF8;
+	custom_projectile_ID[60] = 0x55BE;
+	custom_projectile_ID[61] = 0x53246;
+=======
 	custom_projectile_ID[37] = 0xB00000;
 	custom_projectile_ID[38] = 0x420A4;
 	custom_projectile_ID[39] = 0x50AB4;
