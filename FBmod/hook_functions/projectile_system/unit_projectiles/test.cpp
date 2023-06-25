@@ -145,8 +145,6 @@ void test_spawn() // ≤‚ ‘
 	char v1959[4];
 	__int64 result;
 	unsigned int v1062;
-
-
 	v1959[0] = -1;
 	v1959[1] = 0;
 	v1062 = GameCall<int>(0x9EE338, 0xd8fe60)(18304LL, 128LL, v1959);

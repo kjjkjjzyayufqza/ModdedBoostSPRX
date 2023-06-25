@@ -122,6 +122,19 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Zabanya.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\age_fx.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\AKATSUKI.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Age-1.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Age-3.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Astray_Red_Frame_Custom.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Double_X.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Full_Armor_Gundam.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Gato_Gelgoog.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Hyperion.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Infinite_Justice_Lacus.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Kampfer.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Kimaris_Tropper.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Leos_II_Vs.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Marasai.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Phantom.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -245,5 +258,18 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Zabanya.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\age_fx.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\AKATSUKI.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Age-1.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Age-3.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Astray_Red_Frame_Custom.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Double_X.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Full_Armor_Gundam.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Gato_Gelgoog.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Hyperion.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Infinite_Justice_Lacus.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Kampfer.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Kimaris_Tropper.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Leos_II_Vs.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Marasai.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Phantom.h" />
   </ItemGroup>
 </Project>

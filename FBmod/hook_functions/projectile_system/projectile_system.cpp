@@ -298,7 +298,6 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[34] = 0x3764;
 	custom_projectile_ID[35] = 0x3396E;
 	custom_projectile_ID[36] = 0x50C30;
-<<<<<<< HEAD
 	custom_projectile_ID[37] = 0x1D650;
 	custom_projectile_ID[38] = 0x70544;
 	custom_projectile_ID[39] = 0x70549;
@@ -324,12 +323,12 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[59] = 0x1BF8;
 	custom_projectile_ID[60] = 0x55BE;
 	custom_projectile_ID[61] = 0x53246;
-=======
-	custom_projectile_ID[37] = 0xB00000;
-	custom_projectile_ID[38] = 0x420A4;
-	custom_projectile_ID[39] = 0x50AB4;
-	custom_projectile_ID[40] = 0x33A72;
-	custom_projectile_ID[41] = 0x33A3B;
+	//after 1000 is for other
+	custom_projectile_ID[1000] = 0xB00000;
+	custom_projectile_ID[1001] = 0x420A4;
+	custom_projectile_ID[1002] = 0x50AB4;
+	custom_projectile_ID[1003] = 0x33A72;
+	custom_projectile_ID[1004] = 0x33A3B;
 }
 
 
