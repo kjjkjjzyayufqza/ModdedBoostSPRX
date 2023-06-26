@@ -228,6 +228,8 @@ void projectile_ID_Check_hook()
 			nu_gundam_hws_re_gz_shoot_assist_spawn();
 			break;
 		case 0xB00000:
+		case 0x96A:
+		case 0x44AE9:
 			test_spawn();
 			break;
 		case 0x420A4:
@@ -325,6 +327,8 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[61] = 0x53246;
 	//after 1000 is for other
 	custom_projectile_ID[1000] = 0xB00000;
+	custom_projectile_ID[1005] = 0x96A;
+	custom_projectile_ID[1006] = 0x44AE9;
 	custom_projectile_ID[1001] = 0x420A4;
 	custom_projectile_ID[1002] = 0x50AB4;
 	custom_projectile_ID[1003] = 0x33A72;
