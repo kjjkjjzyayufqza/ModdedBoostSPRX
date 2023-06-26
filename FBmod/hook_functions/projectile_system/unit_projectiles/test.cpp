@@ -66,6 +66,8 @@ void test_spawn_model_hash()
 
 unsigned int test_sub_9F1088(_DWORD* a1)
 {
+	printf("Hello world");
+
 	copyJumptable((int*)0xDAA09C, test_spawn_script_pointers_test1);
 	//test_spawn_script_pointers_test1[37] = (int)test_spawn_model_hash;//ALEO ? ALEO接在什么地方，和什么aleo ？
 	test_spawn_script_pointers_test1[58] = (int)test_spawn_model_hash;//模型id
