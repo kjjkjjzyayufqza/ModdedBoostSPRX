@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "new_type_script_sys_74_hook.h"
 #include "registers.h"
 
@@ -96,3 +97,29 @@ void no_boost_index_change()
 	}
 }
 
+void ModeIndexChange()
+{
+	int sys_74_args_pointer = temp_registers[6]; 
+	int sys_74_args_memory_pointer = temp_registers[3] + 0x476C;
+
+	if (sys_74_args_pointer != 0)
+	{
+		int sys_74_switch_case = *(int*)sys_74_args_pointer;
+		int args_set_index = *(int*)(sys_74_args_pointer + 0x4);
+
+		if (sys_74_switch_case == 0x1)
+		{
+			printf("sys_74_args_memory_pointer: %d", sys_74_args_memory_pointer);
+			printf("args_set_index: %d", args_set_index);
+			int args_offset = ((args_set_index - 1) * (0x80 * 0x4));
+			int arg_0x67 = *(int*)(sys_74_args_memory_pointer + args_offset + 0x19c);
+
+			int ModeIndex = *(int*)(sys_74_args_pointer + 0x18);
+			if (ModeIndex == 0 && arg_0x67 >= 0x1)
+			{
+				*(int*)(sys_74_args_memory_pointer + args_offset) = -0x1;
+				*(int*)(sys_74_args_pointer + 0x18) = -0x1;
+			}
+		}
+	}
+}

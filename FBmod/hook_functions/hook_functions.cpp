@@ -89,6 +89,9 @@ void hook()
 	// new_type_script_sys_74_hook
 	write_protected_memory(0x660470, 0x485B8891); // bl 0xc18d00
 
+	// ModeIndexWrite
+	write_protected_memory(0x660428, 0x485B88d9); // bl 0xc18d00
+
 	printf("burst_Increment_Check_hook: %d \n", *(int*)burst_Increment_Check_hook);
 	printf("general_Burst_Check_hook: %d \n", *(int*)general_Burst_Check_hook);
 	printf("get_non_Full_Burst_Boost_Increase_Percentage_hook: %d \n", *(int*)get_non_Full_Burst_Boost_Increase_Percentage_hook);
@@ -96,8 +99,7 @@ void hook()
 	printf("read_Burst_Damage_Multiplier_hook: %d \n", *(int*)read_Burst_Damage_Multiplier_hook);
 	printf("projectile_ID_Check_hook: %d \n", *(int*)projectile_ID_Check_hook);
 	printf("unit_initializations: %d \n", *(int*)sub_4DDFF4);
-	//printf("ammoRead5thEnum: %d \n", *(int*)ammoRead5thEnum);
-
+	printf("ModeIndexChange: %d \n", *(int*)ModeIndexChange);
 	printf("Hooks Loaded\n");
 }
 
@@ -282,6 +284,10 @@ void jump()
 		case 0x660474:
 			temp_registers[3] = temp_registers[31];
 			no_boost_index_change();
+			break;
+		case 0x66042c:
+			ModeIndexChange();
+			temp_registers[6] = temp_registers[7] + temp_registers[11];
 			break;
 		default:
 			break;
