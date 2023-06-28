@@ -225,6 +225,26 @@ __int64 test_sub_82E504(__int64 a1, unsigned int* a2, __int64 a3) // 0x1250238
 }
 
 
+void test_spawn_omo_1()
+{
+	int hex = 0x2;
+}
+
+void test_spawn_omo_2()
+{
+	int hex = 0x3;
+}
+
+void test_spawn_omo_3()
+{
+	int hex = 0x4;
+}
+
+void test_spawn_omo_4()
+{
+	int hex = 0x5;
+}
+
 unsigned int test_sub_95F830(_DWORD* a1)
 {
 	printf("Hello world");
@@ -238,7 +258,7 @@ unsigned int test_sub_95F830(_DWORD* a1)
 		//test_spawn_script_pointers_test[143] = (int)test_spawn_model_hash;//模型 大小 ??
 		test_spawn_script_pointers_test[153] = (int)test_sub_7EC3DC;//sub_7EC3DC //0x00D45A30
 		test_spawn_script_pointers_test[154] = 0x00D42568;
-		test_spawn_script_pointers_test[156] = 0x00D54F48;
+		test_spawn_script_pointers_test[156] = (int)test_spawn_omo_1;//可能是这个   //95F6A8 这里的值是 开始动画 r3, 0
 		test_spawn_script_pointers_test[157] = 0;//0x00D42548 //不是omo 
 		test_spawn_script_pointers_test[158] = 0;//0x00D42550 //不是omo
 		test_spawn_script_pointers_test[162] = 0x00D45B28;
@@ -247,15 +267,15 @@ unsigned int test_sub_95F830(_DWORD* a1)
 		test_spawn_script_pointers_test[165] = 0x00D45A00;
 		test_spawn_script_pointers_test[166] = 0x00D45A08;
 		test_spawn_script_pointers_test[167] = 0x00D43630;
-		test_spawn_script_pointers_test[168] = 0x00D54F50;
-		test_spawn_script_pointers_test[169] = 0x00D54F58;
-		test_spawn_script_pointers_test[170] = 0x00D45B70;
+		test_spawn_script_pointers_test[168] = (int)test_spawn_omo_2;//可能是这个   //95F6A8 这里的值是 r3, 1
+		test_spawn_script_pointers_test[169] = (int)test_spawn_omo_3;//可能是这个 飞行中的动画 r3, 2
+		test_spawn_script_pointers_test[170] = 0x00D45B70; 
 		test_spawn_script_pointers_test[171] = 0x00D54F28;
 		test_spawn_script_pointers_test[172] = 0x00D54F30;
 		test_spawn_script_pointers_test[173] = 0x00D54F38;
 		test_spawn_script_pointers_test[174] = 0x00D54F40;
 		test_spawn_script_pointers_test[175] = 0x00D45B50;
-		test_spawn_script_pointers_test[176] = 0x00D54F60;
+		test_spawn_script_pointers_test[176] = (int)test_spawn_omo_4;//可能是这个 结束动画 r3, 3
 		test_spawn_script_pointers_test[177] = 0x00D45B80;
 		test_spawn_script_pointers_test[178] = 0x00D45B78;
 		test_spawn_script_pointers_test[179] = 0x00000000;
