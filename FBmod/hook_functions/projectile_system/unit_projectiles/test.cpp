@@ -225,6 +225,46 @@ __int64 test_sub_82E504(__int64 a1, unsigned int* a2, __int64 a3) // 0x1250238
 }
 
 
+__int64 test_sub_95F6C0(unsigned int* a1, unsigned int a2)
+{
+	__int64 v2; // r29
+	int v5; // r28
+	unsigned int v6; // r3
+
+	v2 = (unsigned int)a1;
+	v5 = (int)a1;
+
+	__int64 TOC = 0xdafdfc; // r2
+
+	GameCall<int>(0x9F4108, 0xd8fe60)((unsigned int)a1, 2LL);
+	//sub_9F4108((unsigned int)a1, 2LL);
+
+	GameCall<int>(0x9F4118, 0xd8fe60)(v2, 0x965C9901, 31LL, 0LL);
+	//sub_9F4118(v2, 0x965C9901, 31LL, 0LL);
+
+	GameCall<int>(0x9F44E8, 0xd8fe60)(v2, a2);
+	//sub_9F44E8(v2, a2);
+
+
+	v6 = GameCall<int>(*(unsigned int*)*(unsigned int*)(*a1 + 0x60LL), TOC)(v2);
+	//v6 = ((__int64(__fastcall*)(__int64)) * (unsigned int*)*(unsigned int*)(*a1 + 0x60LL))(v2);
+
+	return GameCall<int>(0x9F40C8, TOC)(
+		(unsigned int)(v5 + 14860),
+		*(unsigned int*)(*(unsigned int*)(*(unsigned int*)(v6 + (__int64)(28 * *(_DWORD*)(v6 + 0x98CLL)) + 4)
+			+ 0xCLL)
+			+ 0xCLL),
+		28LL);
+
+	//return sub_9F40C8(
+	//	(unsigned int)(v5 + 14860),
+	//	*(unsigned int*)(*(unsigned int*)(*(unsigned int*)(v6 + (__int64)(28 * *(_DWORD*)(v6 + 0x98CLL)) + 4)
+	//		+ 0xCLL)
+	//		+ 0xCLL),
+	//	28LL);
+}
+
+
 void test_spawn_omo_1()
 {
 	int hex = 0x2;
@@ -253,7 +293,7 @@ unsigned int test_sub_95F830(_DWORD* a1)
 		printf("Hello world2");
 
 		copyJumptable((int*)0xD1D500, test_spawn_script_pointers_test);
-		//test_spawn_script_pointers_test[37] = (int)test_spawn_model_hash;//ALEO ? ALEO接在什么地方，和什么aleo ？
+		test_spawn_script_pointers_test[37] = (int)test_sub_95F6C0;//ALEO ? ALEO接在什么地方，和什么aleo ？
 		test_spawn_script_pointers_test[58] = (int)test_spawn_model_hash;//模型id
 		//test_spawn_script_pointers_test[143] = (int)test_spawn_model_hash;//模型 大小 ??
 		test_spawn_script_pointers_test[153] = (int)test_sub_7EC3DC;//sub_7EC3DC //0x00D45A30
