@@ -4,160 +4,287 @@
 #include "../../../stdafx.h"
 #include "../../../ida_macros.h"
 
-//int test_spawn_script_pointers[500];
-//int test_spawn_script_pointers2[500];
-//int test_spawn_script_pointers3[500];
-
-int test_spawn_script_pointers_test1[500];
-bool test_spawn_script_pointers_initialized;
+int test_spawn_script_pointers_test[500];
+bool init_test_bool = false;
 
 void test_spawn_model_hash()
 {
-	int hash = 0x8D71B5D3;
+	int hex = 0x77A231D7;
 }
 
-//
-//__int64 sub_7D9F08_test_func(__int64 a1)
-//{
-//	if (test_spawn_script_pointers_initialized == false)
-//	{
-//		copyJumptable((int*)0xCA2390, test_spawn_script_pointers);
-//		copyJumptable((int*)0xCA25E8, test_spawn_script_pointers2);//有问题 v4 = *(float *)(v2 - 16704);
-//		copyJumptable((int*)0xCA25E8, test_spawn_script_pointers3);
-//		test_spawn_script_pointers_initialized = true;
-//
-//		//test_spawn_script_pointers[58] = (int)test_spawn_model_hash;
-//	}
-//	__int64 v2; // r2
-//	int v3; // r6
-//	double v4; // fp0
-//	__int64 result; // r3
-//
-//	GameCall<int>(0x777288, 0xd8fe60)((_DWORD*)(unsigned int)a1);
-//	v3 = (int)test_spawn_script_pointers;
-//	v4 = *(float*)(0xd8fe60 - 16704);//这里有问题，所以用原本的
-//	result = 8LL;
-//	*(_DWORD*)a1 = (int)test_spawn_script_pointers3;
-//	*(_DWORD*)(a1 + 17600) = 0;
-//	*(_DWORD*)((unsigned int)(a1 + 17604) + 4LL) = -1;
-//	*(_QWORD*)(unsigned int)(a1 + 17604) = 0xFFFFFFFFLL;
-//	*(_DWORD*)(a1 + 17604) = 0;
-//	*(_DWORD*)(a1 + 17616) = 0;
-//	*(_DWORD*)(a1 + 17612) = 0;
-//	*(_DWORD*)a1 = v3;
-//	*(float*)(a1 + 17620) = v4;
-//	*(_DWORD*)(a1 + 216) = 8;
-//	*(_DWORD*)(a1 + 172) = 0;
-//	*(float*)(a1 + 17628) = v4;
-//	*(float*)(a1 + 17624) = v4;
-//	return result;
-//}
+// Script for reading projectile ID and such
+__int64 test_sub_7EC3DC(unsigned int* a1, unsigned int* a2) // accessed from 0x00d4a530
+{
+	__int64 v4; // r29
+	__int64 v5; // r2
+	__int64 v6; // r2
+	__int64 v7; // r3
+	__int64 v8; // r27
+	unsigned int* v9; // r22
+	__int64 v10; // r2
+	__int64 v11; // r3
+	int* v12; // r29
+	_DWORD* v13; // r25
+	int v14; // r5
+	int v15; // r4
+	__int64 v16; // r2
+	__int64 v17; // r2
+	__int64 v18; // r2
+	__int64 v19; // r2
+	char v21[4]; // [sp+70h] [-70h] BYREF
+	char v22[4]; // [sp+74h] [-6Ch] BYREF
+	char v23[16]; // [sp+78h] [-68h] BYREF
 
-//void test_spawn() // ok版本
-//{
-//	_DWORD* v2 = (_DWORD*)temp_registers[3];
-//	char v1916[4];
-//	__int64 result;
-//	_DWORD* v181; // r24
-//	__int64 v182; // r2
-//	int v183; // r28
-//	int v184; // r8
-//
-//	copyJumptable((int*)0xCAD7B8, test_spawn_script_pointers_test1);
-//
-//
-//	v1916[1] = 0;
-//	v1916[0] = -1;
-//	v181 = (_DWORD*)GameCall<int>(0x9EE338, 0xd8fe60)(17664LL, 128LL, v1916);
-//	//GameCall<int>(0x7D9F08, 0xd8fe60)((unsigned int)v181);
-//	sub_7D9F08_test_func((unsigned int)v181);
-//	//v183 = *(_DWORD*)(0xd8fe60 - 18408);
-//	v183 = (int)test_spawn_script_pointers_test1;
-//	result = *(unsigned int*)(0xd8fe60 - 18420);
-//	v184 = *(_DWORD*)(0xd8fe60 - 18412);
-//	*v181 = result;
-//	*(_DWORD*)(unsigned int)((_DWORD)v181 + 17632) = v184;
-//	*(_DWORD*)((unsigned int)((_DWORD)v181 + 17632) + 4LL) = (_DWORD)v181;
-//	v181[4408] = v183;
-//	*v2 = (_DWORD)v181;
-//	// set return
-//	temp_registers[3] = result;
-//}
-
-
-//void test_spawn() // 刹帝利
-//{
-//	_DWORD* v2 = (_DWORD*)temp_registers[3];
-//	char v1796[4];
-//	__int64 result;
-//	__int64 v1649; // r3
-//	unsigned __int64 v1650; // r27
-//	_DWORD* v1651; // r24
-//	int v1653; // r29
-//	int v1654; // r4
-//	int v1655; // r26
-//
-//
-//
-//	if (test_spawn_script_pointers_initialized == false)
-//	{
-//		copyJumptable((int*)0xC971C0, test_spawn_script_pointers_test1);
-//		test_spawn_script_pointers_test1[58] = (int)test_spawn_model_hash;
-//		test_spawn_script_pointers_initialized = true;
-//	}
-//
-//	v1796[1] = 0;
-//	v1796[0] = -1;
-//	v1649 = GameCall<int>(0x9EE338, 0xd8fe60)(17664LL, 128LL, v1796);
-//	v1650 = (unsigned int)v1649;
-//	v1651 = (_DWORD*)v1649;
-//	//result = sub_7D9F08_test_func((unsigned int)v1649);
-//	result = GameCall<int>(0x7D9F08, 0xd8fe60)((unsigned int)v1649);
-//	v1653 = *(_DWORD*)(0xd8fe60 - 17852);
-//	v1654 = (int)test_spawn_script_pointers_test1;
-//	v1655 = *(_DWORD*)(0xd8fe60 - 17856);
-//	*(_DWORD*)v1650 = *(_DWORD*)(0xd8fe60 - 17864);
-//	*v1651 = v1654;
-//	*(_DWORD*)(unsigned int)((_DWORD)v1651 + 17632) = v1655;
-//	*(_DWORD*)((unsigned int)((_DWORD)v1651 + 17632) + 4LL) = (_DWORD)v1651;
-//	v1651[4408] = v1653;
-//	*v2 = (_DWORD)v1651;
-//	// set return
-//	temp_registers[3] = result;
-//}
+	v23[0] = -1;
+	v23[1] = 0;
+	v4 = (unsigned int)GameCall<int>(0x9EE118, 0xd8fe60)(156LL, v23);
+	GameCall<int>(0x9EE278, 0xd8fe60)(v4);
+	v5 = *(unsigned int*)(*(unsigned int*)(*a1 + 0x28CLL) + 4LL);
+	GameCall<int>(*(unsigned int*)*(unsigned int*)(*a1 + 0x28CLL), v5)((unsigned int)a1, v4);
+	GameCall<int>(0x9EE9E8, 0xd8fe60)(v4, 1LL);
+	v6 = *(unsigned int*)(*(unsigned int*)(*a2 + 0x34LL) + 4LL);
+	GameCall<int>(*(unsigned int*)*(unsigned int*)(*a2 + 0x34LL), v6)((unsigned int)a2, v4);
+	v22[0] = -1;
+	v22[1] = 0;
+	v7 = GameCall<int>(0x9EE118, 0xd8fe60)(156LL, v22);
+	v8 = (unsigned int)v7;
+	v9 = (unsigned int*)v7;
+	GameCall<int>(0x9EE278, 0xd8fe60)((unsigned int)v7);
+	v10 = *(unsigned int*)(*(unsigned int*)(*a1 + 0x290LL) + 4LL);
+	GameCall<int>(*(unsigned int*)*(unsigned int*)(*a1 + 0x290LL), v10)((unsigned int)a1, v8);
+	v21[0] = -1;
+	v21[1] = 0;
+	v11 = GameCall<int>(0x9EE118, 0xd8fe60)(28LL, v21);
+	v12 = (int*)(unsigned int)v11;
+	v13 = (_DWORD*)v11;
+	GameCall<int>(0x9EE998, 0xd8fe60)((unsigned int)v11);
+	v14 = 0xc81c18;
+	v15 = 0xc85e48;
+	v12[5] = -241;
+	*v12 = v14;
+	v12[4] = (int)a1;
+	*v13 = v15;
+	v13[6] = 0; // dealy frame
+	v16 = *(unsigned int*)(*(unsigned int*)(*v9 + 0x34LL) + 4LL);
+	GameCall<int>(*(unsigned int*)*(unsigned int*)(*v9 + 0x34LL), v16)(v8, v12);
+	v17 = *(unsigned int*)(*(unsigned int*)(*a1 + 0x298LL) + 4LL);
+	GameCall<int>(*(unsigned int*)*(unsigned int*)(*a1 + 0x298LL), v17)((unsigned int)a1, v8);
+	GameCall<int>(0x9EE9E8, 0xd8fe60)(v8, 2LL);
+	v18 = *(unsigned int*)(*(unsigned int*)(*a2 + 0x34LL) + 4LL);
+	GameCall<int>(*(unsigned int*)*(unsigned int*)(*a2 + 0x34LL), v18)((unsigned int)a2, v8);
+	v19 = *(unsigned int*)(*(unsigned int*)(*a1 + 0x294LL) + 4LL);
+	return (GameCall<int>(*(unsigned int*)*(unsigned int*)(*a1 + 0x294LL), v19)(
+		(unsigned int)a1,
+		(unsigned int)a2)
+		);
+}
 
 
-void test_spawn() // 权天使 射击浮游
+__int64 test_sub_85E534(__int64 a1, __int64 a2, __int64 a3, int a4)
+{
+	// set animation (nth index of the animation in the second folder in OMO PAC)
+	// arg1 = starting animation
+	// arg2 = the looping animation (shoot)
+	// arg3 = ending animation
+	int anim_start_index = 1LL;
+	int anim_loop_index = 2LL;
+	int anim_end_index = 3LL;
+
+	float float1 = 30; // starting anim frame to start shoot
+	float float2 = 1; // starting anim multiplier
+	float float3 = 13; // ending anim frame?
+	float float4 = 1; // ending anime frame multiplier?
+
+	// We need to use this method to properly pass the float into the function, GameCall will incorrectly puts the float at flipped f30 and f29 onwards
+	int opd[2] = { 0x9F2008, 0xd8fe60 };
+
+	return ((int(*)(unsigned int*, int, int, int, int, float, int, int, int, float, float, float, int)) & opd)(
+		(unsigned int*)a2,
+		a3,
+		anim_start_index,
+		anim_loop_index,
+		anim_end_index,
+		float1,
+		*(_DWORD*)(*(unsigned int*)(a1 + 164) + 0xC8LL),
+		a4,
+		0,
+		float2,
+		float3,
+		float4,
+		-1);
+}
+
+__int64 test_sub_82E504(__int64 a1, unsigned int* a2, __int64 a3) // 0x1250238
+{
+	__int64 v5; // r27
+	__int64 v6; // r26
+	__int64 v7; // r2
+	unsigned int* v8; // r27
+	__int64 v9; // r3
+	int* v10; // r29
+	_DWORD* v11; // r28
+	int v12; // r8
+	int v13; // r21
+	__int64 v14; // r2
+	unsigned int* v15; // r27
+	__int64 v16; // r3
+	_DWORD* v17; // r29
+	_DWORD* v18; // r28
+	int v19; // r3
+	__int64 v20; // r2
+	char v22[4]; // [sp+70h] [-70h] BYREF
+	char v23[4]; // [sp+74h] [-6Ch] BYREF
+	char v24[8]; // [sp+78h] [-68h] BYREF
+
+	// --------------------------------------------------------
+	v24[1] = 0;
+	v24[0] = -1;
+
+	v5 = GameCall<int>(0x9EE118, 0xd8fe60)(56LL, (__int64)v24); // Find these if you want to find if the pointer func is doing animation shit
+
+	v6 = (unsigned int)a2;
+
+	// set animation (nth index of the animation in the second folder in OMO PAC)
+	// arg1 = starting animation
+	// arg2 = the looping animation (shoot)
+	// arg3 = ending animation
+	int anim_start_index = 1LL;
+	int anim_loop_index = 2LL;
+	int anim_end_index = 3LL;
+	GameCall<int>(0x9F1828, 0xd8fe60)((unsigned int)v5, (unsigned int)a3, anim_start_index, anim_loop_index, anim_end_index);
+	*(_DWORD*)(v5 + 44) = 0;
+
+	// 0x6f4a00, 0xd7ff30
+	v7 = *(unsigned int*)(*(unsigned int*)(*a2 + 0x34LL) + 4LL);
+	GameCall<int>((*(unsigned int*)*(unsigned int*)(*a2 + 0x34LL)), 0xd7ff30)((unsigned int)a2, (unsigned int)v5);
+
+	// --------------------------------------------------------
+	v8 = (unsigned int*)*(unsigned int*)(*a2 + 0x34LL);
+	v23[0] = -1;
+	v23[1] = 0;
+
+	v9 = GameCall<int>(0x9EE118, 0xd8fe60)(32LL, (__int64)v23);
+
+	v10 = (int*)(unsigned int)v9;
+	v11 = (_DWORD*)v9;
+
+	// populate the temp 0x4ffff type with the 0xc837d8
+	GameCall<int>(0x9EE998, 0xd8fe60)((unsigned int)v9); // 0xd7ff30
+
+	v12 = 0xc853d0; // 0xc853d0
+	v13 = 0xc86240; // 0xc86240
+
+	// this decompilation is quite wrong, but is it is okay since the toc is ovewritten on *v11 = v12 (no idea why)
+	*v10 = 0xc83818; // 0xc83818 
+
+	v10[4] = a3;
+	*v11 = v12; // write the toc for 0x4fff temp address with 0xc853d0
+	v10[5] = -241;
+	v11[7] = 0;
+	v11[6] = 1;
+
+	// wrong decompilation of r2 toc assign
+	v14 = v8[1];
+
+	// 0x6f4a00, 0xd7ff30
+	GameCall<int>(*v8, 0xd7ff30)((unsigned int)a2, v10);
+
+	// --------------------------------------------------------
+	v15 = (unsigned int*)*(unsigned int*)(*a2 + 0x34LL);
+
+	// Read the continue hash in the projectile properties
+	LODWORD(a2) = *(_DWORD*)(*(unsigned int*)(a3 + 164) + 0xC8LL);
+	v22[0] = -1;
+	v22[1] = 0;
+
+	v16 = GameCall<int>(0x9EE118, 0xd8fe60)(28LL, (__int64)v22);
+
+	v17 = (_DWORD*)(unsigned int)v16;
+	v18 = (_DWORD*)v16;
+
+	GameCall<int>(0x9EE998, 0xd8fe60)((unsigned int)v16);
+
+	v19 = 0xc83a78; // 0xc83a78
+
+	// wrong decompilation, should be writing 0xc83818 instead, but is okay since it is overwritten later by (*v18 = v19)
+	*v17 = v13;
+
+	v17[4] = a3;
+
+	v17[5] = -241;
+
+	*v18 = v19; // write new TOC, 0xc83a78
+
+	v18[6] = (_DWORD)a2; // write continue projectile hash
+
+	// wrong decompilation of r2 toc assign
+	v20 = v15[1];
+
+	// 0x6f4a00, 0xd7ff30
+	return GameCall<int>((*v15), 0xd7ff30)(v6, v17);
+}
+
+
+unsigned int test_sub_95F830(_DWORD* a1)
+{
+	printf("Hello world");
+
+	if (init_test_bool == false) {
+		printf("Hello world2");
+
+		copyJumptable((int*)0xD1D500, test_spawn_script_pointers_test);
+		//test_spawn_script_pointers_test[37] = (int)test_spawn_model_hash;//ALEO ? ALEO接在什么地方，和什么aleo ？
+		test_spawn_script_pointers_test[58] = (int)test_spawn_model_hash;//模型id
+		//test_spawn_script_pointers_test[143] = (int)test_spawn_model_hash;//模型 大小 ??
+		test_spawn_script_pointers_test[153] = (int)test_sub_7EC3DC;//sub_7EC3DC //0x00D45A30
+		test_spawn_script_pointers_test[154] = 0x00D42568;
+		test_spawn_script_pointers_test[156] = 0x00D54F48;
+		test_spawn_script_pointers_test[157] = 0;//0x00D42548 //不是omo 
+		test_spawn_script_pointers_test[158] = 0;//0x00D42550 //不是omo
+		test_spawn_script_pointers_test[162] = 0x00D45B28;
+		test_spawn_script_pointers_test[163] = 0x00D55400;
+		test_spawn_script_pointers_test[164] = 0x00D55410;
+		test_spawn_script_pointers_test[165] = 0x00D45A00;
+		test_spawn_script_pointers_test[166] = 0x00D45A08;
+		test_spawn_script_pointers_test[167] = 0x00D43630;
+		test_spawn_script_pointers_test[168] = 0x00D54F50;
+		test_spawn_script_pointers_test[169] = 0x00D54F58;
+		test_spawn_script_pointers_test[170] = 0x00D45B70;
+		test_spawn_script_pointers_test[171] = 0x00D54F28;
+		test_spawn_script_pointers_test[172] = 0x00D54F30;
+		test_spawn_script_pointers_test[173] = 0x00D54F38;
+		test_spawn_script_pointers_test[174] = 0x00D54F40;
+		test_spawn_script_pointers_test[175] = 0x00D45B50;
+		test_spawn_script_pointers_test[176] = 0x00D54F60;
+		test_spawn_script_pointers_test[177] = 0x00D45B80;
+		test_spawn_script_pointers_test[178] = 0x00D45B78;
+		test_spawn_script_pointers_test[179] = 0x00000000;
+
+		init_test_bool = true;
+	}
+	
+
+	__int64 result; // r3
+
+	GameCall<int>(0x9F46C8, 0xDAFDFC)(a1, 281321LL);
+	result = (unsigned int)test_spawn_script_pointers_test;
+	*a1 = result;
+	return result;
+}
+
+void test_spawn()
 {
 	_DWORD* v2 = (_DWORD*)temp_registers[3];
-	char v1854[4];
+	char v2146[4];
+	unsigned int v1215; // r26
 	__int64 result;
-	_DWORD *v4; // r27
-	__int64 v5; // r2
-	int v6; // r24
-	int v7; // r26
 
+	v2146[0] = -1;
+	v2146[1] = 0;
+	v1215 = GameCall<int>(0x9EE338, 0xd8fe60)(18304LL, 128LL, v2146);
+	result = test_sub_95F830((_DWORD*)v1215);
+	*v2 = v1215;
 
-
-	if (test_spawn_script_pointers_initialized == false)
-	{
-		copyJumptable((int*)0xCDABA8, test_spawn_script_pointers_test1);
-		test_spawn_script_pointers_test1[58] = (int)test_spawn_model_hash;
-		test_spawn_script_pointers_initialized = true;
-	}
-
-	v1854[1] = 0;
-	v1854[0] = -1;
-	v4 = (_DWORD*)GameCall<int>(0x9EE338, 0xd8fe60)(17664LL, 128LL, v1854);
-	GameCall<int>(0x7D9F08, 0xd8fe60)((unsigned int)v4);
-	v6 = *(_DWORD*)(0xd8fe60 - 17968);
-	result = (int)test_spawn_script_pointers_test1;
-	v7 = *(_DWORD*)(0xd8fe60 - 17856);
-	*v4 = result;
-	*(_DWORD*)(unsigned int)((_DWORD)v4 + 17632) = v7;
-	*(_DWORD*)((unsigned int)((_DWORD)v4 + 17632) + 4LL) = (_DWORD)v4;
-	v4[4408] = v6;
-	*v2 = (_DWORD)v4;
 	// set return
 	temp_registers[3] = result;
 }

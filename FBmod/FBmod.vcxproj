@@ -48,6 +48,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
     <IncludePath>$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include;$(SCE_PS3_ROOT)\host-win32\sn\ppu\include;</IncludePath>
+    <OutDir>..\..\..\dev_hdd0\customSPRX</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
     <ClCompile>
@@ -63,7 +64,7 @@
       </AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y "I:\Full Boost\MBON Reimport Project\ModdedBoostSPRX\PS3_Debug\FBmod.sprx" "I:\Full Boost\rpcs3\dev_hdd0\customSPRX"</Command>
+      <Command>copy /y "D:\rpcs3\dev_hdd0\customSPRX"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
@@ -89,6 +90,8 @@
     <ClInclude Include="hook_functions\projectile_system\script_pointers.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Age-1.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Age-3.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\age_fx.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\AKATSUKI.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Astray_Red_Frame_Custom.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Bael.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Barbatos.h" />
@@ -119,6 +122,8 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Raider_Gundam.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Reborns.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Tallgeese_III.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\test.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Zabanya.h" />
     <ClInclude Include="hook_functions\registers.h" />
     <ClInclude Include="hook_functions\unit_initializations.h" />
     <ClInclude Include="hook_functions\unit_initializations\unit_initializations_func_scripts.h" />
@@ -219,6 +224,8 @@
     <ClCompile Include="hook_functions\projectile_system\projectile_system.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Age-1.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Age-3.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\age_fx.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\AKATSUKI.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Astray_Red_Frame_Custom.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Bael.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Barbatos.cpp" />
@@ -250,6 +257,8 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Reborns.cpp" />
     <ClCompile Include="hook_functions\projectile_system\script_pointers.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Tallgeese_III.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\test.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Zabanya.cpp" />
     <ClCompile Include="hook_functions\registers.cpp" />
     <ClCompile Include="hook_functions\unit_initializations.cpp" />
     <ClCompile Include="hook_functions\unit_initializations\unit_initializations_func_scripts.cpp" />
