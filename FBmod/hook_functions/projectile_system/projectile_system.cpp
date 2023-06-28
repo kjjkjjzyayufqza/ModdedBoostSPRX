@@ -230,6 +230,7 @@ void projectile_ID_Check_hook()
 		case 0xB00000:
 		case 0x96A:
 		case 0x44AE9:
+		case 0x50A0F:
 			test_spawn();
 			break;
 		case 0x420A4:
@@ -329,6 +330,7 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[1000] = 0xB00000;
 	custom_projectile_ID[1005] = 0x96A;
 	custom_projectile_ID[1006] = 0x44AE9;
+	custom_projectile_ID[1007] = 0x50A0F;
 	custom_projectile_ID[1001] = 0x420A4;
 	custom_projectile_ID[1002] = 0x50AB4;
 	custom_projectile_ID[1003] = 0x33A72;
