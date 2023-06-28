@@ -63,7 +63,6 @@
       </AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
