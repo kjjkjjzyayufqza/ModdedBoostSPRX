@@ -6,7 +6,7 @@
 
 int Zabanya_type_script_pointers[500];
 int Zabanya_spawn_script_pointers[500];
-
+bool init_Zabanya_spawn = false;
 void Zabanya_spawn_Funnel_model_hash()
 {
 	int hash = 0x8D71B5D3;
@@ -26,42 +26,24 @@ void Zabanya_Funnel_TypeNormal_spawn()
 	int v1655; // r26
 
 
+	if (init_Zabanya_spawn == false) {
 
 
-	copyJumptable((int*)0xCDABA8, Zabanya_spawn_script_pointers);
-	Zabanya_spawn_script_pointers[58] = (int)Zabanya_spawn_Funnel_model_hash;
+		copyJumptable((int*)0xCDABA8, Zabanya_spawn_script_pointers);
+		Zabanya_spawn_script_pointers[58] = (int)Zabanya_spawn_Funnel_model_hash;
 
-	copyJumptable((int*)0xCC1538, Zabanya_type_script_pointers);//先读取原本刹帝利的指针
-	//下面按照需要换成其他的
-	//test_spawn_script_pointers_test0[0] = 0x00D4F560;
-	//test_spawn_script_pointers_test0[1] = 0x00D4F5A0;
-	//test_spawn_script_pointers_test0[5] = 0x00D43738;
-	Zabanya_type_script_pointers[8] = 0x00D46170;//是否读取projectile的aleo信息，并且读取更多projectile信息
-	//test_spawn_script_pointers_test0[10] = 0x00D45460;
-	//test_spawn_script_pointers_test0[12] = 0x00D45410;
-	//test_spawn_script_pointers_test0[14] = 0x00D45468;//射击结束是否消失
-	//test_spawn_script_pointers_test0[15] = 0x00D45428;//射击结束回到身上是否有回归动画
-	//test_spawn_script_pointers_test0[20] = 0x00D453F0;
-	//test_spawn_script_pointers_test0[23] = 0x00D43768;
-	//test_spawn_script_pointers_test0[25] = 0x00D44E08;
-	Zabanya_type_script_pointers[27] = 0x00D4F5B0;//移动轨迹 直线 | 乱数
-	//test_spawn_script_pointers_test0[31] = 0x00D4F5A8;
-	//test_spawn_script_pointers_test0[32] = 0;
-	//test_spawn_script_pointers_test0[33] = 0;
-	//test_spawn_script_pointers_test0[34] = 0x00D4F5B8;
-	//test_spawn_script_pointers_test0[35] = 0x00D4F5C0;
-	//test_spawn_script_pointers_test0[36] = 0x00D3B608;
-	//test_spawn_script_pointers_test0[37] = 0x00D3E608;
-	//test_spawn_script_pointers_test0[38] = 0x00D42328;
-	//test_spawn_script_pointers_test0[39] = 0x00D4F568;
-	//test_spawn_script_pointers_test0[40] = 0x00D3E610;
-	//test_spawn_script_pointers_test0[41] = 0x00D3E618;
-	//test_spawn_script_pointers_test0[42] = 0x00D422B8;
-	//test_spawn_script_pointers_test0[43] = 0x00D422C0;
-	//test_spawn_script_pointers_test0[44] = 0x00D42330;
-	//test_spawn_script_pointers_test0[45] = 0x00D42340;
-	//test_spawn_script_pointers_test0[46] = 0x00D422C8;
-	//test_spawn_script_pointers_test0[47] = 0x00D422D0;
+		copyJumptable((int*)0xCDA5A0, Zabanya_type_script_pointers);//先读取原本刹帝利的指针  //射两发0xCDA5A0 会卡
+
+		Zabanya_type_script_pointers[18] = 0x00D45478;//这个会卡
+
+		//Zabanya_type_script_pointers[8] = 0x00D46170;//是否读取projectile的aleo信息，并且读取更多projectile信息
+		Zabanya_type_script_pointers[14] = 0x00D45468;//射击结束是否消失
+		Zabanya_type_script_pointers[15] = 0x00D45428;//射击结束回到身上是否有回归动画
+		Zabanya_type_script_pointers[20] = 0x00D49648;//这个会卡
+		//Zabanya_type_script_pointers[27] = 0x00D4F5B0;//移动轨迹 直线 | 乱数
+		init_Zabanya_spawn = true;
+	}
+
 
 	v1796[1] = 0;
 	v1796[0] = -1;
