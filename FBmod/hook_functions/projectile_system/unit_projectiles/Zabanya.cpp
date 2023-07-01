@@ -16,14 +16,16 @@ void Zabanya_spawn_Funnel_model_hash()
 void Zabanya_Funnel_TypeNormal_spawn()
 {
 	_DWORD* v2 = (_DWORD*)temp_registers[3];
-	char v1796[4];
+	char v2217[4];
 	__int64 result;
 	__int64 v1649; // r3
-	unsigned __int64 v1650; // r27
-	_DWORD* v1651; // r24
-	int v1653; // r29
-	int v1654; // r4
-	int v1655; // r26
+	__int64 v1358; // r3
+	unsigned __int64 v1359; // r25
+	_DWORD* v1360; // r26
+	__int64 TOC = 0xd8fe60; // r2
+	int v1362; // r11
+	int v1363; // r8
+	int v1364; // r24
 
 
 	if (init_Zabanya_spawn == false) {
@@ -45,22 +47,27 @@ void Zabanya_Funnel_TypeNormal_spawn()
 	}
 
 
-	v1796[1] = 0;
-	v1796[0] = -1;
-	v1649 = GameCall<int>(0x9EE338, 0xd8fe60)(17664LL, 128LL, v1796);
-	v1650 = (unsigned int)v1649;
-	v1651 = (_DWORD*)v1649;
-	//result = sub_7D9F08_test_func((unsigned int)v1649);
-	result = GameCall<int>(0x7D9F08, 0xd8fe60)((unsigned int)v1649);
-	v1653 = (int)Zabanya_type_script_pointers;
-	v1654 = (int)Zabanya_spawn_script_pointers;
-	v1655 = *(_DWORD*)(0xd8fe60 - 17856);
-	*(_DWORD*)v1650 = *(_DWORD*)(0xd8fe60 - 17864);
-	*v1651 = v1654;
-	*(_DWORD*)(unsigned int)((_DWORD)v1651 + 17632) = v1655;
-	*(_DWORD*)((unsigned int)((_DWORD)v1651 + 17632) + 4LL) = (_DWORD)v1651;
-	v1651[4408] = v1653;
-	*v2 = (_DWORD)v1651;
+	v2217[0] = -1;
+	v2217[1] = 0;
+	v1358 = GameCall<int>(0x9EE338, 0xd8fe60)(17664LL, 128LL, v2217);
+	v1359 = (unsigned int)v1358;
+	v1360 = (_DWORD*)v1358;
+	GameCall<int>(0x7D9F08, 0xd8fe60)((unsigned int)v1358);
+
+	v1362 = (int)Zabanya_type_script_pointers;
+	result = (int)Zabanya_spawn_script_pointers;
+	v1363 = *(_DWORD*)(TOC - 16980);
+	v1364 = *(_DWORD*)(TOC - 17012);
+
+	*(_DWORD*)v1359 = result;
+	*v1360 = v1363;
+	v1360[4408] = 0;
+	*(_DWORD*)(unsigned int)((_DWORD)v1360 + 17636) = v1364;
+	*(_DWORD*)((unsigned int)((_DWORD)v1360 + 17636) + 4LL) = (_DWORD)v1360;
+	v1360[4409] = v1362;
+	v1360[4411] = 1;
+	*v2 = (_DWORD)v1360;
+
 	// set return
 	temp_registers[3] = result;
 }

@@ -238,6 +238,11 @@ void projectile_ID_Check_hook()
 			age2_Three_Shoot_Aid_spawn();
 			break;
 		case 0x420A4:
+		case 0x420C2:
+		case 0x420DB:
+		case 0x420D6:
+		case 0x420EA:
+		case 0x420CC:
 			Zabanya_Funnel_TypeNormal_spawn();
 			break;
 		case 0x50AB4:
@@ -338,6 +343,11 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[1004] = 0x33A3B;
 	custom_projectile_ID[1007] = 0x50A0F;
 	custom_projectile_ID[1008] = 0x50A0A;
+	custom_projectile_ID[1009] = 0x420C2;
+	custom_projectile_ID[1010] = 0x420DB;
+	custom_projectile_ID[1011] = 0x420D6;
+	custom_projectile_ID[1012] = 0x420EA;
+	custom_projectile_ID[1013] = 0x420CC;
 }
 
 
