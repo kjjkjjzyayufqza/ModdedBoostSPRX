@@ -48,7 +48,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
     <IncludePath>$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include;$(SCE_PS3_ROOT)\host-win32\sn\ppu\include;</IncludePath>
-    <OutDir>..\..\..\dev_hdd0\customSPRX</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
     <ClCompile>
@@ -63,10 +62,6 @@
       <AdditionalOptions>
       </AdditionalOptions>
     </Link>
-    <PostBuildEvent>
-      <Command>
-      </Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
     <ClCompile>
