@@ -62,6 +62,8 @@
       <AdditionalOptions>
       </AdditionalOptions>
     </Link>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
     <ClCompile>
