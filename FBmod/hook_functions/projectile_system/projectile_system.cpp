@@ -38,6 +38,7 @@
 #include "unit_projectiles/Zabanya.h"
 #include "unit_projectiles/age_fx.h"
 #include "unit_projectiles/AKATSUKI.h"
+#include "unit_projectiles/age-2.h"
 
 int MBON_Added_Unit_ID[5000];
 int custom_projectile_ID[5000];
@@ -228,10 +229,13 @@ void projectile_ID_Check_hook()
 			nu_gundam_hws_re_gz_shoot_assist_spawn();
 			break;
 		case 0xB00000:
-		case 0x96A:
-		case 0x44AE9:
-		case 0x50A0F:
 			test_spawn();
+			break;
+		case 0x50A0F:
+			age2_Melee_Aid_spawn();
+			break;
+		case 0x50A0A:
+			age2_Three_Shoot_Aid_spawn();
 			break;
 		case 0x420A4:
 			Zabanya_Funnel_TypeNormal_spawn();
@@ -328,13 +332,12 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[61] = 0x53246;
 	//after 1000 is for other
 	custom_projectile_ID[1000] = 0xB00000;
-	custom_projectile_ID[1005] = 0x96A;
-	custom_projectile_ID[1006] = 0x44AE9;
-	custom_projectile_ID[1007] = 0x50A0F;
 	custom_projectile_ID[1001] = 0x420A4;
 	custom_projectile_ID[1002] = 0x50AB4;
 	custom_projectile_ID[1003] = 0x33A72;
 	custom_projectile_ID[1004] = 0x33A3B;
+	custom_projectile_ID[1007] = 0x50A0F;
+	custom_projectile_ID[1008] = 0x50A0A;
 }
 
 

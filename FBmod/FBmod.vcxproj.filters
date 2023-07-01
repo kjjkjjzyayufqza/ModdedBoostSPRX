@@ -135,6 +135,7 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Leos_II_Vs.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Marasai.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Phantom.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\age-2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -271,5 +272,6 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Leos_II_Vs.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Marasai.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Phantom.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\age-2.h" />
   </ItemGroup>
 </Project>
