@@ -1,1 +1,1 @@
-*.vcxproj filter=ignore-line
+*.vcxproj filter=myfilter
