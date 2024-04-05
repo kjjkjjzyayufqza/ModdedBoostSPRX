@@ -2,8 +2,6 @@
 #include "stdafx.h"
 #include "../registers.h"
 
-
-
 void ammoRead5thEnum()
 {
 	int r22 = temp_registers[22];

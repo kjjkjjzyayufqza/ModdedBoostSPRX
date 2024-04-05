@@ -100,25 +100,33 @@ void no_boost_index_change()
 void ModeIndexChange()
 {
 	int sys_74_args_pointer = temp_registers[6]; 
+	// First b4ac in memory cache
 	int sys_74_args_memory_pointer = temp_registers[3] + 0x476C;
 
 	if (sys_74_args_pointer != 0)
 	{
 		int sys_74_switch_case = *(int*)sys_74_args_pointer;
+		
+		// assign_B4AC_Weapon_Input
 		int args_set_index = *(int*)(sys_74_args_pointer + 0x4);
 
 		if (sys_74_switch_case == 0x1)
 		{
-			printf("sys_74_args_memory_pointer: %d", sys_74_args_memory_pointer);
-			printf("args_set_index: %d", args_set_index);
 			int args_offset = ((args_set_index - 1) * (0x80 * 0x4));
-			int arg_0x67 = *(int*)(sys_74_args_memory_pointer + args_offset + 0x19c);
+			int arg_0x68 = *(int*)(sys_74_args_memory_pointer + args_offset + 0x19c);
+			int modeIndex = *(int*)(sys_74_args_pointer + 0x18);
 
-			int ModeIndex = *(int*)(sys_74_args_pointer + 0x18);
-			if (ModeIndex == 0 && arg_0x67 >= 0x1)
+			printf("sys_74_args_memory_pointer: %d \n", sys_74_args_memory_pointer);
+			printf("sys_74_args_pointer: %d \n", sys_74_args_pointer);
+			printf("args_set_index: %d \n", args_set_index);
+			printf("modeIndex: %d \n", modeIndex);
+			printf("arg_0x68: %d \n", arg_0x68);
+
+			if (modeIndex == 0 && arg_0x68 == 0x1)
 			{
-				*(int*)(sys_74_args_memory_pointer + args_offset) = -0x1;
-				*(int*)(sys_74_args_pointer + 0x18) = -0x1;
+				printf("Changing mode to %d \n", -1);
+				*(int*)(sys_74_args_memory_pointer + args_offset) = -1;
+				*(int*)(sys_74_args_pointer + 0x18) = -1;
 			}
 		}
 	}
