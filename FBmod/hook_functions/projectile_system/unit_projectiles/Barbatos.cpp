@@ -216,3 +216,100 @@ void barbatos_ex_mace_throw_spawn()
 	// set return
 	temp_registers[3] = result;
 }
+
+int barbatos_shoot_assist_spawn_script_pointers[500];
+bool is_barbatos_shoot_assist_initialized = false;
+
+unsigned int barbatos_assist_spawn_model_hash()
+{
+	return 0x99F1778F;
+}
+
+// 0x011eed88, 0x011eefb8
+unsigned int barbatos_shoot_assist_initial_animation_script(unsigned int a1, unsigned int *a2)
+{
+	const unsigned int toc = 0xdafdfc;
+	const unsigned int animation_index = 0x4;
+	
+	char list[12];
+	list[1] = 0;
+	list[0] = -1;
+	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(56LL, reinterpret_cast<long long>(list));
+	GameCall<unsigned int>(0x9F44C8, toc)(static_cast<unsigned int>(working_memory), a1, animation_index);
+
+	// Clear 0x2c
+	*reinterpret_cast<uint32*>(working_memory + 0x2c) = 0;
+	
+	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
+	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory));
+
+	char list2[12];
+	list2[0] = -1;
+	list2[1] = 0;
+	const unsigned int working_memory_2 = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list2));
+	GameCall<unsigned int>(0x9F40E8, toc)(working_memory_2);
+
+	const unsigned int script = *reinterpret_cast<unsigned int*>(toc - 0x6858);
+
+	// 1.57 in this case
+	// If set too high, it'll basically skip the aim phase, and if set too low the first shot will miss
+	const float aim_animation_speed_multiplier = *reinterpret_cast<float*>(toc - 0x6854);
+	
+	*reinterpret_cast<uint32*>(working_memory_2) = script;
+	*reinterpret_cast<uint32*>(working_memory_2 + 16) = a1;
+	*reinterpret_cast<uint32*>(working_memory_2 + 20) = -241;
+	*reinterpret_cast<float*>(working_memory_2 + 24) = aim_animation_speed_multiplier;
+
+	unsigned int debug = 0xDEADBEEF;
+
+	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory_2));
+	return GameCall<unsigned int>(0x9F4648, toc)(a1, reinterpret_cast<unsigned int>(a2));
+}
+
+float barbatos_shoot_assist_size_multiplier()
+{
+	return 1.0f;
+}
+
+unsigned int barbatos_shoot_assist_aim_animation_index()
+{
+	return 4;
+}
+
+unsigned int barbatos_shoot_assist_loop_animation_index()
+{
+	return 5;
+}
+
+unsigned int barbatos_shoot_assist_sub_936FC0(_DWORD* a1)
+{
+	if (is_barbatos_shoot_assist_initialized == false) {
+		copyJumptable(reinterpret_cast<int*>(0xd1a5b0), barbatos_shoot_assist_spawn_script_pointers);
+		barbatos_shoot_assist_spawn_script_pointers[58] = reinterpret_cast<int>(barbatos_assist_spawn_model_hash);
+		barbatos_shoot_assist_spawn_script_pointers[144] = reinterpret_cast<int>(barbatos_shoot_assist_aim_animation_index); // aiming animation
+		barbatos_shoot_assist_spawn_script_pointers[147] = reinterpret_cast<int>(barbatos_shoot_assist_size_multiplier);
+		barbatos_shoot_assist_spawn_script_pointers[165] = reinterpret_cast<int>(barbatos_shoot_assist_initial_animation_script); // initial animation script
+		barbatos_shoot_assist_spawn_script_pointers[167] = reinterpret_cast<int>(barbatos_shoot_assist_loop_animation_index); // looping shoot animation
+		is_barbatos_shoot_assist_initialized = true;
+	}
+	
+	GameCall<int>(0x9F2998, 0xd9fe1c)(a1, 3400);
+	const unsigned int result = reinterpret_cast<unsigned int>(barbatos_shoot_assist_spawn_script_pointers);
+	*a1 = result;
+	return result;
+}
+
+void barbatos_shoot_assist_spawn()
+{
+	_DWORD* r3_pointer = reinterpret_cast<uint32*>(temp_registers[3]);
+
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	const unsigned int temp_memory_ptr = GameCall<int>(0x9EE338, 0xd8fe60)(0x4780, 0x80, list);
+	const unsigned int result = barbatos_shoot_assist_sub_936FC0(reinterpret_cast<uint32*>(temp_memory_ptr));
+	*r3_pointer = temp_memory_ptr;
+
+	// set return
+	temp_registers[3] = result;
+}

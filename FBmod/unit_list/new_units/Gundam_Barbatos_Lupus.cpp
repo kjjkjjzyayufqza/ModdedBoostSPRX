@@ -18,15 +18,15 @@ unit_voice_hash_list_0x28 Gundam_Barbatos_Lupus_inject_arcade_select_hash()
 {
     unit_voice_hash_list_0x28 Gundam_Barbatos_Lupus_ArcadeSelectHash;
     Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_1 = 0xB347A5BE; // VO_49_P01_CHARA_SELECT_01
-Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_2 = 0x2A4EF404; // VO_49_P01_CHARA_SELECT_02
-Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_3 = 0x5D49C492; // VO_49_P01_CHARA_SELECT_03
-Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_4 = 0xC32D5131; // VO_49_P01_CHARA_SELECT_04
-Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_5 = 0;
-Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_6 = 0;
-Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_7 = 0;
-Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_8 = 0;
-Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_9 = 0;
-Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_10 = 0;
+    Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_2 = 0x2A4EF404; // VO_49_P01_CHARA_SELECT_02
+    Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_3 = 0x5D49C492; // VO_49_P01_CHARA_SELECT_03
+    Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_4 = 0xC32D5131; // VO_49_P01_CHARA_SELECT_04
+    Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_5 = 0;
+    Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_6 = 0;
+    Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_7 = 0;
+    Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_8 = 0;
+    Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_9 = 0;
+    Gundam_Barbatos_Lupus_ArcadeSelectHash.hash_10 = 0;
 
     return Gundam_Barbatos_Lupus_ArcadeSelectHash;
 }

@@ -189,6 +189,9 @@ void projectile_ID_Check_hook()
 		case 0x77bbe:
 			barbatos_lupus_rex_mace_throw_spawn();
 			break;
+		case 0x77BDC:
+			barbatos_lupus_rex_twin_shoot_assist_spawn();
+			break;
 		case 0x77baa:
 			barbatos_lupus_rex_tail_blade_one_time_spawn();
 			break;
@@ -198,11 +201,17 @@ void projectile_ID_Check_hook()
 		case 0x77a7e:
 			barbatos_lupus_twin_mace_throw_spawn();
 			break;
+		case 0x77AA6:
+			barbatos_lupus_twin_shoot_assist_spawn();
+			break;
 		case 0x6903C:
 			barbatos_mace_throw_spawn();
 			break;
 		case 0x69046:
 			barbatos_ex_mace_throw_spawn();
+			break;
+		case 0x69037:
+			barbatos_shoot_assist_spawn();
 			break;
 		case 0x31132:
 			raider_nuclear_missile_spawn();
@@ -232,10 +241,10 @@ void projectile_ID_Check_hook()
 			test_spawn();
 			break;
 		case 0x50A0F:
-			age2_Melee_Aid_spawn();
+			age2_melee_assist_spawn();
 			break;
 		case 0x50A0A:
-			age2_Three_Shoot_Aid_spawn();
+			age2_three_shoot_assist_spawn();
 			break;
 		case 0x420A4:
 			Zabanya_Funnel_TypeNormal_spawn();
@@ -330,6 +339,9 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[59] = 0x1BF8;
 	custom_projectile_ID[60] = 0x55BE;
 	custom_projectile_ID[61] = 0x53246;
+	custom_projectile_ID[62] = 0x77AA6;
+	custom_projectile_ID[63] = 0x77BDC;
+	custom_projectile_ID[64] = 0x69037;
 	//after 1000 is for other
 	custom_projectile_ID[1000] = 0xB00000;
 	custom_projectile_ID[1001] = 0x420A4;

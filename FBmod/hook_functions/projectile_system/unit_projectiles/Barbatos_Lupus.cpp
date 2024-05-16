@@ -2,6 +2,7 @@
 #include "../../registers.h"
 #include "../../../stdafx.h"
 #include "../../../ida_macros.h"
+#include "helpers/helpers.h"
 
 int barbatos_lupus_anti_ship_mace_spawn_script_pointers[500];
 int barbatos_lupus_twin_mace_throw_spawn_script_pointers[500];
@@ -426,6 +427,119 @@ void barbatos_lupus_twin_mace_throw_spawn() // 0x7D4964
 	v1058 = GameCall<int>(0x9EE338, 0xd8fe60)(17536LL, 128LL, v1492);
 	result = barbatos_lupus_twin_mace_throw_spawn_supp_1((_DWORD *)v1058, 1); //GameCall<int>(0x9f1138, 0xd8fe60)((_DWORD *)v1058);
 	*v2 = v1058;
+
+	// set return
+	temp_registers[3] = result;
+}
+
+int barbatos_lupus_twin_shoot_spawn_script_pointers[500];
+bool is_barbatos_lupus_twin_shoot_assist_initialized = false;
+
+// 11f068c
+__int64 barbatos_lupus_twin_shoot_double_hand_sub_936FFC(__int64 a1, unsigned int *a2, int a3)
+{
+	unsigned __int64 v7; // r29
+	_DWORD *v8; // r28
+	int v9; // r25
+	int v10; // r24
+	__int64 v11; // r2
+	unsigned int *v12; // r27
+	__int64 v13; // r3
+	unsigned __int64 v14; // r29
+	_DWORD *v15; // r28
+	__int64 v16; // r2
+	char v18[4]; // [sp+70h] [-70h] BYREF
+	char v19[12]; // [sp+74h] [-6Ch] BYREF
+
+	__int64 toc = 0xd9fe1c; // r2
+
+	const unsigned int* v5 = (unsigned int*)*(unsigned int*)(*a2 + 0x34LL);
+	v19[0] = -1;
+	v19[1] = 0;
+	// v6 = sub_9F2198(28LL, (__int64)v19);
+	__int64 v6 = GameCall<int>(0x9F2198, toc)(28LL, reinterpret_cast<long long>(v19));
+	v7 = static_cast<unsigned int>(v6);
+	v8 = reinterpret_cast<uint32*>(v6);
+
+	// sub_9F21A8((unsigned int)v6);
+	GameCall<int>(0x9F21A8, toc)(static_cast<unsigned int>(v6));
+	
+	v9 = *reinterpret_cast<int*>(toc + 0x596C);
+	v10 = *reinterpret_cast<int*>(toc + 0x5998);
+	*reinterpret_cast<uint32*>(v7) = *reinterpret_cast<uint32*>(toc + 0x596C);
+	*reinterpret_cast<uint32*>(v7 + 16) = a3;
+	*reinterpret_cast<uint32*>(v7 + 20) = -241;
+	*v8 = v10;
+
+	// Projectile 1
+	v8[6] = 3068634661;
+
+	// TOC for this fastcall is read here
+	v11 = v5[1];
+	// ((void (__fastcall *)(unsigned int *, unsigned __int64))*v5)(a2, v7);
+	GameCall<int>(*v5, v11)(a2, v7);
+	
+	v12 = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
+	v18[0] = -1;
+	v18[1] = 0;
+	
+	// v13 = sub_9F2198(28LL, (__int64)v18);
+	v13 = GameCall<int>(0x9F2198, toc)(28LL, reinterpret_cast<long long>(v18));
+	
+	v14 = static_cast<unsigned int>(v13);
+	v15 = reinterpret_cast<uint32*>(v13);
+	
+	// sub_9F21A8((unsigned int)v13);
+	GameCall<int>(0x9F21A8, toc)(static_cast<unsigned int>(v13));
+
+	*reinterpret_cast<uint32*>(v14) = v9;
+	*reinterpret_cast<uint32*>(v14 + 16) = a3;
+	*reinterpret_cast<uint32*>(v14 + 20) = -241;
+	*v15 = v10;
+
+	// Projectile 2
+	v15[6] = 3068634661;
+	
+	// TOC for this fastcall is read here
+	v16 = v12[1];
+	// return ((__int64 (__fastcall *)(unsigned int *, unsigned __int64))*v12)(a2, v14);
+	__int64 result = GameCall<int>(*v12, v16)(a2, v14);
+	return result;
+}
+
+void barbatos_lupus_gusion_assist_spawn_model_hash()
+{
+	// This will assign the r3, we could also return this
+	int hex = 0xd2ffdd9b;
+}
+
+unsigned int barbatos_lupus_twin_shoot_assist_sub_936FC0(_DWORD* a1)
+{
+	if (is_barbatos_lupus_twin_shoot_assist_initialized == false) {
+		copyJumptable(reinterpret_cast<int*>(0xd06d68), barbatos_lupus_twin_shoot_spawn_script_pointers);
+		barbatos_lupus_twin_shoot_spawn_script_pointers[58] = reinterpret_cast<int>(barbatos_lupus_gusion_assist_spawn_model_hash); // 模型id
+		barbatos_lupus_twin_shoot_spawn_script_pointers[158] = reinterpret_cast<int>(barbatos_lupus_twin_shoot_double_hand_sub_936FFC);
+		//barbatos_lupus_twin_shoot_spawn_script_pointers[158] = 0x00D42550;
+
+		is_barbatos_lupus_twin_shoot_assist_initialized = true;
+	}
+	
+	GameCall<int>(0x9F2998, 0xd9fe1c)(a1, 3400);
+	__int64 result = reinterpret_cast<unsigned int>(barbatos_lupus_twin_shoot_spawn_script_pointers);
+	*a1 = result;
+	return result;
+}
+
+void barbatos_lupus_twin_shoot_assist_spawn()
+{
+	_DWORD* r3_pointer = reinterpret_cast<uint32*>(temp_registers[3]);
+
+	char arr[4];
+	arr[0] = -1;
+	arr[1] = 0;
+	unsigned int temp_memory_ptr = GameCall<int>(0x9EE338, 0xd8fe60)(0x4780, 0x80, arr);
+	__int64 result = barbatos_lupus_twin_shoot_assist_sub_936FC0(reinterpret_cast<uint32*>(temp_memory_ptr));
+	*r3_pointer = temp_memory_ptr;
 
 	// set return
 	temp_registers[3] = result;

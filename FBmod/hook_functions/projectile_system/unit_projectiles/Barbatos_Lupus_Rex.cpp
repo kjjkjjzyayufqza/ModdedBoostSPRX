@@ -2,6 +2,7 @@
 #include "../../registers.h"
 #include "../../../stdafx.h"
 #include "../../../ida_macros.h"
+#include "helpers/helpers.h"
 
 int barbatos_lupus_rex_tomahawk_throw_spawn_script_pointers[500];
 int barbatos_lupus_rex_mace_throw_spawn_script_pointers[500];
@@ -520,6 +521,104 @@ void barbatos_lupus_rex_tail_blade_one_time_spawn() // 0x7D3618
 	v950 = GameCall<int>(0x9EE338, 0xd8fe60)(17664LL, 128LL, (unsigned int)v2114);
 	result = sub_94C438((_DWORD *)v950);
 	*v2 = v950;
+
+	// set return
+	temp_registers[3] = result;
+}
+
+__int64 assist_shoot_projectile(
+	const unsigned int *a2,
+	const int a3,
+	const unsigned int toc,
+	const unsigned int script,
+	const uint projectile_hash)
+{
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	
+	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
+	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list));
+	
+	GameCall<int>(0x9F21A8, toc)(static_cast<unsigned int>(working_memory));
+	
+	// Write to the working memory
+	*reinterpret_cast<uint32*>(working_memory) = script;
+	*reinterpret_cast<uint32*>(working_memory + 16) = a3;
+	*reinterpret_cast<uint32*>(working_memory + 20) = -241;
+	*reinterpret_cast<uint32*>(working_memory + 24) = projectile_hash;
+	
+	return GameCall<__int64>(*script_func_ptr, script_func_ptr[1])(a2, working_memory);
+}
+
+__int64 delay(
+	const unsigned int *a2,
+	const int a3,
+	const unsigned int toc,
+	const uint delay_frame)
+{
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	
+	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
+	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list));
+	
+	GameCall<int>(0x9F21A8, toc)(static_cast<unsigned int>(working_memory));
+	
+	// Write to the working memory
+	*reinterpret_cast<uint32*>(working_memory) = 0xc84150;
+	*reinterpret_cast<uint32*>(working_memory + 16) = a3;
+	*reinterpret_cast<uint32*>(working_memory + 20) = -241;
+	*reinterpret_cast<uint32*>(working_memory + 24) = delay_frame;
+	
+	return GameCall<__int64>(*script_func_ptr, script_func_ptr[1])(a2, working_memory);
+}
+
+void barbatos_lupus_rex_twin_shoot_double_hand_sub_936FFC(__int64 a1, unsigned int *a2, int a3)
+{
+	const unsigned int toc = 0xd9fe1c;
+	const unsigned int script = *reinterpret_cast<unsigned int*>(toc + 0x5998);
+
+	delay(a2, a3, toc, 4);
+	assist_shoot_projectile(a2, a3, toc, script, 0x341A1088);
+	delay(a2, a3, toc, 14);
+	assist_shoot_projectile(a2, a3, toc, script, 0xE05B2F57);
+}
+
+int barbatos_lupus_rex_twin_shoot_spawn_script_pointers[500];
+bool is_barbatos_lupus_rex_twin_shoot_assist_initialized = false;
+
+unsigned int barbatos_lupus_rex_gusion_assist_spawn_model_hash()
+{
+	return 0x5594E6E4;
+}
+
+unsigned int barbatos_lupus_rex_twin_shoot_assist_sub_936FC0(_DWORD* a1)
+{
+	if (is_barbatos_lupus_rex_twin_shoot_assist_initialized == false) {
+		copyJumptable(reinterpret_cast<int*>(0xd06d68), barbatos_lupus_rex_twin_shoot_spawn_script_pointers);
+		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[58] = reinterpret_cast<int>(barbatos_lupus_rex_gusion_assist_spawn_model_hash); // 模型id
+		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[158] = reinterpret_cast<int>(barbatos_lupus_rex_twin_shoot_double_hand_sub_936FFC);
+		is_barbatos_lupus_rex_twin_shoot_assist_initialized = true;
+	}
+	
+	GameCall<int>(0x9F2998, 0xd9fe1c)(a1, 3400);
+	const unsigned int result = reinterpret_cast<unsigned int>(barbatos_lupus_rex_twin_shoot_spawn_script_pointers);
+	*a1 = result;
+	return result;
+}
+
+void barbatos_lupus_rex_twin_shoot_assist_spawn()
+{
+	_DWORD* r3_pointer = reinterpret_cast<uint32*>(temp_registers[3]);
+
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	const unsigned int temp_memory_ptr = GameCall<int>(0x9EE338, 0xd8fe60)(0x4780, 0x80, list);
+	const unsigned int result = barbatos_lupus_rex_twin_shoot_assist_sub_936FC0(reinterpret_cast<uint32*>(temp_memory_ptr));
+	*r3_pointer = temp_memory_ptr;
 
 	// set return
 	temp_registers[3] = result;
