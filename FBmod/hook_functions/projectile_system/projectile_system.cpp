@@ -9,9 +9,9 @@
 #include "unit_projectiles/Bound_Doc.h"
 #include "unit_projectiles/Quanta_Full_Saber.h"
 #include "unit_projectiles/Montero.h"
-#include "unit_projectiles/Barbatos_Lupus_Rex.h"
-#include "unit_projectiles/Barbatos_Lupus.h"
-#include "unit_projectiles/Barbatos.h"
+#include "unit_projectiles/barbatos_lupus_rex.h"
+#include "unit_projectiles/barbatos_lupus.h"
+#include "unit_projectiles/barbatos.h"
 #include "unit_projectiles/Raider_Gundam.h"
 #include "unit_projectiles/Tallgeese_III.h"
 #include "unit_projectiles/Lacus_Infinite_Justice.h"
@@ -192,6 +192,9 @@ void projectile_ID_Check_hook()
 		case 0x77BDC:
 			barbatos_lupus_rex_twin_shoot_assist_spawn();
 			break;
+		// case 0x77BD2:
+		// 	barbatos_lupus_rex_grab_melee_assist_spawn();
+		// 	break;
 		case 0x77baa:
 			barbatos_lupus_rex_tail_blade_one_time_spawn();
 			break;
@@ -212,6 +215,9 @@ void projectile_ID_Check_hook()
 			break;
 		case 0x69037:
 			barbatos_shoot_assist_spawn();
+			break;
+		case 0x69032:
+			barbatos_melee_assist_spawn();
 			break;
 		case 0x31132:
 			raider_nuclear_missile_spawn();
@@ -342,6 +348,8 @@ void init_custom_projectile_ID()
 	custom_projectile_ID[62] = 0x77AA6;
 	custom_projectile_ID[63] = 0x77BDC;
 	custom_projectile_ID[64] = 0x69037;
+	custom_projectile_ID[65] = 0x69032;
+	// custom_projectile_ID[66] = 0x77BD2; 
 	//after 1000 is for other
 	custom_projectile_ID[1000] = 0xB00000;
 	custom_projectile_ID[1001] = 0x420A4;

@@ -3,6 +3,7 @@
 #include "../../../stdafx.h"
 #include "../../../ida_macros.h"
 #include "helpers/helpers.h"
+#include "hook_functions/projectile_system/projectile_common.h"
 
 int barbatos_lupus_anti_ship_mace_spawn_script_pointers[500];
 int barbatos_lupus_twin_mace_throw_spawn_script_pointers[500];
@@ -435,92 +436,88 @@ void barbatos_lupus_twin_mace_throw_spawn() // 0x7D4964
 int barbatos_lupus_twin_shoot_spawn_script_pointers[500];
 bool is_barbatos_lupus_twin_shoot_assist_initialized = false;
 
-// 11f068c
-__int64 barbatos_lupus_twin_shoot_double_hand_sub_936FFC(__int64 a1, unsigned int *a2, int a3)
+unsigned int barbatos_lupus_gusion_assist_spawn_model_hash()
 {
-	unsigned __int64 v7; // r29
-	_DWORD *v8; // r28
-	int v9; // r25
-	int v10; // r24
-	__int64 v11; // r2
-	unsigned int *v12; // r27
-	__int64 v13; // r3
-	unsigned __int64 v14; // r29
-	_DWORD *v15; // r28
-	__int64 v16; // r2
-	char v18[4]; // [sp+70h] [-70h] BYREF
-	char v19[12]; // [sp+74h] [-6Ch] BYREF
-
-	__int64 toc = 0xd9fe1c; // r2
-
-	const unsigned int* v5 = (unsigned int*)*(unsigned int*)(*a2 + 0x34LL);
-	v19[0] = -1;
-	v19[1] = 0;
-	// v6 = sub_9F2198(28LL, (__int64)v19);
-	__int64 v6 = GameCall<int>(0x9F2198, toc)(28LL, reinterpret_cast<long long>(v19));
-	v7 = static_cast<unsigned int>(v6);
-	v8 = reinterpret_cast<uint32*>(v6);
-
-	// sub_9F21A8((unsigned int)v6);
-	GameCall<int>(0x9F21A8, toc)(static_cast<unsigned int>(v6));
-	
-	v9 = *reinterpret_cast<int*>(toc + 0x596C);
-	v10 = *reinterpret_cast<int*>(toc + 0x5998);
-	*reinterpret_cast<uint32*>(v7) = *reinterpret_cast<uint32*>(toc + 0x596C);
-	*reinterpret_cast<uint32*>(v7 + 16) = a3;
-	*reinterpret_cast<uint32*>(v7 + 20) = -241;
-	*v8 = v10;
-
-	// Projectile 1
-	v8[6] = 3068634661;
-
-	// TOC for this fastcall is read here
-	v11 = v5[1];
-	// ((void (__fastcall *)(unsigned int *, unsigned __int64))*v5)(a2, v7);
-	GameCall<int>(*v5, v11)(a2, v7);
-	
-	v12 = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
-	v18[0] = -1;
-	v18[1] = 0;
-	
-	// v13 = sub_9F2198(28LL, (__int64)v18);
-	v13 = GameCall<int>(0x9F2198, toc)(28LL, reinterpret_cast<long long>(v18));
-	
-	v14 = static_cast<unsigned int>(v13);
-	v15 = reinterpret_cast<uint32*>(v13);
-	
-	// sub_9F21A8((unsigned int)v13);
-	GameCall<int>(0x9F21A8, toc)(static_cast<unsigned int>(v13));
-
-	*reinterpret_cast<uint32*>(v14) = v9;
-	*reinterpret_cast<uint32*>(v14 + 16) = a3;
-	*reinterpret_cast<uint32*>(v14 + 20) = -241;
-	*v15 = v10;
-
-	// Projectile 2
-	v15[6] = 3068634661;
-	
-	// TOC for this fastcall is read here
-	v16 = v12[1];
-	// return ((__int64 (__fastcall *)(unsigned int *, unsigned __int64))*v12)(a2, v14);
-	__int64 result = GameCall<int>(*v12, v16)(a2, v14);
-	return result;
+	return 0xd2ffdd9b;
 }
 
-void barbatos_lupus_gusion_assist_spawn_model_hash()
+unsigned int barbatos_lupus_twin_shoot_assist_initial_animation_script(unsigned int a1, unsigned int *a2)
 {
-	// This will assign the r3, we could also return this
-	int hex = 0xd2ffdd9b;
+	const unsigned int toc = 0xdafdfc;
+	const unsigned int animation_index = 0x1;
+	
+	char list[12];
+	list[1] = 0;
+	list[0] = -1;
+	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(56LL, reinterpret_cast<long long>(list));
+	GameCall<unsigned int>(0x9F44C8, toc)(static_cast<unsigned int>(working_memory), a1, animation_index);
+
+	// Clear 0x2c
+	*reinterpret_cast<uint32*>(working_memory + 0x2c) = 0;
+	
+	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
+	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory));
+
+	char list2[12];
+	list2[0] = -1;
+	list2[1] = 0;
+	const unsigned int working_memory_2 = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list2));
+	GameCall<unsigned int>(0x9F40E8, toc)(working_memory_2);
+
+	const unsigned int script = *reinterpret_cast<unsigned int*>(toc - 0x6858);
+
+	// 1.57 in this case
+	// If set too high, it'll basically skip the aim phase, and if set too low the first shot will miss
+	const float aim_animation_speed_multiplier = *reinterpret_cast<float*>(toc - 0x6854);
+	
+	*reinterpret_cast<uint32*>(working_memory_2) = script;
+	*reinterpret_cast<uint32*>(working_memory_2 + 16) = a1;
+	*reinterpret_cast<uint32*>(working_memory_2 + 20) = -241;
+	*reinterpret_cast<float*>(working_memory_2 + 24) = aim_animation_speed_multiplier;
+
+	unsigned int debug = 0xDEADBEEF;
+
+	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory_2));
+	return GameCall<unsigned int>(0x9F4648, toc)(a1, reinterpret_cast<unsigned int>(a2));
+}
+
+void barbatos_lupus_twin_shoot_double_hand_sub_936FFC(__int64 a1, unsigned int *a2, int a3)
+{
+	const unsigned int toc = 0xd9fe1c;
+	const unsigned int script = *reinterpret_cast<unsigned int*>(toc + 0x5998);
+
+	delay(a2, a3, toc, 10);
+	assist_shoot_projectile(a2, a3, toc, script, 0x6715E4A3);
+	assist_shoot_projectile(a2, a3, toc, script, 0x90A61FDB);
+}
+
+void barbatos_lupus_twin_shoot_assist_spawn_model_effects(unsigned int* a1,unsigned int a2)
+{
+	const unsigned int toc = 0xdafdfc;
+
+	GameCall<int>(0x9F4108, toc)(reinterpret_cast<unsigned int>(a1), 2LL);
+	GameCall<int>(0x9F44E8, toc)(reinterpret_cast<unsigned int>(a1), a2);
+
+	hide_bone(a1, 31LL);
+	hide_bone(a1, 29LL);
+	hide_bone(a1, 41LL);
+}
+
+unsigned int barbatos_lupus_twin_shoot_assist_loop_animation_index()
+{
+	return 2;
 }
 
 unsigned int barbatos_lupus_twin_shoot_assist_sub_936FC0(_DWORD* a1)
 {
 	if (is_barbatos_lupus_twin_shoot_assist_initialized == false) {
 		copyJumptable(reinterpret_cast<int*>(0xd06d68), barbatos_lupus_twin_shoot_spawn_script_pointers);
-		barbatos_lupus_twin_shoot_spawn_script_pointers[58] = reinterpret_cast<int>(barbatos_lupus_gusion_assist_spawn_model_hash); // 模型id
+		barbatos_lupus_twin_shoot_spawn_script_pointers[37] = reinterpret_cast<int>(barbatos_lupus_twin_shoot_assist_spawn_model_effects);
+		barbatos_lupus_twin_shoot_spawn_script_pointers[58] = reinterpret_cast<int>(barbatos_lupus_gusion_assist_spawn_model_hash);
 		barbatos_lupus_twin_shoot_spawn_script_pointers[158] = reinterpret_cast<int>(barbatos_lupus_twin_shoot_double_hand_sub_936FFC);
-		//barbatos_lupus_twin_shoot_spawn_script_pointers[158] = 0x00D42550;
-
+		barbatos_lupus_twin_shoot_spawn_script_pointers[165] = reinterpret_cast<int>(barbatos_lupus_twin_shoot_assist_initial_animation_script); // initial animation script
+		barbatos_lupus_twin_shoot_spawn_script_pointers[167] = reinterpret_cast<int>(barbatos_lupus_twin_shoot_assist_loop_animation_index); // looping shoot animation
+		
 		is_barbatos_lupus_twin_shoot_assist_initialized = true;
 	}
 	

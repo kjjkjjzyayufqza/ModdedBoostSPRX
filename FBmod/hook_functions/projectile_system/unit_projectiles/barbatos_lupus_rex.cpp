@@ -3,6 +3,7 @@
 #include "../../../stdafx.h"
 #include "../../../ida_macros.h"
 #include "helpers/helpers.h"
+#include "hook_functions/projectile_system/projectile_common.h"
 
 int barbatos_lupus_rex_tomahawk_throw_spawn_script_pointers[500];
 int barbatos_lupus_rex_mace_throw_spawn_script_pointers[500];
@@ -526,66 +527,6 @@ void barbatos_lupus_rex_tail_blade_one_time_spawn() // 0x7D3618
 	temp_registers[3] = result;
 }
 
-__int64 assist_shoot_projectile(
-	const unsigned int *a2,
-	const int a3,
-	const unsigned int toc,
-	const unsigned int script,
-	const uint projectile_hash)
-{
-	char list[4];
-	list[0] = -1;
-	list[1] = 0;
-	
-	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
-	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list));
-	
-	GameCall<int>(0x9F21A8, toc)(static_cast<unsigned int>(working_memory));
-	
-	// Write to the working memory
-	*reinterpret_cast<uint32*>(working_memory) = script;
-	*reinterpret_cast<uint32*>(working_memory + 16) = a3;
-	*reinterpret_cast<uint32*>(working_memory + 20) = -241;
-	*reinterpret_cast<uint32*>(working_memory + 24) = projectile_hash;
-	
-	return GameCall<__int64>(*script_func_ptr, script_func_ptr[1])(a2, working_memory);
-}
-
-__int64 delay(
-	const unsigned int *a2,
-	const int a3,
-	const unsigned int toc,
-	const uint delay_frame)
-{
-	char list[4];
-	list[0] = -1;
-	list[1] = 0;
-	
-	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
-	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list));
-	
-	GameCall<int>(0x9F21A8, toc)(static_cast<unsigned int>(working_memory));
-	
-	// Write to the working memory
-	*reinterpret_cast<uint32*>(working_memory) = 0xc84150;
-	*reinterpret_cast<uint32*>(working_memory + 16) = a3;
-	*reinterpret_cast<uint32*>(working_memory + 20) = -241;
-	*reinterpret_cast<uint32*>(working_memory + 24) = delay_frame;
-	
-	return GameCall<__int64>(*script_func_ptr, script_func_ptr[1])(a2, working_memory);
-}
-
-void barbatos_lupus_rex_twin_shoot_double_hand_sub_936FFC(__int64 a1, unsigned int *a2, int a3)
-{
-	const unsigned int toc = 0xd9fe1c;
-	const unsigned int script = *reinterpret_cast<unsigned int*>(toc + 0x5998);
-
-	delay(a2, a3, toc, 4);
-	assist_shoot_projectile(a2, a3, toc, script, 0x341A1088);
-	delay(a2, a3, toc, 14);
-	assist_shoot_projectile(a2, a3, toc, script, 0xE05B2F57);
-}
-
 int barbatos_lupus_rex_twin_shoot_spawn_script_pointers[500];
 bool is_barbatos_lupus_rex_twin_shoot_assist_initialized = false;
 
@@ -594,12 +535,74 @@ unsigned int barbatos_lupus_rex_gusion_assist_spawn_model_hash()
 	return 0x5594E6E4;
 }
 
+void barbatos_lupus_rex_twin_shoot_double_hand_sub_936FFC(__int64 a1, unsigned int *a2, int a3)
+{
+	const unsigned int toc = 0xd9fe1c;
+	const unsigned int script = *reinterpret_cast<unsigned int*>(toc + 0x5998);
+
+	assist_shoot_projectile(a2, a3, toc, script, 0x341A1088);
+	delay(a2, a3, toc, 14);
+	assist_shoot_projectile(a2, a3, toc, script, 0xE05B2F57);
+}
+
+void barbatos_lupus_rex_shoot_assist_initial_animation_script(unsigned int a1, unsigned int *a2)
+{
+	const unsigned int toc = 0xdafdfc;
+	const unsigned int animation_index = 0x1;
+	
+	char list[12];
+	list[1] = 0;
+	list[0] = -1;
+	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(56LL, reinterpret_cast<long long>(list));
+	GameCall<unsigned int>(0x9F44C8, toc)(static_cast<unsigned int>(working_memory), a1, animation_index);
+
+	// Clear 0x2c
+	*reinterpret_cast<uint32*>(working_memory + 0x2c) = 0;
+	
+	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
+	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory));
+
+	char list2[12];
+	list2[0] = -1;
+	list2[1] = 0;
+	const unsigned int working_memory_2 = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list2));
+	GameCall<unsigned int>(0x9F40E8, toc)(working_memory_2);
+
+	const unsigned int script = *reinterpret_cast<unsigned int*>(toc - 0x6858);
+
+	// 1.57 in this case
+	// If set too high, it'll basically skip the aim phase, and if set too low the first shot will miss
+	const float aim_animation_speed_multiplier = *reinterpret_cast<float*>(toc - 0x6854);
+	
+	*reinterpret_cast<uint32*>(working_memory_2) = script;
+	*reinterpret_cast<uint32*>(working_memory_2 + 16) = a1;
+	*reinterpret_cast<uint32*>(working_memory_2 + 20) = -241;
+	*reinterpret_cast<float*>(working_memory_2 + 24) = aim_animation_speed_multiplier;
+
+	unsigned int debug = 0xDEADBEEF;
+
+	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory_2));
+	GameCall<unsigned int>(0x9F4648, toc)(a1, reinterpret_cast<unsigned int>(a2));
+}
+
+unsigned int barbatos_lupus_rex_twin_shoot_assist_spawn_model_effects(unsigned int* a1,unsigned int a2)
+{
+	const unsigned int toc = 0xdafdfc;
+
+	GameCall<int>(0x9F4108, toc)(reinterpret_cast<unsigned int>(a1), 2LL);
+	GameCall<int>(0x9F44E8, toc)(reinterpret_cast<unsigned int>(a1), a2);
+
+	return hide_bone(a1, 31LL);
+}
+
 unsigned int barbatos_lupus_rex_twin_shoot_assist_sub_936FC0(_DWORD* a1)
 {
 	if (is_barbatos_lupus_rex_twin_shoot_assist_initialized == false) {
 		copyJumptable(reinterpret_cast<int*>(0xd06d68), barbatos_lupus_rex_twin_shoot_spawn_script_pointers);
+		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[37] = reinterpret_cast<int>(barbatos_lupus_rex_twin_shoot_assist_spawn_model_effects); // 模型id
 		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[58] = reinterpret_cast<int>(barbatos_lupus_rex_gusion_assist_spawn_model_hash); // 模型id
 		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[158] = reinterpret_cast<int>(barbatos_lupus_rex_twin_shoot_double_hand_sub_936FFC);
+		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[165] = reinterpret_cast<int>(barbatos_lupus_rex_shoot_assist_initial_animation_script); // initial animation script
 		is_barbatos_lupus_rex_twin_shoot_assist_initialized = true;
 	}
 	
@@ -618,6 +621,62 @@ void barbatos_lupus_rex_twin_shoot_assist_spawn()
 	list[1] = 0;
 	const unsigned int temp_memory_ptr = GameCall<int>(0x9EE338, 0xd8fe60)(0x4780, 0x80, list);
 	const unsigned int result = barbatos_lupus_rex_twin_shoot_assist_sub_936FC0(reinterpret_cast<uint32*>(temp_memory_ptr));
+	*r3_pointer = temp_memory_ptr;
+
+	// set return
+	temp_registers[3] = result;
+}
+
+int barbatos_lupus_rex_grab_melee_assist_spawn_script_pointers[500];
+bool is_barbatos_lupus_rex_grab_melee_assist_initialized = false;
+
+unsigned int barbatos_lupus_rex_grab_melee_assist_spawn_animation_1()
+{
+	return 0x4;
+}
+
+unsigned int barbatos_lupus_rex_grab_melee_assist_spawn_animation_2()
+{
+	return 0x5;
+}
+
+unsigned int barbatos_lupus_rex_grab_melee_assist_spawn_animation_3()
+{
+	return 0x6;
+}
+
+unsigned int barbatos_lupus_rex_grab_melee_assist_spawn_animation_4()
+{
+	return 0x7;
+}
+
+unsigned int barbatos_lupus_rex_grab_melee_assist_main(_DWORD* a1)
+{
+	if (is_barbatos_lupus_rex_grab_melee_assist_initialized == false) {
+		copyJumptable(reinterpret_cast<int*>(0xD1D500), barbatos_lupus_rex_grab_melee_assist_spawn_script_pointers);
+		barbatos_lupus_rex_grab_melee_assist_spawn_script_pointers[58] = reinterpret_cast<int>(barbatos_lupus_rex_gusion_assist_spawn_model_hash);
+		barbatos_lupus_rex_grab_melee_assist_spawn_script_pointers[156] = reinterpret_cast<int>(barbatos_lupus_rex_grab_melee_assist_spawn_animation_1);
+		barbatos_lupus_rex_grab_melee_assist_spawn_script_pointers[168] = reinterpret_cast<int>(barbatos_lupus_rex_grab_melee_assist_spawn_animation_2);
+		barbatos_lupus_rex_grab_melee_assist_spawn_script_pointers[169] = reinterpret_cast<int>(barbatos_lupus_rex_grab_melee_assist_spawn_animation_3);
+		barbatos_lupus_rex_grab_melee_assist_spawn_script_pointers[176] = reinterpret_cast<int>(barbatos_lupus_rex_grab_melee_assist_spawn_animation_4);
+		is_barbatos_lupus_rex_grab_melee_assist_initialized = true;
+	}
+	
+	GameCall<int>(0x9F2998, 0xd9fe1c)(a1, 3400);
+	const unsigned int result = reinterpret_cast<unsigned int>(barbatos_lupus_rex_grab_melee_assist_spawn_script_pointers);
+	*a1 = result;
+	return result;
+}
+
+void barbatos_lupus_rex_grab_melee_assist_spawn()
+{
+	_DWORD* r3_pointer = reinterpret_cast<uint32*>(temp_registers[3]);
+
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	const unsigned int temp_memory_ptr = GameCall<int>(0x9EE338, 0xd8fe60)(0x4780, 0x80, list);
+	const unsigned int result = barbatos_lupus_rex_grab_melee_assist_main(reinterpret_cast<uint32*>(temp_memory_ptr));
 	*r3_pointer = temp_memory_ptr;
 
 	// set return
