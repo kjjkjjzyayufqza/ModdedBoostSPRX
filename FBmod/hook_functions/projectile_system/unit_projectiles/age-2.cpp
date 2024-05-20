@@ -3,6 +3,7 @@
 #include "../../../helpers/helpers.h"
 #include "../../../stdafx.h"
 #include "../../../ida_macros.h"
+#include "hook_functions/projectile_system/projectile_common.h"
 
 int age2_spawn_script_pointers[500];
 bool is_age2_melee_assist_initialized = false;

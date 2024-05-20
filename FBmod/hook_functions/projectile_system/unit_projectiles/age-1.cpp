@@ -3,6 +3,7 @@
 #include "../../../helpers/helpers.h"
 #include "../../../stdafx.h"
 #include "../../../ida_macros.h"
+#include "hook_functions/projectile_system/projectile_common.h"
 
 int age1_boomerang_throw_spawn_script_pointers[500];
 
@@ -327,6 +328,78 @@ void age1_big_rock_throw_spawn()
 	temporaryPointer = (int *)GameCall<int>(0x9EE338, 0xd8fe60)(17664LL, 128LL, tempArray);
 	result = age1_big_rock_throw_spawn_helper(temporaryPointer, 0x5212);
 	*tempR3Pointer = (_DWORD)temporaryPointer;
+
+	// set return
+	temp_registers[3] = result;
+}
+
+int age_1_melee_assist_spawn_script_pointers[500];
+bool is_age_1_melee_assist_initialized = false;
+
+void age_1_melee_assist_spawn_model_effects(unsigned int* a1, unsigned int a2)
+{
+	const unsigned int toc = 0xdafdfc;
+
+	GameCall<int>(0x9F4108, toc)(reinterpret_cast<unsigned int>(a1), 2LL);
+	GameCall<int>(0x9F4118, toc)(reinterpret_cast<unsigned int>(a1), saber_pink_effect_hash, 0x1c, 0LL);
+	GameCall<int>(0x9F4118, toc)(reinterpret_cast<unsigned int>(a1), saber_pink_effect_hash, 0x1e, 1LL);
+	GameCall<int>(0x9F44E8, toc)(reinterpret_cast<unsigned int>(a1), a2);
+}
+
+unsigned int age_1_g_exes_assist_spawn_model_hash()
+{
+	return 0x5B2DE023;
+}
+
+unsigned int age_1_melee_assist_spawn_animation_1()
+{
+	return 0x5;
+}
+
+unsigned int age_1_melee_assist_spawn_animation_2()
+{
+	return 0x6;
+}
+
+unsigned int age_1_melee_assist_spawn_animation_3()
+{
+	return 0x7;
+}
+
+unsigned int age_1_melee_assist_spawn_animation_4()
+{
+	return 0x8;
+}
+
+unsigned int age_1_melee_assist_main(_DWORD* a1)
+{
+	if (is_age_1_melee_assist_initialized == false) {
+		copyJumptable(reinterpret_cast<int*>(0xD1D500), age_1_melee_assist_spawn_script_pointers);
+		age_1_melee_assist_spawn_script_pointers[37] = reinterpret_cast<int>(age_1_melee_assist_spawn_model_effects);
+		age_1_melee_assist_spawn_script_pointers[58] = reinterpret_cast<int>(age_1_g_exes_assist_spawn_model_hash);
+		age_1_melee_assist_spawn_script_pointers[156] = reinterpret_cast<int>(age_1_melee_assist_spawn_animation_1);
+		age_1_melee_assist_spawn_script_pointers[168] = reinterpret_cast<int>(age_1_melee_assist_spawn_animation_2);
+		age_1_melee_assist_spawn_script_pointers[169] = reinterpret_cast<int>(age_1_melee_assist_spawn_animation_3);
+		age_1_melee_assist_spawn_script_pointers[176] = reinterpret_cast<int>(age_1_melee_assist_spawn_animation_4);
+		is_age_1_melee_assist_initialized = true;
+	}
+	
+	GameCall<int>(0x9F2998, 0xd9fe1c)(a1, 3400);
+	const unsigned int result = reinterpret_cast<unsigned int>(age_1_melee_assist_spawn_script_pointers);
+	*a1 = result;
+	return result;
+}
+
+void age_1_melee_assist_spawn()
+{
+	_DWORD* r3_pointer = reinterpret_cast<uint32*>(temp_registers[3]);
+
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	const unsigned int temp_memory_ptr = GameCall<int>(0x9EE338, 0xd8fe60)(0x4780, 0x80, list);
+	const unsigned int result = age_1_melee_assist_main(reinterpret_cast<uint32*>(temp_memory_ptr));
+	*r3_pointer = temp_memory_ptr;
 
 	// set return
 	temp_registers[3] = result;

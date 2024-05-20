@@ -260,9 +260,7 @@ unsigned int barbatos_shoot_assist_initial_animation_script(unsigned int a1, uns
 	*reinterpret_cast<uint32*>(working_memory_2 + 16) = a1;
 	*reinterpret_cast<uint32*>(working_memory_2 + 20) = -241;
 	*reinterpret_cast<float*>(working_memory_2 + 24) = aim_animation_speed_multiplier;
-
-	unsigned int debug = 0xDEADBEEF;
-
+	
 	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory_2));
 	return GameCall<unsigned int>(0x9F4648, toc)(a1, reinterpret_cast<unsigned int>(a2));
 }
