@@ -537,12 +537,9 @@ unsigned int barbatos_lupus_rex_gusion_assist_spawn_model_hash()
 
 void barbatos_lupus_rex_twin_shoot_double_hand_sub_936FFC(__int64 a1, unsigned int *a2, int a3)
 {
-	const unsigned int toc = 0xd9fe1c;
-	const unsigned int script = *reinterpret_cast<unsigned int*>(toc + 0x5998);
-
-	assist_shoot_projectile(a2, a3, toc, script, 0x341A1088);
-	delay(a2, a3, toc, 14);
-	assist_shoot_projectile(a2, a3, toc, script, 0xE05B2F57);
+	assist_shoot_projectile(a2, a3,0x341A1088);
+	delay(a2, a3, 14);
+	assist_shoot_projectile(a2, a3,0xE05B2F57);
 }
 
 void barbatos_lupus_rex_shoot_assist_initial_animation_script(unsigned int a1, unsigned int *a2)

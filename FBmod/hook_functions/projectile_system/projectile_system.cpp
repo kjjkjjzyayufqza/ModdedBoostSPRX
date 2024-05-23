@@ -5,7 +5,7 @@
 #include "unit_projectiles/Exia.h"
 #include "unit_projectiles/Reborns.h"
 #include "unit_projectiles/Infinite_Justice.h"
-#include "unit_projectiles/Bound_Doc.h"
+#include "unit_projectiles/bound_doc.h"
 #include "unit_projectiles/Quanta_Full_Saber.h"
 #include "unit_projectiles/Montero.h"
 #include "unit_projectiles/barbatos_lupus_rex.h"
@@ -38,9 +38,11 @@
 #include "unit_projectiles/age_fx.h"
 #include "unit_projectiles/akautsuki.h"
 #include "unit_projectiles/age-2.h"
+#include "unit_projectiles/cherudim_gundam.h"
 #include "unit_projectiles/f91.h"
 #include "unit_projectiles/gundam_x_divider.h"
 #include "unit_projectiles/jagd_doga.h"
+#include "unit_projectiles/sinanju.h"
 #include "unit_projectiles/zeydra.h"
 
 int MBON_Added_Unit_ID[5000];
@@ -83,6 +85,19 @@ void projectile_ID_Check_hook()
             break;
         case 0x3764:
             exia_dagger_throw_spawn();
+            break;
+        case 0x389b:
+            cherudim_gundam_gerobi_assist_spawn();
+            break;
+        case 0x389C:
+            cherudim_gundam_shoot_assist_spawn();
+            break;
+        case 0x3be4:
+        case 0x3be7:
+            sinanju_gerobi_assist_spawn();
+            break;
+        case 0x3BE2:
+            sinanju_shoot_assist_spawn();
             break;
         case 0x42cc: // nu gundam's funnel, to be changed in the future.
             nu_hws_funnels_launch_spawn();
@@ -403,6 +418,11 @@ void init_custom_projectile_ID()
     custom_projectile_ID[77] = 0x105F;
     custom_projectile_ID[78] = 0x299AA;
     custom_projectile_ID[79] = 0x299B4;
+    custom_projectile_ID[80] = 0x389b;
+    custom_projectile_ID[81] = 0x389C;
+    custom_projectile_ID[82] = 0x3be4;
+    custom_projectile_ID[83] = 0x3BE7;
+    custom_projectile_ID[84] = 0x3BE2;
     // custom_projectile_ID[66] = 0x77BD2; 
     //after 1000 is for other
     custom_projectile_ID[1000] = 0xB00000;

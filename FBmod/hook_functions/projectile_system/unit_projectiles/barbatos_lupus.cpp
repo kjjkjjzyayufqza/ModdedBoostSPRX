@@ -483,12 +483,9 @@ unsigned int barbatos_lupus_twin_shoot_assist_initial_animation_script(unsigned 
 
 void barbatos_lupus_twin_shoot_double_hand_sub_936FFC(__int64 a1, unsigned int *a2, int a3)
 {
-	const unsigned int toc = 0xd9fe1c;
-	const unsigned int script = *reinterpret_cast<unsigned int*>(toc + 0x5998);
-
-	delay(a2, a3, toc, 10);
-	assist_shoot_projectile(a2, a3, toc, script, 0x6715E4A3);
-	assist_shoot_projectile(a2, a3, toc, script, 0x90A61FDB);
+	delay(a2, a3, 10);
+	assist_shoot_projectile(a2, a3, 0x6715E4A3);
+	assist_shoot_projectile(a2, a3, 0x90A61FDB);
 }
 
 void barbatos_lupus_twin_shoot_assist_spawn_model_effects(unsigned int* a1,unsigned int a2)

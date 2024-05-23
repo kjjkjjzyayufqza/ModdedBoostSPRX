@@ -97,7 +97,8 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\barbatos.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\barbatos_lupus.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\barbatos_lupus_rex.h" />
-    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Bound_Doc.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\bound_doc.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\cherudim_gundam.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\dark_hound.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\double_x.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Excellia.h" />
@@ -124,6 +125,7 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Quanta_Full_Saber.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Raider_Gundam.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Reborns.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\sinanju.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Tallgeese_III.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\test.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\Zabanya.h" />
@@ -237,7 +239,8 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\barbatos.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\barbatos_lupus.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\barbatos_lupus_rex.cpp" />
-    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Bound_Doc.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\bound_doc.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\cherudim_gundam.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\dark_hound.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\double_x.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Excellia.cpp" />
@@ -265,6 +268,7 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Raider_Gundam.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Reborns.cpp" />
     <ClCompile Include="hook_functions\projectile_system\script_pointers.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\sinanju.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Tallgeese_III.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\test.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\Zabanya.cpp" />

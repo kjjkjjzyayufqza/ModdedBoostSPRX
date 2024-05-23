@@ -10,14 +10,11 @@ const unsigned int saber_pink_effect_hash = 0x91315D18;
 __int64 assist_shoot_projectile(
     const unsigned int *a2,
     int a3,
-    unsigned int toc,
-    unsigned int script,
     uint projectile_hash);
 
 __int64 delay(
     const unsigned int *a2,
     int a3,
-    unsigned int toc,
     uint delay_frame);
 
 unsigned int hide_bone(const unsigned int* a1, int bone_index);
@@ -46,3 +43,17 @@ __int64 assist_shoot_initial_animation_script(
     unsigned int toc,
     int animation_index,
     float aim_animation_speed_multiplier);
+
+unsigned int create_working_memory(int size);
+
+void add_projectile(
+	unsigned int working_memory,
+	unsigned int projectile_hash,
+	unsigned int a3);
+
+void add_delay(
+	unsigned int working_memory,
+	unsigned int delay_frame,
+	unsigned int a3);
+
+void execute_working_memory(unsigned int* a2, unsigned int working_memory);
