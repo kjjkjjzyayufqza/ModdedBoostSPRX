@@ -143,9 +143,10 @@ bool is_dark_hound_melee_assist_initialized = false;
 
 void dark_hound_melee_assist_spawn_model_effects(unsigned int* a1, unsigned int a2)
 {
-	const unsigned int toc = 0xdafdfc;
-	GameCall<int>(0x9F4108, toc)(reinterpret_cast<unsigned int>(a1), 2LL);
-	GameCall<int>(0x9F44E8, toc)(reinterpret_cast<unsigned int>(a1), a2);
+	GameCall<int>(0x763D0C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), 2LL);
+
+	// This does animation??
+	GameCall<int>(0x77E46C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), a2);
 }
 
 unsigned int dark_hound_melee_assist_spawn_animation_1()
@@ -168,16 +169,56 @@ unsigned int dark_hound_melee_assist_spawn_animation_4()
 	return 0x7;
 }
 
+void dark_hound_melee_assist_hitbox_script(__int64 a1, __int64 a2)
+{
+	GameCall<void>(0x77C69C, 0xD8FE60)(a1, static_cast<unsigned int>(a2));
+	GameCall<void>(0x7654B0, 0xD8FE60)(static_cast<unsigned int>(a2), 5, 0);
+	
+	*reinterpret_cast<float*>(a2 + 20) = 4.0f;
+	*reinterpret_cast<float*>(a2 + 32) = 0.0f;
+	*reinterpret_cast<float*>(a2 + 36) = 0.0f;
+	*reinterpret_cast<float*>(a2 + 40) = 19.0f;
+	*reinterpret_cast<float*>(a2 + 44) = 1.0f;
+	*reinterpret_cast<uint32*>(a2 + 48) = 1;
+	*reinterpret_cast<float*>(a2 + 52) = 11.0f;
+	*reinterpret_cast<uint32*>(a2 + 80) = 1;
+	*reinterpret_cast<float*>(a2 + 84) = 7.0f;
+	*reinterpret_cast<uint32*>(a2 + 96) = 0x6C43E803; // 2nd hit hash
+
+	*reinterpret_cast<float*>(a2 + 64) = 0.0f;
+	*reinterpret_cast<float*>(a2 + 64 + 4) = 0.0f;
+	*reinterpret_cast<float*>(a2 + 64 + 8) = 10.0f;
+	*reinterpret_cast<float*>(a2 + 64 + 12) = 1.0f;
+}
+
+// TODO: The animation for the first hit should be 7, and the second 8, however fb there's no animation that allows 3 step two hit
+unsigned int dark_hound_melee_assist_approach_spawn_animation()
+{
+	return 6;
+}
+
+void dark_hound_melee_assist_second_hit_animation_script(__int64 a1, unsigned int *a2)
+{
+	GameCall<void>(0x96E080,0xDAFDFC)(a1, a2);
+
+	const unsigned int working_memory = create_working_memory(56LL);
+	
+	const int animation_index = 7;
+	GameCall<void>(0x6EBB78,0xD7FF30)(working_memory, a1, animation_index);
+	*reinterpret_cast<uint*>(working_memory + 44) = 0;
+	
+	execute_working_memory(a2, working_memory);
+}
+
 unsigned int dark_hound_melee_assist_main(_DWORD* a1)
 {
 	if (is_dark_hound_melee_assist_initialized == false) {
-		copyJumptable(reinterpret_cast<int*>(0xD1D500), dark_hound_melee_assist_spawn_script_pointers);
+		copyJumptable(reinterpret_cast<int*>(0xceeb00), dark_hound_melee_assist_spawn_script_pointers);
 		dark_hound_melee_assist_spawn_script_pointers[37] = reinterpret_cast<int>(dark_hound_melee_assist_spawn_model_effects);
 		dark_hound_melee_assist_spawn_script_pointers[58] = reinterpret_cast<int>(dark_hound_jackedge_assist_spawn_model_hash);
-		dark_hound_melee_assist_spawn_script_pointers[156] = reinterpret_cast<int>(dark_hound_melee_assist_spawn_animation_1);
-		dark_hound_melee_assist_spawn_script_pointers[168] = reinterpret_cast<int>(dark_hound_melee_assist_spawn_animation_2);
-		dark_hound_melee_assist_spawn_script_pointers[169] = reinterpret_cast<int>(dark_hound_melee_assist_spawn_animation_3);
-		dark_hound_melee_assist_spawn_script_pointers[176] = reinterpret_cast<int>(dark_hound_melee_assist_spawn_animation_4);
+		dark_hound_melee_assist_spawn_script_pointers[65] = reinterpret_cast<int>(dark_hound_melee_assist_hitbox_script);
+		dark_hound_melee_assist_spawn_script_pointers[155] = reinterpret_cast<int>(dark_hound_melee_assist_approach_spawn_animation);
+		dark_hound_melee_assist_spawn_script_pointers[166] = reinterpret_cast<int>(dark_hound_melee_assist_second_hit_animation_script);
 		is_dark_hound_melee_assist_initialized = true;
 	}
 	
@@ -208,7 +249,7 @@ bool is_dark_hound_shoot_assist_initialized = false;
 void dark_hound_shoot_assist_aim_animation_script(unsigned int a1, unsigned int *a2)
 {
 	// The animation index should be the same as the aim animation index
-	assist_shoot_initial_animation_script(a1, a2, 0xdafdfc, 0x1, 1.0f);
+	assist_shoot_initial_animation_script(a1, a2, 0x1, 1.0f);
 }
 
 unsigned int dark_hound_shoot_assist_aim_animation_index()
@@ -249,5 +290,36 @@ void dark_hound_shoot_assist_spawn()
 	*r3_pointer = temp_memory_ptr;
 
 	// set return
+	temp_registers[3] = result;
+}
+
+int dark_hound_hook_spawn_script_pointers[500];
+bool is_dark_hound_hook_initialized = false;
+
+unsigned int dark_hound_hook_spawn_model_hash()
+{
+	return 0xE097BF00;
+}
+
+void dark_hound_hook_spawn()
+{
+	_DWORD* r3_pointer = reinterpret_cast<uint32*>(temp_registers[3]);
+
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	const unsigned int temp_memory_ptr = GameCall<int>(0x9EE338, 0xd8fe60)(0x4780, 0x80, list);
+	const unsigned int result = GameCall<int>(0x7E83B4, 0xd8fe60)(reinterpret_cast<uint32*>(temp_memory_ptr));
+	
+	if (is_dark_hound_hook_initialized == false) {
+		copyJumptable(reinterpret_cast<int*>(0xcc3018), dark_hound_hook_spawn_script_pointers);
+		dark_hound_hook_spawn_script_pointers[58] = reinterpret_cast<int>(dark_hound_hook_spawn_model_hash);
+		is_dark_hound_hook_initialized = true;
+	}
+
+	const unsigned int script_pointer = reinterpret_cast<unsigned int>(dark_hound_hook_spawn_script_pointers);
+	*reinterpret_cast<unsigned int*>(temp_memory_ptr) = script_pointer;
+
+	*r3_pointer = temp_memory_ptr;
 	temp_registers[3] = result;
 }

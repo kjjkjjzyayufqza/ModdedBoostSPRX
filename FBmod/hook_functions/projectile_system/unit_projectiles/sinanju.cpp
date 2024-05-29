@@ -82,7 +82,7 @@ bool is_sinanju_shoot_assist_initialized = false;
 void sinanju_shoot_assist_aim_animation_script(unsigned int a1, unsigned int *a2)
 {
     // The animation index should be the same as the aim animation index
-    assist_shoot_initial_animation_script(a1, a2, 0xdafdfc, 0x5, 1.57f);
+    assist_shoot_initial_animation_script(a1, a2, 0x5, 1.57f);
 }
 
 void sinanju_shoot_assist_frame_script(__int64 a1, unsigned int *a2, __int64 a3, __int64 a4, __int64 a5)
@@ -99,22 +99,8 @@ void sinanju_shoot_assist_frame_script(__int64 a1, unsigned int *a2, __int64 a3,
 	);
 
 	// Configure the multiplier of the animation after the first shot
-	// If this is not reduced, the 2nd shot will shoot too fast, the original
-	const float animation_speed_multiplier = 0.5;
-	
-	char list[4];
-	list[0] = -1;
-	list[1] = 0;
-	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list));
-	GameCall<int>(0x6d54a0, 0xD7FF30)(working_memory);
-	
-	*reinterpret_cast<uint32*>(working_memory) = 0xC852F8;
-	*reinterpret_cast<uint32*>(working_memory + 16) = static_cast<unsigned int>(a3);
-	*reinterpret_cast<uint32*>(working_memory + 20) = -241;
-	*reinterpret_cast<float*>(working_memory + 24) = animation_speed_multiplier;
-
-	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
-	GameCall<__int64>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), working_memory);
+	// If this is not reduced, the 2nd shot will shoot too fast
+	set_animation_speed_multiplier(a2, static_cast<int>(a3), 0.5f);
 }
 
 unsigned int sinanju_shoot_assist_aim_animation_index()

@@ -4,7 +4,6 @@
 #include "../../../stdafx.h"
 #include "../../../ida_macros.h"
 
-
 int infinite_justice_lacus_shoot_assist_spawn_script_pointers[500];
 
 bool infinite_justice_lacus_shoot_assist_spawn_script_pointers_initialized;

@@ -91,6 +91,7 @@ int double_x_model_init(int a1)
 	return GameCall<int>(0x4DE424, 0xd6ff70)(v5);
 }
 
+// ?????
 __int64 __fastcall sub_5A0DE0(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
 {
 	unsigned int v6; // r29

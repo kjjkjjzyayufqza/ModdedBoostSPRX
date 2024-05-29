@@ -16,3 +16,15 @@
 
 ### Harute melee assist
 - 0xce41a8
+
+## Qubeley melee grab assist
+- 0xcaf0c8
+
+## Kapool
+- 0x8D6C28, 0xd9fe1c
+- 0xce9d88
+
+## Raider gundam's hammer throw
+- Super fucking complicated, it is neither a projectile nor a melee hitbox
+  - Looking at Turn A's hammer, there's projectile associated with the hit hash, but there's no sys_22 call from script
+  - Searching for the projectile's hash associated with the hit hash points to 0x5A1A94 or 0x5a20fc, a super complicated func

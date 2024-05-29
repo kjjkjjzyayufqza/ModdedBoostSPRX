@@ -1,3 +1,4 @@
+#pragma once
 
 void age1_boomerang_throw_spawn();
 

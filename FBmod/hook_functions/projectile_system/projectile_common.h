@@ -12,10 +12,21 @@ __int64 assist_shoot_projectile(
     int a3,
     uint projectile_hash);
 
+void set_animation_speed_multiplier(
+    unsigned int* a2,
+    int a3,
+    float animation_speed_multiplier);
+
 __int64 delay(
     const unsigned int *a2,
     int a3,
     uint delay_frame);
+
+__int64 assist_shoot_initial_animation_script(
+    unsigned int a1,
+    unsigned int *a2,
+    int animation_index,
+    float aim_animation_speed_multiplier);
 
 unsigned int hide_bone(const unsigned int* a1, int bone_index);
 
@@ -36,13 +47,6 @@ unsigned int scale_bone(
     double z,
     double w,
     int unknown);
-
-__int64 assist_shoot_initial_animation_script(
-    unsigned int a1,
-    unsigned int *a2,
-    unsigned int toc,
-    int animation_index,
-    float aim_animation_speed_multiplier);
 
 unsigned int create_working_memory(int size);
 

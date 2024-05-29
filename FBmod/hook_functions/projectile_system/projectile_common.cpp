@@ -26,6 +26,26 @@ __int64 assist_shoot_projectile(
     return GameCall<__int64>(*script_func_ptr, script_func_ptr[1])(a2, working_memory);
 }
 
+void set_animation_speed_multiplier(
+	unsigned int* a2,
+	int a3,
+	float animation_speed_multiplier)
+{
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list));
+	GameCall<int>(0x6d54a0, 0xD7FF30)(working_memory);
+	
+	*reinterpret_cast<uint32*>(working_memory) = 0xC852F8;
+	*reinterpret_cast<uint32*>(working_memory + 16) = static_cast<unsigned int>(a3);
+	*reinterpret_cast<uint32*>(working_memory + 20) = -241;
+	*reinterpret_cast<float*>(working_memory + 24) = animation_speed_multiplier;
+
+	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
+	GameCall<__int64>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), working_memory);
+}
+
 __int64 delay(
 	const unsigned int *a2,
 	const int a3,
@@ -121,7 +141,6 @@ unsigned int scale_bone(
 __int64 assist_shoot_initial_animation_script(
 	unsigned int a1,
 	unsigned int *a2,
-	const unsigned int toc,
 	const int animation_index,
 	const float aim_animation_speed_multiplier)
 {
@@ -129,7 +148,7 @@ __int64 assist_shoot_initial_animation_script(
 	list[1] = 0;
 	list[0] = -1;
 	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(56LL, reinterpret_cast<long long>(list));
-	GameCall<unsigned int>(0x9F44C8, toc)(static_cast<unsigned int>(working_memory), a1, animation_index);
+	GameCall<unsigned int>(0x6EBB78, 0xD7FF30)(static_cast<unsigned int>(working_memory), a1, animation_index);
 
 	// Clear 0x2c
 	*reinterpret_cast<uint32*>(working_memory + 0x2c) = 0;
@@ -137,21 +156,8 @@ __int64 assist_shoot_initial_animation_script(
 	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
 	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory));
 
-	char list2[12];
-	list2[0] = -1;
-	list2[1] = 0;
-	const unsigned int working_memory_2 = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list2));
-	GameCall<unsigned int>(0x9F40E8, toc)(working_memory_2);
-
-	const unsigned int script = *reinterpret_cast<unsigned int*>(toc - 0x6858);
-	
-	*reinterpret_cast<uint32*>(working_memory_2) = script;
-	*reinterpret_cast<uint32*>(working_memory_2 + 16) = a1;
-	*reinterpret_cast<uint32*>(working_memory_2 + 20) = -241;
-	*reinterpret_cast<float*>(working_memory_2 + 24) = aim_animation_speed_multiplier;
-	
-	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory_2));
-	return GameCall<unsigned int>(0x9F4648, toc)(a1, reinterpret_cast<unsigned int>(a2));
+	set_animation_speed_multiplier(a2, static_cast<int>(a1), aim_animation_speed_multiplier);
+	return GameCall<unsigned int>(0x7ED744, 0xD8FE60)(a1, reinterpret_cast<unsigned int>(a2));
 }
 
 unsigned int create_working_memory(int size)

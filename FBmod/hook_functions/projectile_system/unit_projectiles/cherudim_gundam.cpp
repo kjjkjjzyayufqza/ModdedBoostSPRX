@@ -17,7 +17,7 @@ bool is_cherudim_gundam_shoot_assist_initialized = false;
 void cherudim_gundam_shoot_assist_aim_animation_script(unsigned int a1, unsigned int *a2)
 {
     // The animation index should be the same as the aim animation index
-    assist_shoot_initial_animation_script(a1, a2, 0xdafdfc, 0x4, 1.0f);
+    assist_shoot_initial_animation_script(a1, a2, 0x4, 1.0f);
 }
 
 // shoots two beams at once

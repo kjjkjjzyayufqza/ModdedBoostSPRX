@@ -441,44 +441,9 @@ unsigned int barbatos_lupus_gusion_assist_spawn_model_hash()
 	return 0xd2ffdd9b;
 }
 
-unsigned int barbatos_lupus_twin_shoot_assist_initial_animation_script(unsigned int a1, unsigned int *a2)
+void barbatos_lupus_twin_shoot_assist_initial_animation_script(unsigned int a1, unsigned int *a2)
 {
-	const unsigned int toc = 0xdafdfc;
-	const unsigned int animation_index = 0x1;
-	
-	char list[12];
-	list[1] = 0;
-	list[0] = -1;
-	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(56LL, reinterpret_cast<long long>(list));
-	GameCall<unsigned int>(0x9F44C8, toc)(static_cast<unsigned int>(working_memory), a1, animation_index);
-
-	// Clear 0x2c
-	*reinterpret_cast<uint32*>(working_memory + 0x2c) = 0;
-	
-	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
-	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory));
-
-	char list2[12];
-	list2[0] = -1;
-	list2[1] = 0;
-	const unsigned int working_memory_2 = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list2));
-	GameCall<unsigned int>(0x9F40E8, toc)(working_memory_2);
-
-	const unsigned int script = *reinterpret_cast<unsigned int*>(toc - 0x6858);
-
-	// 1.57 in this case
-	// If set too high, it'll basically skip the aim phase, and if set too low the first shot will miss
-	const float aim_animation_speed_multiplier = *reinterpret_cast<float*>(toc - 0x6854);
-	
-	*reinterpret_cast<uint32*>(working_memory_2) = script;
-	*reinterpret_cast<uint32*>(working_memory_2 + 16) = a1;
-	*reinterpret_cast<uint32*>(working_memory_2 + 20) = -241;
-	*reinterpret_cast<float*>(working_memory_2 + 24) = aim_animation_speed_multiplier;
-
-	unsigned int debug = 0xDEADBEEF;
-
-	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory_2));
-	return GameCall<unsigned int>(0x9F4648, toc)(a1, reinterpret_cast<unsigned int>(a2));
+	assist_shoot_initial_animation_script(a1, a2, 0x1, 1.57f);
 }
 
 void barbatos_lupus_twin_shoot_double_hand_sub_936FFC(__int64 a1, unsigned int *a2, int a3)
@@ -490,10 +455,8 @@ void barbatos_lupus_twin_shoot_double_hand_sub_936FFC(__int64 a1, unsigned int *
 
 void barbatos_lupus_twin_shoot_assist_spawn_model_effects(unsigned int* a1,unsigned int a2)
 {
-	const unsigned int toc = 0xdafdfc;
-
-	GameCall<int>(0x9F4108, toc)(reinterpret_cast<unsigned int>(a1), 2LL);
-	GameCall<int>(0x9F44E8, toc)(reinterpret_cast<unsigned int>(a1), a2);
+	GameCall<int>(0x763D0C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), 2LL);
+	GameCall<int>(0x77E46C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), a2);
 
 	hide_bone(a1, 31LL);
 	hide_bone(a1, 29LL);

@@ -1,48 +1,55 @@
 #include "projectile_system.h"
 #include "stdafx.h"
-#include "unit_projectiles/Hyaku_Shiki.h"
+#include "unit_projectiles/hyaku_shiki.h"
 #include "unit_projectiles/bael.h"
-#include "unit_projectiles/Exia.h"
-#include "unit_projectiles/Reborns.h"
-#include "unit_projectiles/Infinite_Justice.h"
+#include "unit_projectiles/exia.h"
+#include "unit_projectiles/reborns.h"
+#include "unit_projectiles/infinite_justice.h"
 #include "unit_projectiles/bound_doc.h"
-#include "unit_projectiles/Quanta_Full_Saber.h"
-#include "unit_projectiles/Montero.h"
+#include "unit_projectiles/quanta_full_saber.h"
+#include "unit_projectiles/montero.h"
 #include "unit_projectiles/barbatos_lupus_rex.h"
 #include "unit_projectiles/barbatos_lupus.h"
 #include "unit_projectiles/barbatos.h"
-#include "unit_projectiles/Raider_Gundam.h"
-#include "unit_projectiles/Tallgeese_III.h"
-#include "unit_projectiles/Lacus_Infinite_Justice.h"
-#include "unit_projectiles/Nu_HWS.h"
-#include "unit_projectiles/Perfect_Strike.h"
-#include "unit_projectiles/Excellia.h"
+#include "unit_projectiles/raider_gundam.h"
+#include "unit_projectiles/tallgeese_III.h"
+#include "unit_projectiles/lacus_infinite_justice.h"
+#include "unit_projectiles/nu_hws.h"
+#include "unit_projectiles/perfect_strike.h"
+#include "unit_projectiles/excellia.h"
 #include "unit_projectiles/dark_hound.h"
-#include "unit_projectiles/Heine_Destiny.h"
-#include "unit_projectiles/Kampfer.h"
-#include "unit_projectiles/Full_Armor_Gundam.h"
-#include "unit_projectiles/Kimaris_Tropper.h"
+#include "unit_projectiles/heine_destiny.h"
+#include "unit_projectiles/kampfer.h"
+#include "unit_projectiles/full_armor_gundam.h"
+#include "unit_projectiles/kimaris_tropper.h"
 #include "unit_projectiles/marasai.h"
-#include "unit_projectiles/Hyperion.h"
+#include "unit_projectiles/hyperion.h"
 #include "unit_projectiles/age-1.h"
 #include "unit_projectiles/age-3.h"
-#include "unit_projectiles/Leos_II_Vs.h"
-#include "unit_projectiles/Gato_Gelgoog.h"
+#include "unit_projectiles/leos_II_vs.h"
+#include "unit_projectiles/gato_gelgoog.h"
 #include "unit_projectiles/astray_red_frame_custom.h"
-#include "unit_projectiles/Phantom.h"
+#include "unit_projectiles/phantom.h"
 #include "unit_projectiles/double_x.h"
-#include "unit_projectiles/Infinite_Justice_Lacus.h"
+#include "unit_projectiles/infinite_justice_lacus.h"
 #include "../registers.h"
 #include "unit_projectiles/test.h"
-#include "unit_projectiles/Zabanya.h"
+#include "unit_projectiles/zabanya.h"
 #include "unit_projectiles/age_fx.h"
 #include "unit_projectiles/akautsuki.h"
 #include "unit_projectiles/age-2.h"
 #include "unit_projectiles/cherudim_gundam.h"
+#include "unit_projectiles/crossbone_gundam_x2_custom.h"
 #include "unit_projectiles/f91.h"
+#include "unit_projectiles/fazz.h"
+#include "unit_projectiles/gouf_ignited.h"
+#include "unit_projectiles/gundam_legilis.h"
 #include "unit_projectiles/gundam_x_divider.h"
+#include "unit_projectiles/gunner_zaku_warrior.h"
 #include "unit_projectiles/jagd_doga.h"
+#include "unit_projectiles/mack_knife.h"
 #include "unit_projectiles/sinanju.h"
+#include "unit_projectiles/xi_gundam.h"
 #include "unit_projectiles/zeydra.h"
 
 int MBON_Added_Unit_ID[5000];
@@ -56,6 +63,15 @@ void projectile_ID_Check_hook()
 
     switch (projectile_ID)
     {
+        case 0xc26:
+            fazz_melee_assist_spawn();
+            break;
+        case 0xc3a:
+            fazz_left_moving_shoot_assist_spawn();
+            break;
+        case 0xc3f:
+            fazz_right_moving_shoot_assist_spawn();
+            break;
         case 0x8c0: // Hyaku Shiki's rick dom assist spawn
             hyaku_shiki_rick_dias_spawn();
             break;
@@ -102,8 +118,8 @@ void projectile_ID_Check_hook()
         case 0x42cc: // nu gundam's funnel, to be changed in the future.
             nu_hws_funnels_launch_spawn();
             break;
-        case 0x530c: // Infinite Justice EX Attack despawn
-            infinite_justice_EX_Attack_despawn();
+        case 0x514A:
+            perfect_strike_hook_spawn();
             break;
         case 0x5140:
             perfect_strike_boomerang_spawn();
@@ -111,8 +127,26 @@ void projectile_ID_Check_hook()
         case 0x5212:
             marasai_sword_throw_spawn();
             break;
+        case 0x530c: // Infinite Justice EX Attack despawn
+            infinite_justice_EX_Attack_despawn();
+            break;
         case 0x55BE:
             infinite_justice_lacus_shoot_assist_spawn();
+            break;
+        case 0x53C0:
+            gunner_zaku_warrior_gerobi_assist_spawn();
+            break;
+        case 0x53ca:
+            gunner_zaku_warrior_melee_assist_spawn();
+            break;
+        case 0x5B36:
+            crossbone_gundam_x2_custom_hook_spawn();
+            break;
+        case 0x7986:
+            xi_gundam_melee_assist_spawn();
+            break;
+        case 0x798b:
+            xi_gundam_shoot_assist_spawn();
             break;
         case 0x1D650:
             kampfer_chainmine_spawn();
@@ -122,6 +156,12 @@ void projectile_ID_Check_hook()
             break;
         case 0x299B4:
             jagd_doga_melee_assist_spawn();
+            break;
+        case 0x338A6:
+            gouf_ignited_melee_assist_spawn();
+            break;
+        case 0x3389C:
+            gouf_ignited_shoot_assist_spawn();
             break;
         case 0x33964:
             heine_destiny_boomerang_spawn();
@@ -157,6 +197,12 @@ void projectile_ID_Check_hook()
             break;
         case 0x50C62:
             dark_hound_melee_assist_spawn();
+            break;
+        case 0x50C76:
+            dark_hound_hook_spawn();
+            break;
+        case 0x6699A:
+            mack_knife_hook_spawn();
             break;
         case 0x77b3c: // Bael's CSa
             bael_CSa();
@@ -206,10 +252,31 @@ void projectile_ID_Check_hook()
         case 0x50A5F:
             age_3_melee_assist_spawn();
             break;
+        case 0x50ABE:
+            age_fx_melee_assist_spawn();
+            break;
+        case 0x50ABF:
+            age_fx_gerobi_assist_spawn();
+            break;
         case 0x50B04:
         case 0x50B0E:
         case 0x50B18:
             zeydra_melee_assist_spawn();
+            break;
+        case 0x50BCC: // 
+        case 0x50BE0: // neutral
+        case 0x50BE5: // left / right
+            gundam_legilis_bits_spawn();
+            break;
+        case 0x50C08:
+            gundam_legilis_gerobi_assist_spawn();
+            break;
+        case 0x50C0d:
+            gundam_legilis_funnel_assist_spawn();
+            break;
+        case 0x50C0E:
+            gundam_legilis_fawn_farsia_funnel_spawn();
+            break;
         case 0x53214:
         case 0x53246:
             excellia_boomerang_spawn();
@@ -423,7 +490,28 @@ void init_custom_projectile_ID()
     custom_projectile_ID[82] = 0x3be4;
     custom_projectile_ID[83] = 0x3BE7;
     custom_projectile_ID[84] = 0x3BE2;
-    // custom_projectile_ID[66] = 0x77BD2; 
+    custom_projectile_ID[85] = 0x798b;
+    custom_projectile_ID[86] = 0x7986;
+    custom_projectile_ID[87] = 0x3389C;
+    custom_projectile_ID[88] = 0x338A6;
+    custom_projectile_ID[89] = 0x514A;
+    custom_projectile_ID[90] = 0x50C76;
+    custom_projectile_ID[91] = 0x5B36;
+    custom_projectile_ID[92] = 0x53C0;
+    custom_projectile_ID[93] = 0x53ca;
+    custom_projectile_ID[94] = 0x6699A;
+    custom_projectile_ID[95] = 0x50ABE;
+    custom_projectile_ID[96] = 0x50ABF;
+    custom_projectile_ID[97] = 0x50BCC;
+    custom_projectile_ID[98] = 0x50BE0;
+    custom_projectile_ID[99] = 0x50BE5;
+    custom_projectile_ID[100] = 0xc26;
+    custom_projectile_ID[101] = 0xc3a;
+    custom_projectile_ID[102] = 0xc3f;
+    custom_projectile_ID[103] = 0x50C08;
+    custom_projectile_ID[104] = 0x50C0D;
+    custom_projectile_ID[105] = 0x50C0E;
+    
     //after 1000 is for other
     custom_projectile_ID[1000] = 0xB00000;
     custom_projectile_ID[1001] = 0x420A4;

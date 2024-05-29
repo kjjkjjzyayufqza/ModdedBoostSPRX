@@ -535,71 +535,48 @@ unsigned int barbatos_lupus_rex_gusion_assist_spawn_model_hash()
 	return 0x5594E6E4;
 }
 
-void barbatos_lupus_rex_twin_shoot_double_hand_sub_936FFC(__int64 a1, unsigned int *a2, int a3)
+void barbatos_lupus_rex_twin_shoot_assist_frame_script(__int64 a1, unsigned int *a2, __int64 a3, __int64 a4, __int64 a5)
 {
-	assist_shoot_projectile(a2, a3,0x341A1088);
-	delay(a2, a3, 14);
-	assist_shoot_projectile(a2, a3,0xE05B2F57);
+	GameCall<int>(0x77C868, 0xd8fe60)(reinterpret_cast<unsigned int*>(a1), a2, a3, a4, a5, 0);
+
+	// Configure the multiplier of the animation after the first shot
+	set_animation_speed_multiplier(a2, static_cast<int>(a3), 1.0f);
+
+	// Configuring the shooting here does not have the limitation that the loop animation will start after all projectile is shot
+	// For some reason this shoots a little bit too fast, so add 2 frame delay
+	delay(a2, static_cast<int>(a3), 2);
+	assist_shoot_projectile(a2, static_cast<int>(a3),0xE05B2F57);
+	delay(a2, static_cast<int>(a3), 14); // In between the shots, delay 14 frames
+	assist_shoot_projectile(a2, static_cast<int>(a3),0x341A1088);
 }
 
-void barbatos_lupus_rex_shoot_assist_initial_animation_script(unsigned int a1, unsigned int *a2)
+void barbatos_lupus_rex_twin_shoot_assist_spawn_model_effects(unsigned int* a1,unsigned int a2)
 {
-	const unsigned int toc = 0xdafdfc;
-	const unsigned int animation_index = 0x1;
-	
-	char list[12];
-	list[1] = 0;
-	list[0] = -1;
-	const unsigned int working_memory = GameCall<unsigned int>(0x1C240, 0xd60138)(56LL, reinterpret_cast<long long>(list));
-	GameCall<unsigned int>(0x9F44C8, toc)(static_cast<unsigned int>(working_memory), a1, animation_index);
+	GameCall<int>(0x763D0C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), 2LL);
+	GameCall<int>(0x77E46C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), a2);
 
-	// Clear 0x2c
-	*reinterpret_cast<uint32*>(working_memory + 0x2c) = 0;
-	
-	const unsigned int* script_func_ptr = reinterpret_cast<unsigned int*>(*reinterpret_cast<unsigned int*>(*a2 + 0x34LL));
-	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory));
-
-	char list2[12];
-	list2[0] = -1;
-	list2[1] = 0;
-	const unsigned int working_memory_2 = GameCall<unsigned int>(0x1C240, 0xd60138)(28LL, reinterpret_cast<long long>(list2));
-	GameCall<unsigned int>(0x9F40E8, toc)(working_memory_2);
-
-	const unsigned int script = *reinterpret_cast<unsigned int*>(toc - 0x6858);
-
-	// 1.57 in this case
-	// If set too high, it'll basically skip the aim phase, and if set too low the first shot will miss
-	const float aim_animation_speed_multiplier = *reinterpret_cast<float*>(toc - 0x6854);
-	
-	*reinterpret_cast<uint32*>(working_memory_2) = script;
-	*reinterpret_cast<uint32*>(working_memory_2 + 16) = a1;
-	*reinterpret_cast<uint32*>(working_memory_2 + 20) = -241;
-	*reinterpret_cast<float*>(working_memory_2 + 24) = aim_animation_speed_multiplier;
-
-	unsigned int debug = 0xDEADBEEF;
-
-	GameCall<unsigned int>(*script_func_ptr, script_func_ptr[1])(reinterpret_cast<unsigned int>(a2), static_cast<unsigned int>(working_memory_2));
-	GameCall<unsigned int>(0x9F4648, toc)(a1, reinterpret_cast<unsigned int>(a2));
+	hide_bone(a1, 31LL);
 }
 
-unsigned int barbatos_lupus_rex_twin_shoot_assist_spawn_model_effects(unsigned int* a1,unsigned int a2)
+unsigned int barbatos_lupus_rex_twin_shoot_assist_aim_animation_index()
 {
-	const unsigned int toc = 0xdafdfc;
+	return 1;
+}
 
-	GameCall<int>(0x9F4108, toc)(reinterpret_cast<unsigned int>(a1), 2LL);
-	GameCall<int>(0x9F44E8, toc)(reinterpret_cast<unsigned int>(a1), a2);
-
-	return hide_bone(a1, 31LL);
+unsigned int barbatos_lupus_rex_twin_shoot_assist_loop_animation_index()
+{
+	return 2;
 }
 
 unsigned int barbatos_lupus_rex_twin_shoot_assist_sub_936FC0(_DWORD* a1)
 {
 	if (is_barbatos_lupus_rex_twin_shoot_assist_initialized == false) {
-		copyJumptable(reinterpret_cast<int*>(0xd06d68), barbatos_lupus_rex_twin_shoot_spawn_script_pointers);
+		copyJumptable(reinterpret_cast<int*>(0xd1a5b0), barbatos_lupus_rex_twin_shoot_spawn_script_pointers);
 		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[37] = reinterpret_cast<int>(barbatos_lupus_rex_twin_shoot_assist_spawn_model_effects); // 模型id
 		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[58] = reinterpret_cast<int>(barbatos_lupus_rex_gusion_assist_spawn_model_hash); // 模型id
-		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[158] = reinterpret_cast<int>(barbatos_lupus_rex_twin_shoot_double_hand_sub_936FFC);
-		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[165] = reinterpret_cast<int>(barbatos_lupus_rex_shoot_assist_initial_animation_script); // initial animation script
+		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[144] = reinterpret_cast<int>(barbatos_lupus_rex_twin_shoot_assist_aim_animation_index); // aiming animation
+		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[157] = reinterpret_cast<int>(barbatos_lupus_rex_twin_shoot_assist_frame_script);
+		barbatos_lupus_rex_twin_shoot_spawn_script_pointers[167] = reinterpret_cast<int>(barbatos_lupus_rex_twin_shoot_assist_loop_animation_index);
 		is_barbatos_lupus_rex_twin_shoot_assist_initialized = true;
 	}
 	

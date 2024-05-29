@@ -16,10 +16,9 @@ unsigned int f91_vigna_ghina_rogue_assist_spawn_model_hash()
 
 void f91_melee_assist_spawn_model_effects(unsigned int* a1, unsigned int a2)
 {
-	const unsigned int toc = 0xdafdfc;
-	GameCall<int>(0x9F4108, toc)(reinterpret_cast<unsigned int>(a1), 2LL);
-	GameCall<int>(0x9F4118, toc)(reinterpret_cast<unsigned int>(a1), saber_pink_effect_hash, 0x1e, 0);
-	GameCall<int>(0x9F44E8, toc)(reinterpret_cast<unsigned int>(a1), a2);
+	GameCall<int>(0x763D0C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), 2LL);
+	GameCall<int>(0x763C3C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), saber_pink_effect_hash, 0x1e, 0);
+	GameCall<int>(0x77E46C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), a2);
 
 	// Hide beam rifle
 	hide_bone(a1, 0x20);

@@ -16,10 +16,9 @@ bool is_jagd_doga_melee_assist_initialized = false;
 
 void jagd_doga_melee_assist_spawn_model_effects(unsigned int* a1, unsigned int a2)
 {
-	const unsigned int toc = 0xdafdfc;
-	GameCall<int>(0x9F4108, toc)(reinterpret_cast<unsigned int>(a1), 2LL);
-	GameCall<int>(0x9F4118, toc)(reinterpret_cast<unsigned int>(a1), saber_green_effect_hash, 0x25, 0);
-	GameCall<int>(0x9F44E8, toc)(reinterpret_cast<unsigned int>(a1), a2);
+	GameCall<int>(0x763D0C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), 2LL);
+	GameCall<int>(0x763C3C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), saber_green_effect_hash, 0x25, 0);
+	GameCall<int>(0x77E46C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), a2);
 
 	// Hide beam rifle
 	hide_bone(a1, 0x22);
@@ -84,9 +83,8 @@ bool is_jagd_doga_shoot_assist_initialized = false;
 
 void jagd_doga_shoot_assist_spawn_model_effects(unsigned int* a1, unsigned int a2)
 {
-	const unsigned int toc = 0xdafdfc;
-	GameCall<int>(0x9F4108, toc)(reinterpret_cast<unsigned int>(a1), 2LL);
-	GameCall<int>(0x9F44E8, toc)(reinterpret_cast<unsigned int>(a1), a2);
+	GameCall<int>(0x763D0C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), 2LL);
+	GameCall<int>(0x77E46C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), a2);
 
 	// Hide axe
 	hide_bone(a1, 0x24);
@@ -95,7 +93,7 @@ void jagd_doga_shoot_assist_spawn_model_effects(unsigned int* a1, unsigned int a
 void jagd_doga_shoot_assist_aim_animation_script(unsigned int a1, unsigned int *a2)
 {
 	// The animation index should be the same as the aim animation index
-	assist_shoot_initial_animation_script(a1, a2, 0xdafdfc, 0x1, 1.0f);
+	assist_shoot_initial_animation_script(a1, a2, 0x1, 1.0f);
 }
 
 unsigned int jagd_doga_shoot_assist_aim_animation_index()

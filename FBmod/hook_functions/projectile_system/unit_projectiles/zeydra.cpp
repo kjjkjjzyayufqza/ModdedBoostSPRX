@@ -11,12 +11,10 @@ bool is_zeydra_melee_assist_initialized = false;
 
 void zeydra_melee_assist_spawn_model_effects(unsigned int* a1, unsigned int a2)
 {
-	const unsigned int toc = 0xdafdfc;
-
-	GameCall<int>(0x9F4108, toc)(reinterpret_cast<unsigned int>(a1), 2LL);
-	GameCall<int>(0x9F4118, toc)(reinterpret_cast<unsigned int>(a1), saber_orange_effect_hash, 0x1d, 0);
-	GameCall<int>(0x9F4118, toc)(reinterpret_cast<unsigned int>(a1), saber_orange_effect_hash, 0x20, 0x1);
-	GameCall<int>(0x9F44E8, toc)(reinterpret_cast<unsigned int>(a1), a2);
+	GameCall<int>(0x763D0C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), 2LL);
+	GameCall<int>(0x763C3C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), saber_orange_effect_hash, 0x1d, 0);
+	GameCall<int>(0x763C3C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), saber_orange_effect_hash, 0x20, 0x1);
+	GameCall<int>(0x77E46C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), a2);
 }
 
 unsigned int zeydra_zedas_m_assist_spawn_model_hash()

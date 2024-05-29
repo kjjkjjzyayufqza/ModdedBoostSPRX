@@ -63,11 +63,9 @@ bool is_age_3_melee_assist_initialized = false;
 
 void age_3_melee_assist_spawn_model_effects(unsigned int* a1, unsigned int a2)
 {
-	const unsigned int toc = 0xdafdfc;
-
-	GameCall<int>(0x9F4108, toc)(reinterpret_cast<unsigned int>(a1), 2LL);
-	GameCall<int>(0x9F4118, toc)(reinterpret_cast<unsigned int>(a1), saber_pink_effect_hash, 0x20, 0);
-	GameCall<int>(0x9F44E8, toc)(reinterpret_cast<unsigned int>(a1), a2);
+	GameCall<int>(0x763D0C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), 2LL);
+	GameCall<int>(0x763C3C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), saber_pink_effect_hash, 0x20, 0);
+	GameCall<int>(0x77E46C, 0xD8FE60)(reinterpret_cast<unsigned int>(a1), a2);
 }
 
 unsigned int age_3_clanche_assist_spawn_model_hash()
@@ -134,8 +132,7 @@ bool is_age_3_shoot_assist_initialized = false;
 
 void age_3_shoot_assist_aim_animation_script(unsigned int a1, unsigned int *a2)
 {
-	// The animation index should be the same as the aim animation index
-	assist_shoot_initial_animation_script(a1, a2, 0xdafdfc, 0x2, 1.0f);
+	assist_shoot_initial_animation_script(a1, a2, 0x2, 1.0f);
 }
 
 unsigned int age_3_shoot_assist_aim_animation_index()
