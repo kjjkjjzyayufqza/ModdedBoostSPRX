@@ -1,2 +1,2 @@
 
-void ammoRead5thEnum();
+void ammo_read_fifth_enum();

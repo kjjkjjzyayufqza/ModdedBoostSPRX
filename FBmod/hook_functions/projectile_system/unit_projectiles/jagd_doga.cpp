@@ -138,3 +138,36 @@ void jagd_doga_shoot_assist_spawn()
 	// set return
 	temp_registers[3] = result;
 }
+
+int jagd_doga_funnel_spawn_script_pointers[500];
+bool is_jagd_doga_funnel_initialized = false;
+
+unsigned int jagd_doga_funnel_spawn_model_hash()
+{
+	return 0x3A77FF70;
+}
+
+void jagd_doga_funnel_spawn()
+{
+	_DWORD* r3_pointer = reinterpret_cast<uint32*>(temp_registers[3]);
+
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	const unsigned int temp_memory_ptr = GameCall<int>(0x9EE338, 0xd8fe60)(0x4780, 0x80, list);
+	const unsigned int result = GameCall<int>(0x7D9F08, 0xd8fe60)(reinterpret_cast<uint32*>(temp_memory_ptr), 0x4344);
+	
+	if (is_jagd_doga_funnel_initialized == false) {
+		copyJumptable(reinterpret_cast<int*>(0xCA9FF8), jagd_doga_funnel_spawn_script_pointers);
+		jagd_doga_funnel_spawn_script_pointers[58] = reinterpret_cast<int>(jagd_doga_funnel_spawn_model_hash);
+		is_jagd_doga_funnel_initialized = true;
+	}
+
+	const unsigned int script_pointer = reinterpret_cast<unsigned int>(jagd_doga_funnel_spawn_script_pointers);
+	*reinterpret_cast<unsigned int*>(temp_memory_ptr) = script_pointer;
+	*reinterpret_cast<unsigned int*>(temp_memory_ptr + 0x44e0) = 0xCA9F70;
+	*reinterpret_cast<unsigned int*>(temp_memory_ptr + 0x44e0 + 4) = temp_memory_ptr;
+
+	*r3_pointer = temp_memory_ptr;
+	temp_registers[3] = result;
+}

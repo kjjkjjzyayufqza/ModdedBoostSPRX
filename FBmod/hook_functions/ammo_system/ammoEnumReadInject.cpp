@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include "../registers.h"
 
-void ammoRead5thEnum()
+void ammo_read_fifth_enum()
 {
 	int r22 = temp_registers[22];
 	int r29 = temp_registers[29];

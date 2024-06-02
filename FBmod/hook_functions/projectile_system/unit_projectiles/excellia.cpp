@@ -58,3 +58,88 @@ void excellia_boomerang_spawn() // originally lacus infinite justice's boomerang
 	// set return
 	temp_registers[3] = result;
 }
+
+int excellia_link_rephaser_spawn_script_pointers[500];
+bool is_excellia_link_rephaser_initialized = false;
+
+unsigned int excellia_link_rephaser_spawn_model_hash()
+{
+	return 0xB84A01D0;
+}
+
+unsigned int excellia_link_rephaser_main(_DWORD* a1)
+{
+	if (is_excellia_link_rephaser_initialized == false) {
+		// taken from gaia gundam's funnel assist
+		copyJumptable(reinterpret_cast<int*>(0xCD0D68), excellia_link_rephaser_spawn_script_pointers);
+		excellia_link_rephaser_spawn_script_pointers[58] = reinterpret_cast<int>(excellia_link_rephaser_spawn_model_hash);
+		is_excellia_link_rephaser_initialized = true;
+	}
+	
+	GameCall<int>(0x9F2228, 0xD9FE1C)(a1, 80300);
+	const unsigned int result = reinterpret_cast<unsigned int>(excellia_link_rephaser_spawn_script_pointers);
+	*a1 = result;
+	a1[54] = 7;
+	
+	return result;
+}
+
+// Circular ice projectile 
+void excellia_link_rephaser_spawn()
+{
+	_DWORD* r3_pointer = reinterpret_cast<uint32*>(temp_registers[3]);
+
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	const unsigned int temp_memory_ptr = GameCall<int>(0x9EE338, 0xd8fe60)(0x4780, 0x80, list);
+	const unsigned int result = excellia_link_rephaser_main(reinterpret_cast<uint32*>(temp_memory_ptr));
+	*r3_pointer = temp_memory_ptr;
+
+	// set return
+	temp_registers[3] = result;
+}
+
+int excellia_shield_bits_spawn_script_pointers[500];
+bool is_excellia_shield_bits_initialized = false;
+
+unsigned int excellia_shield_bits_spawn_model_hash()
+{
+	return 0xB7823D2F;
+}
+
+// TODO: This is unusable since the game will crash trying to read the unit's model hash to "attach" the shield bits to.
+// The only way to set the shield bits to yourself is to initialize the model hash when the unit is loaded, related to unit_initializations
+// That part is quite complex, the only clue to solve it is to refer to Cherudim gundam's hash, which is 0x9D92E7BD located at 0xB46604
+// Until that part is done, these bits is unusable
+void excellia_shield_bits_spawn()
+{
+	_DWORD* r3_pointer = reinterpret_cast<uint32*>(temp_registers[3]);
+
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	const unsigned int temp_memory_ptr = GameCall<int>(0x9EE338, 0xd8fe60)(0x4780, 0x80, list);
+	const unsigned int result = GameCall<int>(0x7D9E7C, 0xd8fe60)(reinterpret_cast<uint32*>(temp_memory_ptr), 0x13854);
+	
+	if (is_excellia_shield_bits_initialized == false) {
+		copyJumptable(reinterpret_cast<int*>(0xC96150), excellia_shield_bits_spawn_script_pointers);
+		excellia_shield_bits_spawn_script_pointers[58] = reinterpret_cast<int>(excellia_shield_bits_spawn_model_hash);
+		is_excellia_shield_bits_initialized = true;
+	}
+
+	// 0x420b1808 // 0x4fff29c0 // 0x4fff2960 // 0x9d92e7bd
+	// 0x6bc8e0
+	const unsigned int script_pointer = reinterpret_cast<unsigned int>(excellia_shield_bits_spawn_script_pointers);
+	*reinterpret_cast<unsigned int*>(temp_memory_ptr) = script_pointer;
+	*reinterpret_cast<unsigned int*>(temp_memory_ptr + 0x44f0) = 0xCBF018;
+	*reinterpret_cast<unsigned int*>(temp_memory_ptr + 0x44f0 + 4) = temp_memory_ptr;
+    
+	*reinterpret_cast<float*>(temp_memory_ptr + 0x44e0) = 0.0f;
+	*reinterpret_cast<float*>(temp_memory_ptr + 0x44e0 + 0x4) = 0.0f;
+	*reinterpret_cast<float*>(temp_memory_ptr + 0x44e0 + 0x8) = 0.0f;
+	*reinterpret_cast<float*>(temp_memory_ptr + 0x44e0 + 0xc) = 1.0f;
+
+	*r3_pointer = temp_memory_ptr;
+	temp_registers[3] = result;
+}

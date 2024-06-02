@@ -1,7 +1,14 @@
-#include "Double_X.h"
+#include "double_x.h"
 #include "../unit_initializations_func_scripts.h"
 #include "../../../ida_macros.h"
 #include "../../../stdafx.h"
+#include "helpers/helpers.h"
+
+int double_x_unit_initializations_func_scripts[16]; // Size is always 0x40
+bool is_double_x_unit_initializations_func_scripts_initialized = false;
+
+int double_x_unit_main_memory_region_func_scripts[68];
+bool is_double_x_unit_main_memory_region_func_scripts_initialized = false;
 
 // IDA decompile code note:
 /*
@@ -45,7 +52,7 @@ int sub_596C0C(_DWORD *a1, unsigned int a2)
 	v3 = (_DWORD)a1 + 0x10000;
 	v4 = a2;
 	GameCall<unsigned int>(0x576E7C, 0xd7ff30)((unsigned int)a1);
-	*a1 = (int)unit_main_memory_region_func_scripts;
+	*a1 = (int)double_x_unit_main_memory_region_func_scripts;
 	a1[164] = 2;
 	*(_DWORD *)((unsigned int)(v3 + 8620) + 8LL) = 6;
 	*(_DWORD *)((unsigned int)(v3 + 8620) + 0x2CLL) = 18;
@@ -168,3 +175,51 @@ int double_x_model_hash_init(int a1, int a2)
 	return sub_5A0DE0(a1, v6, v5, v4, v3, v2);
 }
 
+unsigned int double_x_init(const unsigned long a1)
+{
+	// fill default (taken from Gundam Mk-II) 0xc78200
+	if (is_double_x_unit_main_memory_region_func_scripts_initialized == false) {
+		copyJumptable(reinterpret_cast<int*>(0xc78200), double_x_unit_main_memory_region_func_scripts);
+		double_x_unit_main_memory_region_func_scripts[6] = 0xd39880; // default model init func, 0x4DE490 -> 0x4DE7F0 -> 0x4DE740 -> 0x9EA7E8
+		double_x_unit_main_memory_region_func_scripts[16] = reinterpret_cast<int>(double_x_model_hash_init);
+		is_double_x_unit_main_memory_region_func_scripts_initialized = true;
+	}
+
+	// fill default func (taken from destiny) 0xd71f24
+	if (is_double_x_unit_initializations_func_scripts_initialized == false) {
+		copyJumptable(reinterpret_cast<int*>(0xc73cb8), double_x_unit_initializations_func_scripts);
+		double_x_unit_initializations_func_scripts[6] = reinterpret_cast<int>(double_x_model_init);
+		is_double_x_unit_initializations_func_scripts_initialized = true;
+	}
+	
+	short temp = -256;
+	const unsigned int working_memory = GameCall<int>(0x9E8B28, 0xd6ff70)(112, &temp, HIDWORD(a1));
+	
+	*reinterpret_cast<uint32*>(working_memory) = reinterpret_cast<int>(double_x_unit_initializations_func_scripts);
+	*reinterpret_cast<uint32*>(working_memory + 4) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 8) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 12) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 16) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 20) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 24) = *reinterpret_cast<int*>(HIDWORD(a1));
+	*reinterpret_cast<uint8*>(working_memory + 32) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 28) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 36) = 0;
+	*reinterpret_cast<uint8*>(working_memory + 40) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 44) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 48) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 52) = -1;
+	*reinterpret_cast<uint32*>(working_memory + 64) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 68) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 72) = 0;
+	*reinterpret_cast<float*>(working_memory + 76) = 1.0f;
+	*reinterpret_cast<uint32*>(working_memory + 80) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 84) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 88) = 0;
+	*reinterpret_cast<float*>(working_memory + 92) = 1.0f;
+	*reinterpret_cast<uint32*>(working_memory + 96) = 0;
+	*reinterpret_cast<uint32*>(working_memory + 100) = 0;
+	
+	GameCall<int>(0xaa364c, 0xd6ff70)(working_memory, 16);
+	return working_memory;
+}

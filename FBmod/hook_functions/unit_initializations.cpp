@@ -2,6 +2,7 @@
 #include "unit_initializations/unit_initializations_func_scripts.h"
 #include "../ida_macros.h"
 #include "../stdafx.h"
+#include "unit_initializations/unit_specific_functions/double_x.h"
 
 // local variable allocation has failed, the output may be wrong!
 int __fastcall sub_4DDFF4(__int64 a1)
@@ -2638,7 +2639,7 @@ int __fastcall sub_4DDFF4(__int64 a1)
 						// MBON Gundam DX
 						if (v1 == 7011) 
 						{
-							double_x_init();
+							double_x_init(a1); // deprecated
 							v756 = -256;
 							v464 = GameCall<int>(0x9E8B28, 0xd6ff70)(112, &v756, HIDWORD(v868));
 							v465 = *(int *)0xD71E58;
@@ -2648,7 +2649,7 @@ int __fastcall sub_4DDFF4(__int64 a1)
 							*(_DWORD *)(v464 + 12) = 0;
 							*(_DWORD *)(v464 + 16) = 0;
 							*(_DWORD *)(v464 + 20) = 0;
-							v466 = (int)unit_initializations_func_scripts;
+							v466 = (int)double_x_unit_initializations_func_scripts;
 							*(_DWORD *)(v464 + 24) = *v674;
 							*(_BYTE *)(v464 + 32) = 0;
 							*(_DWORD *)(v464 + 28) = 0;

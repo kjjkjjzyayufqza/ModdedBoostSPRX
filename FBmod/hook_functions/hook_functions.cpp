@@ -11,6 +11,7 @@
 #include "registers.h"
 #include "bypass_BLJS10250_patch_size_limit_hack.h"
 #include "new_type_script_sys_74_hook.h"
+#include "unit_initializations/unit_initializations.h"
 
 void main_hook_func();
 
@@ -20,7 +21,8 @@ void hook()
 	set_constant_non_full_Burst_Boost_Recover_Percentage();
 	set_constant_full_Burst_Boost_Recover_Percentage();
 
-	init_custom_projectile_ID();
+	init_custom_projectile_id();
+	init_custom_initialization_unit_id();
 
 	// TOC for 0x9EDE98 d7ff30 - not used, too hard to use.
 	// hookPatch(0x009EDE98, (int)Projectile_ID_Check);
@@ -97,7 +99,7 @@ void hook()
 	printf("get_non_Full_Burst_Boost_Increase_Percentage_hook: %d \n", *(int*)get_non_Full_Burst_Boost_Increase_Percentage_hook);
 	printf("get_Full_Burst_Boost_Increase_Percentage_hook: %d \n", *(int*)get_Full_Burst_Boost_Increase_Percentage_hook);
 	printf("read_Burst_Damage_Multiplier_hook: %d \n", *(int*)read_Burst_Damage_Multiplier_hook);
-	printf("projectile_ID_Check_hook: %d \n", *(int*)projectile_ID_Check_hook);
+	printf("projectile_ID_Check_hook: %d \n", *(int*)projectile_id_check_hook);
 	printf("unit_initializations: %d \n", *(int*)sub_4DDFF4);
 	printf("ModeIndexChange: %d \n", *(int*)ModeIndexChange);
 	printf("Hooks Loaded\n");
@@ -135,7 +137,7 @@ void jump()
 			bool is_custom_projectile = false;
 
 			for (int i = 0; i < 5000; i++){
-				if (custom_projectile_ID[i] == temp_registers[4]){
+				if (custom_projectile_id[i] == temp_registers[4]){
 					is_custom_projectile = true;
 					break;
 				}
@@ -177,7 +179,7 @@ void jump()
 				*/
 
 				temp_registers[31] = temp_registers[3];
-				projectile_ID_Check_hook(); // return temp_registers[3] should be handled by the func inside
+				projectile_id_check_hook(); // return temp_registers[3] should be handled by the func inside
 				// 11e1ed8
 
 				/*
@@ -236,7 +238,7 @@ void jump()
 		case 0x128654: // Ammo read (change to 5 max)
 			//int r5 = *(int*)(temp_registers[23] + 0x1c);
 			int r31 = temp_registers[31];
-			ammoRead5thEnum();
+			ammo_read_fifth_enum();
 			temp_registers[29] = -0x4160;
 			temp_registers[27] = 0;
 			//temp_registers[5] = r5;
@@ -244,8 +246,8 @@ void jump()
 			break;
 
 		case 0x657860: // temporary sys_22(0x5 fix
-			int ammoIndex = temp_registers[8];
-			if (ammoIndex >= 5)
+			int ammo_index = temp_registers[8];
+			if (ammo_index >= 5)
 			{
 				// r6 stores the arguments int32
 				// to change the first arg, we need to write it manually.
@@ -256,11 +258,20 @@ void jump()
 			temp_registers[29] = temp_registers[4];
 			break;
 		case 0x4ca0fc:
-			int unitID = *(int *)temp_registers[3];
-			if (unitID == 0x1b63)
+			bool is_custom_unit_id = false;
+
+			const int unit_id = *reinterpret_cast<int*>(temp_registers[3]);
+			for (int i = 0; i < 5000; i++){
+				if (custom_initialization_unit_id[i] == unit_id){
+					is_custom_unit_id = true;
+					break;
+				}
+			}
+		
+			if (is_custom_unit_id)
 			{
 				retrieve_registers();
-				sub_4DDFF4(temp_registers[3]);
+				initialize_unit(temp_registers[3], unit_id);
 			}
 			else
 			{
