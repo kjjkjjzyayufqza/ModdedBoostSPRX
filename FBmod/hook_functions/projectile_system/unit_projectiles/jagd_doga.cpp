@@ -159,7 +159,7 @@ void jagd_doga_funnel_spawn()
 	
 	if (is_jagd_doga_funnel_initialized == false) {
 		copyJumptable(reinterpret_cast<int*>(0xCA9FF8), jagd_doga_funnel_spawn_script_pointers);
-		jagd_doga_funnel_spawn_script_pointers[58] = reinterpret_cast<int>(jagd_doga_funnel_spawn_model_hash);
+		// jagd_doga_funnel_spawn_script_pointers[58] = reinterpret_cast<int>(jagd_doga_funnel_spawn_model_hash);
 		is_jagd_doga_funnel_initialized = true;
 	}
 

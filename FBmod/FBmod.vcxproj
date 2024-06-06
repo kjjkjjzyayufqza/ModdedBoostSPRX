@@ -141,7 +141,6 @@
     <ClInclude Include="hook_functions\registers.h" />
     <ClInclude Include="hook_functions\unit_initializations.h" />
     <ClInclude Include="hook_functions\unit_initializations\unit_initializations.h" />
-    <ClInclude Include="hook_functions\unit_initializations\unit_initializations_func_scripts.h" />
     <ClInclude Include="hook_functions\unit_initializations\unit_specific_functions\double_x.h" />
     <ClInclude Include="hook_functions\unit_initializations\unit_specific_functions\jagd_doga.h" />
     <ClInclude Include="ida_macros.h" />
@@ -294,7 +293,6 @@
     <ClCompile Include="hook_functions\registers.cpp" />
     <ClCompile Include="hook_functions\unit_initializations.cpp" />
     <ClCompile Include="hook_functions\unit_initializations\unit_initializations.cpp" />
-    <ClCompile Include="hook_functions\unit_initializations\unit_initializations_func_scripts.cpp" />
     <ClCompile Include="hook_functions\unit_initializations\unit_specific_functions\double_x.cpp" />
     <ClCompile Include="hook_functions\unit_initializations\unit_specific_functions\jagd_doga.cpp" />
     <ClCompile Include="ida_macros.cpp" />

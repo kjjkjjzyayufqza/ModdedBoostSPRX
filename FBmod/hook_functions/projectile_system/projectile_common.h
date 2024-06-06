@@ -48,6 +48,16 @@ unsigned int scale_bone(
     double w,
     int unknown);
 
+unsigned int scale_bone(
+    const unsigned int* a1, 
+    int model_hash,
+    int bone_index,
+    int unknown,
+    double x,
+    double y,
+    double z,
+    double w);
+
 unsigned int create_working_memory(int size);
 
 void add_projectile(

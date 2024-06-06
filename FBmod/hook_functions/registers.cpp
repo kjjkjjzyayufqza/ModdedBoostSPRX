@@ -2,6 +2,7 @@
 
 int temp_registers[32]; // This location is dynamic.
 float temp_float_registers[32]; // This location is dynamic.
+unsigned int temp_r1_pointer[4]; // This location is dynamic.
 
 void get_temp_registers_pointer()
 {
@@ -195,6 +196,26 @@ void save_registers()
 	asm("stfs %f30, 0x78(%r17)");
 	asm("stfs %f31, 0x7c(%r17)");
 	*/
+}
+
+unsigned int* get_temp_r1_register_pointer()
+{
+	return temp_r1_pointer; // replaces r3 with the temp r1 pointer
+}
+
+unsigned int get_r1()
+{
+	// use the small data area to store the original r17 value, and store the r3 value on r17
+	asm("stw %r17, 0x1000(%r13)");
+	asm("mr %r17, %r3");
+	
+	get_temp_r1_register_pointer();  // branch to get_temp_r1_register_pointer, which will override the r3 with the pointer
+
+	asm("stw %r1, 0x0(%r3)"); // write r1 pointer to the temp_r1_pointer memory region
+	asm("mr %r3, %r17"); // restore the original r3 value
+	asm("lwz %r17, 0x1000(%r13)"); // load the original r17 value from the small data area
+
+	return temp_r1_pointer[0] + 0x70; // return the stored r1 pointer, with an offset of 0x80 to offset the initial r1 offset that's done when entering this function
 }
 
 void retrieve_registers()

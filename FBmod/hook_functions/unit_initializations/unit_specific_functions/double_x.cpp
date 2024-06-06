@@ -1,5 +1,4 @@
 #include "double_x.h"
-#include "../unit_initializations_func_scripts.h"
 #include "../../../ida_macros.h"
 #include "../../../stdafx.h"
 #include "helpers/helpers.h"
@@ -180,7 +179,6 @@ unsigned int double_x_init(const unsigned long a1)
 	// fill default (taken from Gundam Mk-II) 0xc78200
 	if (is_double_x_unit_main_memory_region_func_scripts_initialized == false) {
 		copyJumptable(reinterpret_cast<int*>(0xc78200), double_x_unit_main_memory_region_func_scripts);
-		double_x_unit_main_memory_region_func_scripts[6] = 0xd39880; // default model init func, 0x4DE490 -> 0x4DE7F0 -> 0x4DE740 -> 0x9EA7E8
 		double_x_unit_main_memory_region_func_scripts[16] = reinterpret_cast<int>(double_x_model_hash_init);
 		is_double_x_unit_main_memory_region_func_scripts_initialized = true;
 	}
@@ -188,6 +186,7 @@ unsigned int double_x_init(const unsigned long a1)
 	// fill default func (taken from destiny) 0xd71f24
 	if (is_double_x_unit_initializations_func_scripts_initialized == false) {
 		copyJumptable(reinterpret_cast<int*>(0xc73cb8), double_x_unit_initializations_func_scripts);
+		// default model init func, 0x4DE490 -> 0x4DE7F0 -> 0x4DE740 -> 0x9EA7E8
 		double_x_unit_initializations_func_scripts[6] = reinterpret_cast<int>(double_x_model_init);
 		is_double_x_unit_initializations_func_scripts_initialized = true;
 	}

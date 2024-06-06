@@ -261,7 +261,7 @@ void jump()
 			bool is_custom_unit_id = false;
 
 			const int unit_id = *reinterpret_cast<int*>(temp_registers[3]);
-			for (int i = 0; i < 5000; i++){
+			for (int i = 0; i < 500; i++){
 				if (custom_initialization_unit_id[i] == unit_id){
 					is_custom_unit_id = true;
 					break;

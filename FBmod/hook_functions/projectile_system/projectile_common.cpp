@@ -138,6 +138,23 @@ unsigned int scale_bone(
 	);
 }
 
+unsigned int scale_bone(
+	const unsigned int* a1, 
+	const int model_hash,
+	const int bone_index,
+	const int unknown,
+	const double x,
+	const double y,
+	const double z,
+	const double w)
+{
+	int opd[2] = { 0x6AF0CC, 0xd7ff30 };
+
+	return reinterpret_cast<int(*)(const unsigned int*, unsigned int, int, double, double, double, unsigned int, double)>(&opd)(
+		a1, model_hash, bone_index, x, y, z, unknown, w
+	);
+}
+
 __int64 assist_shoot_initial_animation_script(
 	unsigned int a1,
 	unsigned int *a2,
