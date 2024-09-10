@@ -93,7 +93,7 @@ unit_hash_info Gundam_Heavyarms_Custom_TV_inject_unit_hash_info()
     Gundam_Heavyarms_Custom_TV.Sound = 0x109E2974;
     Gundam_Heavyarms_Custom_TV.GlobalPilotVoice = 0x9E3DF755;
     Gundam_Heavyarms_Custom_TV.WeaponImage = 0xBAE91047;
-    Gundam_Heavyarms_Custom_TV.IngameImage = 0xBAE91047;
+    Gundam_Heavyarms_Custom_TV.IngameImage = 0x2B2A21F9;
     Gundam_Heavyarms_Custom_TV.KPKP = 0x2970373A;
     Gundam_Heavyarms_Custom_TV.VoiceFileList = 0xBBE6D9E3;
     Gundam_Heavyarms_Custom_TV.Stream = 0x08A3863E;
