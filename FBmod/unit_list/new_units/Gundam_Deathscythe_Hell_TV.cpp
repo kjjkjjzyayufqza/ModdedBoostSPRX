@@ -93,7 +93,7 @@ unit_hash_info Gundam_Deathscythe_Hell_TV_inject_unit_hash_info()
     Gundam_Deathscythe_Hell_TV.Sound = 0x34964DAC;
     Gundam_Deathscythe_Hell_TV.GlobalPilotVoice = 0xF6127E49;
     Gundam_Deathscythe_Hell_TV.WeaponImage = 0x3B787BBA;
-    Gundam_Deathscythe_Hell_TV.IngameImage = 0x3B787BBA;
+    Gundam_Deathscythe_Hell_TV.IngameImage = 0x2CBAE71F;
     Gundam_Deathscythe_Hell_TV.KPKP = 0x624A8FAD;
     Gundam_Deathscythe_Hell_TV.VoiceFileList = 0x60343235;
     Gundam_Deathscythe_Hell_TV.Stream = 0xFA9962EC;

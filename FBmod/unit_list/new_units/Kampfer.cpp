@@ -93,7 +93,7 @@ unit_hash_info Kampfer_inject_unit_hash_info()
     Kampfer.Sound = 0x7061E3B6;
     Kampfer.GlobalPilotVoice = 0xF76A7541;
     Kampfer.WeaponImage = 0x568CF7EB;
-    Kampfer.IngameImage = 0x568CF7EB;
+    Kampfer.IngameImage = 0xF4009988;
     Kampfer.KPKP = 0xF0BF1EB0;
     Kampfer.VoiceFileList = 0x925DC192;
     Kampfer.Stream = 0x59E36CAD;

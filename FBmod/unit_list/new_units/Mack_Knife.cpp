@@ -93,7 +93,7 @@ unit_hash_info Mack_Knife_inject_unit_hash_info()
     Mack_Knife.Sound = 0x835CCA8B;
     Mack_Knife.GlobalPilotVoice = 0x369CC1B2;
     Mack_Knife.WeaponImage = 0x7C9B58D4;
-    Mack_Knife.IngameImage = 0x7C9B58D4;
+    Mack_Knife.IngameImage = 0xC6488BE4;
     Mack_Knife.KPKP = 0x9B5ECB51;
     Mack_Knife.VoiceFileList = 0xB2802462;
     Mack_Knife.Stream = 0xCE4A3493;

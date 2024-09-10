@@ -93,7 +93,7 @@ unit_hash_info V2_Gundam_Boss_inject_unit_hash_info()
     V2_Gundam_Boss.Sound = 0x847E02AF;
     V2_Gundam_Boss.GlobalPilotVoice = 0x7CB054B8;
     V2_Gundam_Boss.WeaponImage = 0x96E17715;
-    V2_Gundam_Boss.IngameImage = 0x96E17715;
+    V2_Gundam_Boss.IngameImage = 0xC69AE3DD;
     V2_Gundam_Boss.KPKP = 0x919E2FE4;
     V2_Gundam_Boss.VoiceFileList = 0xE6106E8B;
     V2_Gundam_Boss.Stream = 0x3D7A7FF7;

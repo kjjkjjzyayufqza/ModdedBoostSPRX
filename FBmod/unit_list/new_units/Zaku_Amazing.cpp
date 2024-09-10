@@ -93,7 +93,7 @@ unit_hash_info Zaku_Amazing_inject_unit_hash_info()
     Zaku_Amazing.Sound = 0x03F6FA87;
     Zaku_Amazing.GlobalPilotVoice = 0x239C5BAE;
     Zaku_Amazing.WeaponImage = 0xEDBCAAAD;
-    Zaku_Amazing.IngameImage = 0xEDBCAAAD;
+    Zaku_Amazing.IngameImage = 0x3BF03C17;
     Zaku_Amazing.KPKP = 0x7B8232AC;
     Zaku_Amazing.VoiceFileList = 0x152FAE16;
     Zaku_Amazing.Stream = 0x14FD61CE;

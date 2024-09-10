@@ -93,7 +93,7 @@ unit_hash_info Montero_inject_unit_hash_info()
     Montero.Sound = 0x19BF4393;
     Montero.GlobalPilotVoice = 0x51A14057;
     Montero.WeaponImage = 0x525DEF6E;
-    Montero.IngameImage = 0x525DEF6E;
+    Montero.IngameImage = 0xA7926935;
     Montero.KPKP = 0x029095D7;
     Montero.VoiceFileList = 0x81F59EF2;
     Montero.Stream = 0x2E811D08;

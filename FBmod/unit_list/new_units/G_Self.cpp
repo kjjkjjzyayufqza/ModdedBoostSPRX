@@ -93,7 +93,7 @@ unit_hash_info G_Self_inject_unit_hash_info()
     G_Self.Sound = 0xBEEA92E2;
     G_Self.GlobalPilotVoice = 0x05AE7CAF;
     G_Self.WeaponImage = 0x8E4D5975;
-    G_Self.IngameImage = 0x8E4D5975;
+    G_Self.IngameImage = 0xF91A27C2;
     G_Self.KPKP = 0x41B6B54D;
     G_Self.VoiceFileList = 0x1FEE834A;
     G_Self.Stream = 0xFFEACCFE;

@@ -93,7 +93,7 @@ unit_hash_info Gundam_Boss_inject_unit_hash_info()
     Gundam_Boss.Sound = 0x3E2F1670;
     Gundam_Boss.GlobalPilotVoice = 0xB1C0D801;
     Gundam_Boss.WeaponImage = 0x6ED321BD;
-    Gundam_Boss.IngameImage = 0x6ED321BD;
+    Gundam_Boss.IngameImage = 0xCEB32503;
     Gundam_Boss.KPKP = 0xC45440B9;
     Gundam_Boss.VoiceFileList = 0x475D5599;
     Gundam_Boss.Stream = 0x9AF05502;

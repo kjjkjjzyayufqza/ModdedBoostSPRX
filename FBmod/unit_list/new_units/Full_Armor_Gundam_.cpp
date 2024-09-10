@@ -93,7 +93,7 @@ unit_hash_info Full_Armor_Gundam__inject_unit_hash_info()
     Full_Armor_Gundam_.Sound = 0xB35F83AE;
     Full_Armor_Gundam_.GlobalPilotVoice = 0x02C02571;
     Full_Armor_Gundam_.WeaponImage = 0xA7BDDA21;
-    Full_Armor_Gundam_.IngameImage = 0xA7BDDA21;
+    Full_Armor_Gundam_.IngameImage = 0x0A295D5E;
     Full_Armor_Gundam_.KPKP = 0xD9DC2BE0;
     Full_Armor_Gundam_.VoiceFileList = 0x4FCEF60C;
     Full_Armor_Gundam_.Stream = 0xFC770BFA;

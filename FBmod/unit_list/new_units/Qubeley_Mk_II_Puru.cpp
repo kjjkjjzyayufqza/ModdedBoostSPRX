@@ -93,7 +93,7 @@ unit_hash_info Qubeley_Mk_II_Puru_inject_unit_hash_info()
     Qubeley_Mk_II_Puru.Sound = 0x6AF0B629;
     Qubeley_Mk_II_Puru.GlobalPilotVoice = 0xFFE4310B;
     Qubeley_Mk_II_Puru.WeaponImage = 0x545D0C8F;
-    Qubeley_Mk_II_Puru.IngameImage = 0x545D0C8F;
+    Qubeley_Mk_II_Puru.IngameImage = 0xFD836583;
     Qubeley_Mk_II_Puru.KPKP = 0x51A38203;
     Qubeley_Mk_II_Puru.VoiceFileList = 0x404C97DE;
     Qubeley_Mk_II_Puru.Stream = 0xBA9A0BE0;

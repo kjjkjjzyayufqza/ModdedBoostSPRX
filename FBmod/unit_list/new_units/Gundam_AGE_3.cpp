@@ -93,7 +93,7 @@ unit_hash_info Gundam_AGE_3_inject_unit_hash_info()
     Gundam_AGE_3.Sound = 0xC20B92F5;
     Gundam_AGE_3.GlobalPilotVoice = 0x2855F9E5;
     Gundam_AGE_3.WeaponImage = 0x3BA21037;
-    Gundam_AGE_3.IngameImage = 0x3BA21037;
+    Gundam_AGE_3.IngameImage = 0xF6517F5D;
     Gundam_AGE_3.KPKP = 0x92D88BEC;
     Gundam_AGE_3.VoiceFileList = 0x92C2F9A6;
     Gundam_AGE_3.Stream = 0x06800B01;

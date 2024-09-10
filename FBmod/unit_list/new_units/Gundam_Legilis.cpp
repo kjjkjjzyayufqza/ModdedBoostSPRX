@@ -93,7 +93,7 @@ unit_hash_info Gundam_Legilis_inject_unit_hash_info()
     Gundam_Legilis.Sound = 0x43E71CD4;
     Gundam_Legilis.GlobalPilotVoice = 0x962DAEB2;
     Gundam_Legilis.WeaponImage = 0xE4A313AC;
-    Gundam_Legilis.IngameImage = 0xE4A313AC;
+    Gundam_Legilis.IngameImage = 0x98E6DA79;
     Gundam_Legilis.KPKP = 0x53A6CA4C;
     Gundam_Legilis.VoiceFileList = 0x2455C38F;
     Gundam_Legilis.Stream = 0x75C74C73;

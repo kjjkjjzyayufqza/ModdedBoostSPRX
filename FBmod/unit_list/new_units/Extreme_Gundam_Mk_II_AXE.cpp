@@ -93,7 +93,7 @@ unit_hash_info Extreme_Gundam_Mk_II_AXE_inject_unit_hash_info()
     Extreme_Gundam_Mk_II_AXE.Sound = 0x794380A9;
     Extreme_Gundam_Mk_II_AXE.GlobalPilotVoice = 0xDE9294A8;
     Extreme_Gundam_Mk_II_AXE.WeaponImage = 0x31BE29A3;
-    Extreme_Gundam_Mk_II_AXE.IngameImage = 0x31BE29A3;
+    Extreme_Gundam_Mk_II_AXE.IngameImage = 0xCE913E86;
     Extreme_Gundam_Mk_II_AXE.KPKP = 0x7F578B33;
     Extreme_Gundam_Mk_II_AXE.VoiceFileList = 0x3C80F39D;
     Extreme_Gundam_Mk_II_AXE.Stream = 0x78CB1DD4;

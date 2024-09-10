@@ -93,7 +93,7 @@ unit_hash_info Extreme_Gundam_Excellia_inject_unit_hash_info()
     Extreme_Gundam_Excellia.Sound = 0xF264A994;
     Extreme_Gundam_Excellia.GlobalPilotVoice = 0x7A22AE48;
     Extreme_Gundam_Excellia.WeaponImage = 0x9ADE68D6;
-    Extreme_Gundam_Excellia.IngameImage = 0x9ADE68D6;
+    Extreme_Gundam_Excellia.IngameImage = 0x03303805;
     Extreme_Gundam_Excellia.KPKP = 0x4E0311F2;
     Extreme_Gundam_Excellia.VoiceFileList = 0xB043219B;
     Extreme_Gundam_Excellia.Stream = 0x193590B2;

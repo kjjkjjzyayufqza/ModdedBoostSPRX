@@ -93,7 +93,7 @@ unit_hash_info Farsia_inject_unit_hash_info()
     Farsia.Sound = 0xC8231F73;
     Farsia.GlobalPilotVoice = 0xC1DB7804;
     Farsia.WeaponImage = 0x7A12951E;
-    Farsia.IngameImage = 0x7A12951E;
+    Farsia.IngameImage = 0xD278B0DA;
     Farsia.KPKP = 0x57E2387C;
     Farsia.VoiceFileList = 0xC97C32AF;
     Farsia.Stream = 0xEBA4DF07;

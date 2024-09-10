@@ -93,7 +93,7 @@ unit_hash_info ZZ_Gundam_inject_unit_hash_info()
     ZZ_Gundam.Sound = 0x19EB69AD;
     ZZ_Gundam.GlobalPilotVoice = 0xA0CF89DA;
     ZZ_Gundam.WeaponImage = 0x7393F06C;
-    ZZ_Gundam.IngameImage = 0x7393F06C;
+    ZZ_Gundam.IngameImage = 0xF97FCFB2;
     ZZ_Gundam.KPKP = 0xD4C7A534;
     ZZ_Gundam.VoiceFileList = 0x7641D8F2;
     ZZ_Gundam.Stream = 0x94AAD2D9;

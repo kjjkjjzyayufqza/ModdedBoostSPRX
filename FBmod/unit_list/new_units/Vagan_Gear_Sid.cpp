@@ -93,7 +93,7 @@ unit_hash_info Vagan_Gear_Sid_inject_unit_hash_info()
     Vagan_Gear_Sid.Sound = 0xCDD723B9;
     Vagan_Gear_Sid.GlobalPilotVoice = 0x1AB6534A;
     Vagan_Gear_Sid.WeaponImage = 0xC5086A42;
-    Vagan_Gear_Sid.IngameImage = 0xC5086A42;
+    Vagan_Gear_Sid.IngameImage = 0xE37ECC8A;
     Vagan_Gear_Sid.KPKP = 0x88F66DEA;
     Vagan_Gear_Sid.VoiceFileList = 0xE9A855F3;
     Vagan_Gear_Sid.Stream = 0x3D46472D;

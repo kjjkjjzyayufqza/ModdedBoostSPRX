@@ -93,7 +93,7 @@ unit_hash_info Zeta_Gundam_Boss_inject_unit_hash_info()
     Zeta_Gundam_Boss.Sound = 0x047329F1;
     Zeta_Gundam_Boss.GlobalPilotVoice = 0xEF7AE077;
     Zeta_Gundam_Boss.WeaponImage = 0x7CDF5F7D;
-    Zeta_Gundam_Boss.IngameImage = 0x7CDF5F7D;
+    Zeta_Gundam_Boss.IngameImage = 0xC2CE8219;
     Zeta_Gundam_Boss.KPKP = 0xFE78AAB7;
     Zeta_Gundam_Boss.VoiceFileList = 0x204DDE67;
     Zeta_Gundam_Boss.Stream = 0xFE312D7A;

@@ -93,7 +93,7 @@ unit_hash_info Perfect_Strike_Gundam_inject_unit_hash_info()
     Perfect_Strike_Gundam.Sound = 0x6EC6AD77;
     Perfect_Strike_Gundam.GlobalPilotVoice = 0x0C19F1BE;
     Perfect_Strike_Gundam.WeaponImage = 0x029E9702;
-    Perfect_Strike_Gundam.IngameImage = 0x029E9702;
+    Perfect_Strike_Gundam.IngameImage = 0x1EEDA700;
     Perfect_Strike_Gundam.KPKP = 0x69097578;
     Perfect_Strike_Gundam.VoiceFileList = 0xAEB66595;
     Perfect_Strike_Gundam.Stream = 0xFE2BF6F2;

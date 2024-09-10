@@ -93,7 +93,7 @@ unit_hash_info Gedlav_inject_unit_hash_info()
     Gedlav.Sound = 0x19506CF8;
     Gedlav.GlobalPilotVoice = 0xFE1F5675;
     Gedlav.WeaponImage = 0x3ADD065D;
-    Gedlav.IngameImage = 0x3ADD065D;
+    Gedlav.IngameImage = 0xD20F9007;
     Gedlav.KPKP = 0x9DF62973;
     Gedlav.VoiceFileList = 0x0F269BBD;
     Gedlav.Stream = 0x9A8C73A1;

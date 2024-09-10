@@ -93,7 +93,7 @@ unit_hash_info Raider_Gundam_inject_unit_hash_info()
     Raider_Gundam.Sound = 0xBDBB39FF;
     Raider_Gundam.GlobalPilotVoice = 0xCCE615F3;
     Raider_Gundam.WeaponImage = 0x45684DE7;
-    Raider_Gundam.IngameImage = 0x45684DE7;
+    Raider_Gundam.IngameImage = 0x4CFF0F80;
     Raider_Gundam.KPKP = 0x7B7C0EE8;
     Raider_Gundam.VoiceFileList = 0x052FFEDA;
     Raider_Gundam.Stream = 0xBBA3168D;

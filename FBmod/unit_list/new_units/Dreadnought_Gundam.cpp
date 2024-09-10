@@ -93,7 +93,7 @@ unit_hash_info Dreadnought_Gundam_inject_unit_hash_info()
     Dreadnought_Gundam.Sound = 0x7890D399;
     Dreadnought_Gundam.GlobalPilotVoice = 0x90785A5E;
     Dreadnought_Gundam.WeaponImage = 0x017E8161;
-    Dreadnought_Gundam.IngameImage = 0x017E8161;
+    Dreadnought_Gundam.IngameImage = 0x0831545C;
     Dreadnought_Gundam.KPKP = 0x7805E9BB;
     Dreadnought_Gundam.VoiceFileList = 0x24C28ECD;
     Dreadnought_Gundam.Stream = 0x9686BF36;

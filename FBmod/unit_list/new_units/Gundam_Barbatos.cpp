@@ -93,7 +93,7 @@ unit_hash_info Gundam_Barbatos_inject_unit_hash_info()
     Gundam_Barbatos.Sound = 0x50E60449;
     Gundam_Barbatos.GlobalPilotVoice = 0xC1990D20;
     Gundam_Barbatos.WeaponImage = 0xF7887DAF;
-    Gundam_Barbatos.IngameImage = 0xF7887DAF;
+    Gundam_Barbatos.IngameImage = 0xB97CCBB0;
     Gundam_Barbatos.KPKP = 0xEF644C31;
     Gundam_Barbatos.VoiceFileList = 0x21451AA4;
     Gundam_Barbatos.Stream = 0xA9D1FB07;

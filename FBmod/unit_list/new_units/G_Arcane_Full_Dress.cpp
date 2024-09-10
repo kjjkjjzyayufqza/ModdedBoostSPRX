@@ -93,7 +93,7 @@ unit_hash_info G_Arcane_Full_Dress_inject_unit_hash_info()
     G_Arcane_Full_Dress.Sound = 0xE4CA55AA;
     G_Arcane_Full_Dress.GlobalPilotVoice = 0x7C89C43D;
     G_Arcane_Full_Dress.WeaponImage = 0xCAB2F382;
-    G_Arcane_Full_Dress.IngameImage = 0xCAB2F382;
+    G_Arcane_Full_Dress.IngameImage = 0xC20E9DBA;
     G_Arcane_Full_Dress.KPKP = 0xB1B0EDF7;
     G_Arcane_Full_Dress.VoiceFileList = 0xD8A97FFB;
     G_Arcane_Full_Dress.Stream = 0x04EAFAF7;

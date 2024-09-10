@@ -93,7 +93,7 @@ unit_hash_info Hot_Scramble_Gundam_inject_unit_hash_info()
     Hot_Scramble_Gundam.Sound = 0xE6610359;
     Hot_Scramble_Gundam.GlobalPilotVoice = 0xC132DF8B;
     Hot_Scramble_Gundam.WeaponImage = 0xA587297D;
-    Hot_Scramble_Gundam.IngameImage = 0xA587297D;
+    Hot_Scramble_Gundam.IngameImage = 0xB12AB2AA;
     Hot_Scramble_Gundam.KPKP = 0xDFB170B8;
     Hot_Scramble_Gundam.VoiceFileList = 0x4620F060;
     Hot_Scramble_Gundam.Stream = 0x02035007;

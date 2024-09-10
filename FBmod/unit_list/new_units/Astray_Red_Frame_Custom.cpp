@@ -93,7 +93,7 @@ unit_hash_info Astray_Red_Frame_Custom_inject_unit_hash_info()
     Astray_Red_Frame_Custom.Sound = 0xFED42935;
     Astray_Red_Frame_Custom.GlobalPilotVoice = 0x0DEC6B6F;
     Astray_Red_Frame_Custom.WeaponImage = 0xB654FF89;
-    Astray_Red_Frame_Custom.IngameImage = 0xB654FF89;
+    Astray_Red_Frame_Custom.IngameImage = 0x1BE72FBA;
     Astray_Red_Frame_Custom.KPKP = 0xD05FE8E3;
     Astray_Red_Frame_Custom.VoiceFileList = 0xEE905E0D;
     Astray_Red_Frame_Custom.Stream = 0xD0C021B3;

@@ -93,7 +93,7 @@ unit_hash_info Gundam_G_Mecha_inject_unit_hash_info()
     Gundam_G_Mecha.Sound = 0xE2D63265;
     Gundam_G_Mecha.GlobalPilotVoice = 0xA9675794;
     Gundam_G_Mecha.WeaponImage = 0xCCD90BC2;
-    Gundam_G_Mecha.IngameImage = 0xCCD90BC2;
+    Gundam_G_Mecha.IngameImage = 0xAC26552E;
     Gundam_G_Mecha.KPKP = 0x5E516D10;
     Gundam_G_Mecha.VoiceFileList = 0x20CDA888;
     Gundam_G_Mecha.Stream = 0x8A38B7D5;

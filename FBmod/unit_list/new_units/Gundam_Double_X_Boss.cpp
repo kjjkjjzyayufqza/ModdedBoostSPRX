@@ -93,7 +93,7 @@ unit_hash_info Gundam_Double_X_Boss_inject_unit_hash_info()
     Gundam_Double_X_Boss.Sound = 0xFCCA4C64;
     Gundam_Double_X_Boss.GlobalPilotVoice = 0x28AEBCC2;
     Gundam_Double_X_Boss.WeaponImage = 0x1E4CDA88;
-    Gundam_Double_X_Boss.IngameImage = 0x1E4CDA88;
+    Gundam_Double_X_Boss.IngameImage = 0x41DC7E2B;
     Gundam_Double_X_Boss.KPKP = 0x8CE25F31;
     Gundam_Double_X_Boss.VoiceFileList = 0x7356B466;
     Gundam_Double_X_Boss.Stream = 0xFDC52C01;

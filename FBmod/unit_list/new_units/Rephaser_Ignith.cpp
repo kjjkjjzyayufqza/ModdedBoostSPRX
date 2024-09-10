@@ -93,7 +93,7 @@ unit_hash_info Rephaser_Ignith_inject_unit_hash_info()
     Rephaser_Ignith.Sound = 0xDEBCB0EB;
     Rephaser_Ignith.GlobalPilotVoice = 0x3F11CA5D;
     Rephaser_Ignith.WeaponImage = 0x113A8A62;
-    Rephaser_Ignith.IngameImage = 0x113A8A62;
+    Rephaser_Ignith.IngameImage = 0x500532A0;
     Rephaser_Ignith.KPKP = 0xFED494F3;
     Rephaser_Ignith.VoiceFileList = 0xC4ABACF4;
     Rephaser_Ignith.Stream = 0xF50DF09F;

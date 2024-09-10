@@ -93,7 +93,7 @@ unit_hash_info Zeydra_inject_unit_hash_info()
     Zeydra.Sound = 0x64530724;
     Zeydra.GlobalPilotVoice = 0x3B9D9890;
     Zeydra.WeaponImage = 0x6B15F365;
-    Zeydra.IngameImage = 0x6B15F365;
+    Zeydra.IngameImage = 0x76B9468E;
     Zeydra.KPKP = 0xB660A31F;
     Zeydra.VoiceFileList = 0x4E077EC0;
     Zeydra.Stream = 0xA2792819;

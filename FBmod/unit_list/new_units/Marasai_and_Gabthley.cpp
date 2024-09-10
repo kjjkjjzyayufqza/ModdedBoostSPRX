@@ -93,7 +93,7 @@ unit_hash_info Marasai_and_Gabthley_inject_unit_hash_info()
     Marasai_and_Gabthley.Sound = 0x8800337F;
     Marasai_and_Gabthley.GlobalPilotVoice = 0x7035F76A;
     Marasai_and_Gabthley.WeaponImage = 0x654EAF60;
-    Marasai_and_Gabthley.IngameImage = 0x654EAF60;
+    Marasai_and_Gabthley.IngameImage = 0xFE5D236F;
     Marasai_and_Gabthley.KPKP = 0x7DF34D09;
     Marasai_and_Gabthley.VoiceFileList = 0x55CFE275;
     Marasai_and_Gabthley.Stream = 0x0EC2953C;

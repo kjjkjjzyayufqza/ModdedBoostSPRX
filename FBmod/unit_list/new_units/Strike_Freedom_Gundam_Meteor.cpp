@@ -93,7 +93,7 @@ unit_hash_info Strike_Freedom_Gundam_Meteor_inject_unit_hash_info()
     Strike_Freedom_Gundam_Meteor.Sound = 0xC980DDA5;
     Strike_Freedom_Gundam_Meteor.GlobalPilotVoice = 0xC875E051;
     Strike_Freedom_Gundam_Meteor.WeaponImage = 0xFDE85247;
-    Strike_Freedom_Gundam_Meteor.IngameImage = 0xFDE85247;
+    Strike_Freedom_Gundam_Meteor.IngameImage = 0xDF37016D;
     Strike_Freedom_Gundam_Meteor.KPKP = 0x337B75C5;
     Strike_Freedom_Gundam_Meteor.VoiceFileList = 0x3D476029;
     Strike_Freedom_Gundam_Meteor.Stream = 0xF370A10B;

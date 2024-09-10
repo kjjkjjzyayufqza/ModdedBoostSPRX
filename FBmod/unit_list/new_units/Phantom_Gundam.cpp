@@ -93,7 +93,7 @@ unit_hash_info Phantom_Gundam_inject_unit_hash_info()
     Phantom_Gundam.Sound = 0x0FB92393;
     Phantom_Gundam.GlobalPilotVoice = 0xF553B704;
     Phantom_Gundam.WeaponImage = 0xB40250E1;
-    Phantom_Gundam.IngameImage = 0xB40250E1;
+    Phantom_Gundam.IngameImage = 0x49540F41;
     Phantom_Gundam.KPKP = 0x3EAAC733;
     Phantom_Gundam.VoiceFileList = 0x4EE8861A;
     Phantom_Gundam.Stream = 0x0DB2236E;

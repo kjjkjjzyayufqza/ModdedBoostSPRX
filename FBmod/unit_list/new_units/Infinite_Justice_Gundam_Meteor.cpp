@@ -93,7 +93,7 @@ unit_hash_info Infinite_Justice_Gundam_Meteor_inject_unit_hash_info()
     Infinite_Justice_Gundam_Meteor.Sound = 0xE5B94B5B;
     Infinite_Justice_Gundam_Meteor.GlobalPilotVoice = 0x05DF4227;
     Infinite_Justice_Gundam_Meteor.WeaponImage = 0x8EE43558;
-    Infinite_Justice_Gundam_Meteor.IngameImage = 0x8EE43558;
+    Infinite_Justice_Gundam_Meteor.IngameImage = 0x1116E166;
     Infinite_Justice_Gundam_Meteor.KPKP = 0x8871917D;
     Infinite_Justice_Gundam_Meteor.VoiceFileList = 0x183BBBCD;
     Infinite_Justice_Gundam_Meteor.Stream = 0x8ED444FE;

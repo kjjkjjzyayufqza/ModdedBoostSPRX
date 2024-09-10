@@ -93,7 +93,7 @@ unit_hash_info GOUF_Ignited_inject_unit_hash_info()
     GOUF_Ignited.Sound = 0xA70C28EE;
     GOUF_Ignited.GlobalPilotVoice = 0xC8F82A7A;
     GOUF_Ignited.WeaponImage = 0xE218AED5;
-    GOUF_Ignited.IngameImage = 0xE218AED5;
+    GOUF_Ignited.IngameImage = 0x0F732721;
     GOUF_Ignited.KPKP = 0xFDAEC3B5;
     GOUF_Ignited.VoiceFileList = 0x3F44AC9A;
     GOUF_Ignited.Stream = 0x7EBA8A0B;

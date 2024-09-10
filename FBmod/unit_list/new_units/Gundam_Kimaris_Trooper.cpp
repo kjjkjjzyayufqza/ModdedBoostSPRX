@@ -93,7 +93,7 @@ unit_hash_info Gundam_Kimaris_Trooper_inject_unit_hash_info()
     Gundam_Kimaris_Trooper.Sound = 0x69BBA3ED;
     Gundam_Kimaris_Trooper.GlobalPilotVoice = 0x93CE143E;
     Gundam_Kimaris_Trooper.WeaponImage = 0x01FB9C15;
-    Gundam_Kimaris_Trooper.IngameImage = 0x01FB9C15;
+    Gundam_Kimaris_Trooper.IngameImage = 0xCD9FCF1C;
     Gundam_Kimaris_Trooper.KPKP = 0x66EE23F3;
     Gundam_Kimaris_Trooper.VoiceFileList = 0x8187D782;
     Gundam_Kimaris_Trooper.Stream = 0x962AD3B4;

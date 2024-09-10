@@ -93,7 +93,7 @@ unit_hash_info Brave_Commander_Test_Type_inject_unit_hash_info()
     Brave_Commander_Test_Type.Sound = 0xEA25C147;
     Brave_Commander_Test_Type.GlobalPilotVoice = 0x765731D5;
     Brave_Commander_Test_Type.WeaponImage = 0x973AC688;
-    Brave_Commander_Test_Type.IngameImage = 0x973AC688;
+    Brave_Commander_Test_Type.IngameImage = 0x0CC7A4A6;
     Brave_Commander_Test_Type.KPKP = 0xC105A1E7;
     Brave_Commander_Test_Type.VoiceFileList = 0xB4AB1D58;
     Brave_Commander_Test_Type.Stream = 0xDAB13579;

@@ -93,7 +93,7 @@ unit_hash_info Build_Strike_Gundam_Full_Package_inject_unit_hash_info()
     Build_Strike_Gundam_Full_Package.Sound = 0x8BBC79EE;
     Build_Strike_Gundam_Full_Package.GlobalPilotVoice = 0xE1AE3D1F;
     Build_Strike_Gundam_Full_Package.WeaponImage = 0x4F6D20FC;
-    Build_Strike_Gundam_Full_Package.IngameImage = 0x4F6D20FC;
+    Build_Strike_Gundam_Full_Package.IngameImage = 0xB29F58F9;
     Build_Strike_Gundam_Full_Package.KPKP = 0x36A90A9F;
     Build_Strike_Gundam_Full_Package.VoiceFileList = 0x3F68D830;
     Build_Strike_Gundam_Full_Package.Stream = 0xF1647772;

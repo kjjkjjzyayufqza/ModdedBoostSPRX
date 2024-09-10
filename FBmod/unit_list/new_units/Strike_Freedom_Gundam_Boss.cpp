@@ -93,7 +93,7 @@ unit_hash_info Strike_Freedom_Gundam_Boss_inject_unit_hash_info()
     Strike_Freedom_Gundam_Boss.Sound = 0x57F8F4B6;
     Strike_Freedom_Gundam_Boss.GlobalPilotVoice = 0xD8E0C098;
     Strike_Freedom_Gundam_Boss.WeaponImage = 0x50DD2AF6;
-    Strike_Freedom_Gundam_Boss.IngameImage = 0x50DD2AF6;
+    Strike_Freedom_Gundam_Boss.IngameImage = 0xED912619;
     Strike_Freedom_Gundam_Boss.KPKP = 0x45B057EA;
     Strike_Freedom_Gundam_Boss.VoiceFileList = 0x6E73EC6C;
     Strike_Freedom_Gundam_Boss.Stream = 0xBC2A3291;

@@ -93,7 +93,7 @@ unit_hash_info Akatsuki_inject_unit_hash_info()
     Akatsuki.Sound = 0xCB20FB48;
     Akatsuki.GlobalPilotVoice = 0x62C1FFC2;
     Akatsuki.WeaponImage = 0xB5B94089;
-    Akatsuki.IngameImage = 0xB5B94089;
+    Akatsuki.IngameImage = 0x908F070B;
     Akatsuki.KPKP = 0xFCFCF5CC;
     Akatsuki.VoiceFileList = 0x0779646E;
     Akatsuki.Stream = 0x4D236D65;

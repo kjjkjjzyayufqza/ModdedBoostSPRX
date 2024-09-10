@@ -93,7 +93,7 @@ unit_hash_info QANT_Full_Saber_inject_unit_hash_info()
     QANT_Full_Saber.Sound = 0xB9E53728;
     QANT_Full_Saber.GlobalPilotVoice = 0x50365748;
     QANT_Full_Saber.WeaponImage = 0x7638DAE2;
-    QANT_Full_Saber.IngameImage = 0x7638DAE2;
+    QANT_Full_Saber.IngameImage = 0x1BE52DC2;
     QANT_Full_Saber.KPKP = 0x0151D5FB;
     QANT_Full_Saber.VoiceFileList = 0x65C1B077;
     QANT_Full_Saber.Stream = 0x62E70449;

@@ -93,7 +93,7 @@ unit_hash_info Legend_Gundam_inject_unit_hash_info()
     Legend_Gundam.Sound = 0xDC2F7FD5;
     Legend_Gundam.GlobalPilotVoice = 0xC65549AE;
     Legend_Gundam.WeaponImage = 0xCBDDFE73;
-    Legend_Gundam.IngameImage = 0xCBDDFE73;
+    Legend_Gundam.IngameImage = 0x891E9C28;
     Legend_Gundam.KPKP = 0xEA7D63DE;
     Legend_Gundam.VoiceFileList = 0x34BDC829;
     Legend_Gundam.Stream = 0x08516C03;

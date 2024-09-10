@@ -93,7 +93,7 @@ unit_hash_info Destiny_Gundam_Heine_inject_unit_hash_info()
     Destiny_Gundam_Heine.Sound = 0x483566B2;
     Destiny_Gundam_Heine.GlobalPilotVoice = 0x7BEA2468;
     Destiny_Gundam_Heine.WeaponImage = 0x87EBD874;
-    Destiny_Gundam_Heine.IngameImage = 0x87EBD874;
+    Destiny_Gundam_Heine.IngameImage = 0x36E81D0C;
     Destiny_Gundam_Heine.KPKP = 0xB05E873D;
     Destiny_Gundam_Heine.VoiceFileList = 0xC4E73863;
     Destiny_Gundam_Heine.Stream = 0x0ACEB6F3;

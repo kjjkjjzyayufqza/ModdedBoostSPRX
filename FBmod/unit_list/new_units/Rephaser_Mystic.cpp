@@ -93,7 +93,7 @@ unit_hash_info Rephaser_Mystic_inject_unit_hash_info()
     Rephaser_Mystic.Sound = 0xFE10058B;
     Rephaser_Mystic.GlobalPilotVoice = 0xD032A23E;
     Rephaser_Mystic.WeaponImage = 0x3E6450FB;
-    Rephaser_Mystic.IngameImage = 0x3E6450FB;
+    Rephaser_Mystic.IngameImage = 0xFE2A265E;
     Rephaser_Mystic.KPKP = 0xAA66931C;
     Rephaser_Mystic.VoiceFileList = 0xBB0C20CD;
     Rephaser_Mystic.Stream = 0x0375B9DC;

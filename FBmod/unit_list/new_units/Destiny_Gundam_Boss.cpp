@@ -93,7 +93,7 @@ unit_hash_info Destiny_Gundam_Boss_inject_unit_hash_info()
     Destiny_Gundam_Boss.Sound = 0x49097CCD;
     Destiny_Gundam_Boss.GlobalPilotVoice = 0x10F13971;
     Destiny_Gundam_Boss.WeaponImage = 0x988EFC22;
-    Destiny_Gundam_Boss.IngameImage = 0x988EFC22;
+    Destiny_Gundam_Boss.IngameImage = 0x9F23BD3B;
     Destiny_Gundam_Boss.KPKP = 0x580B6D87;
     Destiny_Gundam_Boss.VoiceFileList = 0x24D0DF1E;
     Destiny_Gundam_Boss.Stream = 0x7A825BA3;

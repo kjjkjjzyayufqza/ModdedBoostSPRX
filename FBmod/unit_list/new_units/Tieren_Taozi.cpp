@@ -93,7 +93,7 @@ unit_hash_info Tieren_Taozi_inject_unit_hash_info()
     Tieren_Taozi.Sound = 0x9915D64D;
     Tieren_Taozi.GlobalPilotVoice = 0xA3907789;
     Tieren_Taozi.WeaponImage = 0x16902071;
-    Tieren_Taozi.IngameImage = 0x16902071;
+    Tieren_Taozi.IngameImage = 0xDF1085D7;
     Tieren_Taozi.KPKP = 0xC64D7E34;
     Tieren_Taozi.VoiceFileList = 0x847648C9;
     Tieren_Taozi.Stream = 0x7DB68D5B;

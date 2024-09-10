@@ -93,7 +93,7 @@ unit_hash_info Shining_Gundam_inject_unit_hash_info()
     Shining_Gundam.Sound = 0x116BB4A7;
     Shining_Gundam.GlobalPilotVoice = 0x937BF6D7;
     Shining_Gundam.WeaponImage = 0x0D8FD15E;
-    Shining_Gundam.IngameImage = 0x0D8FD15E;
+    Shining_Gundam.IngameImage = 0xD9E5D91C;
     Shining_Gundam.KPKP = 0x1CA87DD0;
     Shining_Gundam.VoiceFileList = 0xA4AAA229;
     Shining_Gundam.Stream = 0x23C83AB4;

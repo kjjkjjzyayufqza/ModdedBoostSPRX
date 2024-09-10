@@ -93,7 +93,7 @@ unit_hash_info GP03_Gundam_Dendrobium_inject_unit_hash_info()
     GP03_Gundam_Dendrobium.Sound = 0x046F86C4;
     GP03_Gundam_Dendrobium.GlobalPilotVoice = 0x53759609;
     GP03_Gundam_Dendrobium.WeaponImage = 0x4F81798D;
-    GP03_Gundam_Dendrobium.IngameImage = 0x4F81798D;
+    GP03_Gundam_Dendrobium.IngameImage = 0xA7D425A2;
     GP03_Gundam_Dendrobium.KPKP = 0xC2EC3A1C;
     GP03_Gundam_Dendrobium.VoiceFileList = 0xE953FDD0;
     GP03_Gundam_Dendrobium.Stream = 0x97C449CB;

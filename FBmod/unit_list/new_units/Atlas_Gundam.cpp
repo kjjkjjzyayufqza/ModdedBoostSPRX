@@ -93,7 +93,7 @@ unit_hash_info Atlas_Gundam_inject_unit_hash_info()
     Atlas_Gundam.Sound = 0x7A5822D7;
     Atlas_Gundam.GlobalPilotVoice = 0x60035A28;
     Atlas_Gundam.WeaponImage = 0xF84F97E0;
-    Atlas_Gundam.IngameImage = 0xF84F97E0;
+    Atlas_Gundam.IngameImage = 0xBF867AFD;
     Atlas_Gundam.KPKP = 0x271BD2BF;
     Atlas_Gundam.VoiceFileList = 0x5C86A95A;
     Atlas_Gundam.Stream = 0xE2158DA6;

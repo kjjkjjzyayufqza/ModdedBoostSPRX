@@ -93,7 +93,7 @@ unit_hash_info Buster_Gundam_inject_unit_hash_info()
     Buster_Gundam.Sound = 0xF818B2B5;
     Buster_Gundam.GlobalPilotVoice = 0x8D9C44BA;
     Buster_Gundam.WeaponImage = 0xB43B091C;
-    Buster_Gundam.IngameImage = 0xB43B091C;
+    Buster_Gundam.IngameImage = 0x724692AD;
     Buster_Gundam.KPKP = 0x7E2593A5;
     Buster_Gundam.VoiceFileList = 0x628EEE72;
     Buster_Gundam.Stream = 0xC5883F26;

@@ -93,7 +93,7 @@ unit_hash_info Gundam_AGE_2_Dark_Hound_inject_unit_hash_info()
     Gundam_AGE_2_Dark_Hound.Sound = 0x848FA222;
     Gundam_AGE_2_Dark_Hound.GlobalPilotVoice = 0x9063BDEA;
     Gundam_AGE_2_Dark_Hound.WeaponImage = 0x786782AC;
-    Gundam_AGE_2_Dark_Hound.IngameImage = 0x786782AC;
+    Gundam_AGE_2_Dark_Hound.IngameImage = 0x44DB6522;
     Gundam_AGE_2_Dark_Hound.KPKP = 0x378939E6;
     Gundam_AGE_2_Dark_Hound.VoiceFileList = 0xDD86FB10;
     Gundam_AGE_2_Dark_Hound.Stream = 0x8D610B36;

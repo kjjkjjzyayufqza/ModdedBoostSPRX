@@ -93,7 +93,7 @@ unit_hash_info Turn_A_Gundam_Boss_inject_unit_hash_info()
     Turn_A_Gundam_Boss.Sound = 0x941F406B;
     Turn_A_Gundam_Boss.GlobalPilotVoice = 0x4B463025;
     Turn_A_Gundam_Boss.WeaponImage = 0x6FCCED00;
-    Turn_A_Gundam_Boss.IngameImage = 0x6FCCED00;
+    Turn_A_Gundam_Boss.IngameImage = 0xE16C80EB;
     Turn_A_Gundam_Boss.KPKP = 0x0AF66A6C;
     Turn_A_Gundam_Boss.VoiceFileList = 0x97BA5D55;
     Turn_A_Gundam_Boss.Stream = 0x1325121C;

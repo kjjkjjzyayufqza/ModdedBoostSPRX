@@ -93,7 +93,7 @@ unit_hash_info Baund_Doc_inject_unit_hash_info()
     Baund_Doc.Sound = 0x51876F6F;
     Baund_Doc.GlobalPilotVoice = 0x7CD65706;
     Baund_Doc.WeaponImage = 0x178A2BC9;
-    Baund_Doc.IngameImage = 0x178A2BC9;
+    Baund_Doc.IngameImage = 0xBBE4E32F;
     Baund_Doc.KPKP = 0xF0D2C30C;
     Baund_Doc.VoiceFileList = 0x005F0BB8;
     Baund_Doc.Stream = 0x5B79C1F7;

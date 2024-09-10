@@ -93,7 +93,7 @@ unit_hash_info Extreme_Gundam_type_Leos_II_Vs__Boss_inject_unit_hash_info()
     Extreme_Gundam_type_Leos_II_Vs__Boss.Sound = 0xCAE4E1CB;
     Extreme_Gundam_type_Leos_II_Vs__Boss.GlobalPilotVoice = 0x285805F1;
     Extreme_Gundam_type_Leos_II_Vs__Boss.WeaponImage = 0x9BFA8832;
-    Extreme_Gundam_type_Leos_II_Vs__Boss.IngameImage = 0x9BFA8832;
+    Extreme_Gundam_type_Leos_II_Vs__Boss.IngameImage = 0x10692F8D;
     Extreme_Gundam_type_Leos_II_Vs__Boss.KPKP = 0x118A6489;
     Extreme_Gundam_type_Leos_II_Vs__Boss.VoiceFileList = 0xAAFD8A1E;
     Extreme_Gundam_type_Leos_II_Vs__Boss.Stream = 0x0B7C1F01;

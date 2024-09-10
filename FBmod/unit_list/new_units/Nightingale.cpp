@@ -93,7 +93,7 @@ unit_hash_info Nightingale_inject_unit_hash_info()
     Nightingale.Sound = 0x9FE9F3B0;
     Nightingale.GlobalPilotVoice = 0xCB800897;
     Nightingale.WeaponImage = 0x5D45E6BB;
-    Nightingale.IngameImage = 0x5D45E6BB;
+    Nightingale.IngameImage = 0x3A3B13DE;
     Nightingale.KPKP = 0xF9A2CD47;
     Nightingale.VoiceFileList = 0x167D43EF;
     Nightingale.Stream = 0xB07A6B89;

@@ -93,7 +93,7 @@ unit_hash_info Hyperion_Gundam_inject_unit_hash_info()
     Hyperion_Gundam.Sound = 0xC3F4630F;
     Hyperion_Gundam.GlobalPilotVoice = 0x36CFD6B1;
     Hyperion_Gundam.WeaponImage = 0x42DCA39E;
-    Hyperion_Gundam.IngameImage = 0x42DCA39E;
+    Hyperion_Gundam.IngameImage = 0xB31EFC3C;
     Hyperion_Gundam.KPKP = 0xB865DEFF;
     Hyperion_Gundam.VoiceFileList = 0xEF4ED3BF;
     Hyperion_Gundam.Stream = 0x9D5D3793;

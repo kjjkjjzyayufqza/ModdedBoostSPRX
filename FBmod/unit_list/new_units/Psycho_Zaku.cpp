@@ -93,7 +93,7 @@ unit_hash_info Psycho_Zaku_inject_unit_hash_info()
     Psycho_Zaku.Sound = 0xDD631490;
     Psycho_Zaku.GlobalPilotVoice = 0xA722199F;
     Psycho_Zaku.WeaponImage = 0x29C8F1BE;
-    Psycho_Zaku.IngameImage = 0x29C8F1BE;
+    Psycho_Zaku.IngameImage = 0x2C1BD338;
     Psycho_Zaku.KPKP = 0x8C723F19;
     Psycho_Zaku.VoiceFileList = 0xB2B6DD24;
     Psycho_Zaku.Stream = 0x14FE8EDD;

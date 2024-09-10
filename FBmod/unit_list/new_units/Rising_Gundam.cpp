@@ -93,7 +93,7 @@ unit_hash_info Rising_Gundam_inject_unit_hash_info()
     Rising_Gundam.Sound = 0xA2E4869B;
     Rising_Gundam.GlobalPilotVoice = 0x49003CC3;
     Rising_Gundam.WeaponImage = 0x8B4DE839;
-    Rising_Gundam.IngameImage = 0x8B4DE839;
+    Rising_Gundam.IngameImage = 0x9485F94F;
     Rising_Gundam.KPKP = 0x76082D0F;
     Rising_Gundam.VoiceFileList = 0xE32A5133;
     Rising_Gundam.Stream = 0x38BAFEDF;

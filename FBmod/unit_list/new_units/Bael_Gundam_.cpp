@@ -93,7 +93,7 @@ unit_hash_info Bael_Gundam__inject_unit_hash_info()
     Bael_Gundam_.Sound = 0x6516E216;
     Bael_Gundam_.GlobalPilotVoice = 0x3F13B4A1;
     Bael_Gundam_.WeaponImage = 0x26D01078;
-    Bael_Gundam_.IngameImage = 0x26D01078;
+    Bael_Gundam_.IngameImage = 0xFABB350B;
     Bael_Gundam_.KPKP = 0x79095B4E;
     Bael_Gundam_.VoiceFileList = 0x9A2C0EF1;
     Bael_Gundam_.Stream = 0xF7730C9F;

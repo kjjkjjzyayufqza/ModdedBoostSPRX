@@ -93,7 +93,7 @@ unit_hash_info Infinite_Justice_Gundam_Boss_inject_unit_hash_info()
     Infinite_Justice_Gundam_Boss.Sound = 0x8A6454BC;
     Infinite_Justice_Gundam_Boss.GlobalPilotVoice = 0x7B9B8417;
     Infinite_Justice_Gundam_Boss.WeaponImage = 0x5B5C11FA;
-    Infinite_Justice_Gundam_Boss.IngameImage = 0x5B5C11FA;
+    Infinite_Justice_Gundam_Boss.IngameImage = 0x360E37F3;
     Infinite_Justice_Gundam_Boss.KPKP = 0x24435BBD;
     Infinite_Justice_Gundam_Boss.VoiceFileList = 0x0BAF0874;
     Infinite_Justice_Gundam_Boss.Stream = 0x7B6EC9F3;

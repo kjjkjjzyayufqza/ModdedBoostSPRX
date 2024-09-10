@@ -93,7 +93,7 @@ unit_hash_info G_Self_Perfect_Pack_inject_unit_hash_info()
     G_Self_Perfect_Pack.Sound = 0x73991A4C;
     G_Self_Perfect_Pack.GlobalPilotVoice = 0x47D3FD03;
     G_Self_Perfect_Pack.WeaponImage = 0xE5BB16A2;
-    G_Self_Perfect_Pack.IngameImage = 0xE5BB16A2;
+    G_Self_Perfect_Pack.IngameImage = 0x3BAB7779;
     G_Self_Perfect_Pack.KPKP = 0xC8FA9647;
     G_Self_Perfect_Pack.VoiceFileList = 0x4DC06D7A;
     G_Self_Perfect_Pack.Stream = 0x30F30CD7;

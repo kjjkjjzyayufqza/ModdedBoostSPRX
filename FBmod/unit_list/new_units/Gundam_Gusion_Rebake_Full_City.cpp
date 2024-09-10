@@ -93,7 +93,7 @@ unit_hash_info Gundam_Gusion_Rebake_Full_City_inject_unit_hash_info()
     Gundam_Gusion_Rebake_Full_City.Sound = 0xF838B92A;
     Gundam_Gusion_Rebake_Full_City.GlobalPilotVoice = 0xB64E7E03;
     Gundam_Gusion_Rebake_Full_City.WeaponImage = 0x985DB362;
-    Gundam_Gusion_Rebake_Full_City.IngameImage = 0x985DB362;
+    Gundam_Gusion_Rebake_Full_City.IngameImage = 0x2B2A21F9;
     Gundam_Gusion_Rebake_Full_City.KPKP = 0xC0AADE19;
     Gundam_Gusion_Rebake_Full_City.VoiceFileList = 0xC0A53203;
     Gundam_Gusion_Rebake_Full_City.Stream = 0x79924E06;

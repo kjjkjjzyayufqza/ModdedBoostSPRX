@@ -93,7 +93,7 @@ unit_hash_info Rephaser_Carnage_inject_unit_hash_info()
     Rephaser_Carnage.Sound = 0xB5911F86;
     Rephaser_Carnage.GlobalPilotVoice = 0x6FD68DBC;
     Rephaser_Carnage.WeaponImage = 0x0410C1EE;
-    Rephaser_Carnage.IngameImage = 0x0410C1EE;
+    Rephaser_Carnage.IngameImage = 0x51C5D6B4;
     Rephaser_Carnage.KPKP = 0x5AE5211E;
     Rephaser_Carnage.VoiceFileList = 0xCF8A5B5A;
     Rephaser_Carnage.Stream = 0x373B2DEF;

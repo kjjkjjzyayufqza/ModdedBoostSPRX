@@ -93,7 +93,7 @@ unit_hash_info Gundam_Barbatos_Lupus_Rex_inject_unit_hash_info()
     Gundam_Barbatos_Lupus_Rex.Sound = 0xF6BEE409;
     Gundam_Barbatos_Lupus_Rex.GlobalPilotVoice = 0x3559C60C;
     Gundam_Barbatos_Lupus_Rex.WeaponImage = 0x6218E99E;
-    Gundam_Barbatos_Lupus_Rex.IngameImage = 0x6218E99E;
+    Gundam_Barbatos_Lupus_Rex.IngameImage = 0x2660F43A;
     Gundam_Barbatos_Lupus_Rex.KPKP = 0x6A4F014A;
     Gundam_Barbatos_Lupus_Rex.VoiceFileList = 0x2052F4F6;
     Gundam_Barbatos_Lupus_Rex.Stream = 0xBDAF8611;

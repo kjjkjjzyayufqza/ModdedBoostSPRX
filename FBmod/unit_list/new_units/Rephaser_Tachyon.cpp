@@ -93,7 +93,7 @@ unit_hash_info Rephaser_Tachyon_inject_unit_hash_info()
     Rephaser_Tachyon.Sound = 0x01E863B7;
     Rephaser_Tachyon.GlobalPilotVoice = 0x48B2EDA0;
     Rephaser_Tachyon.WeaponImage = 0xAF04158D;
-    Rephaser_Tachyon.IngameImage = 0xAF04158D;
+    Rephaser_Tachyon.IngameImage = 0xAFAEC640;
     Rephaser_Tachyon.KPKP = 0x095E8E2D;
     Rephaser_Tachyon.VoiceFileList = 0x30C517FC;
     Rephaser_Tachyon.Stream = 0x511A9B9E;

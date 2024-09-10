@@ -93,7 +93,7 @@ unit_hash_info Gundam_Zabanya_inject_unit_hash_info()
     Gundam_Zabanya.Sound = 0x47F74396;
     Gundam_Zabanya.GlobalPilotVoice = 0x39EEA28C;
     Gundam_Zabanya.WeaponImage = 0x838B5701;
-    Gundam_Zabanya.IngameImage = 0x838B5701;
+    Gundam_Zabanya.IngameImage = 0x54DCFCD0;
     Gundam_Zabanya.KPKP = 0xC841FF87;
     Gundam_Zabanya.VoiceFileList = 0x80B6EBAD;
     Gundam_Zabanya.Stream = 0xBCD03EDA;

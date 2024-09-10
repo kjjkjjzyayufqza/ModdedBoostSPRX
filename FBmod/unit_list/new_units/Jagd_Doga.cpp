@@ -93,7 +93,7 @@ unit_hash_info Jagd_Doga_inject_unit_hash_info()
     Jagd_Doga.Sound = 0xD251E38E;
     Jagd_Doga.GlobalPilotVoice = 0x3594812E;
     Jagd_Doga.WeaponImage = 0x3F7F29C9;
-    Jagd_Doga.IngameImage = 0x3F7F29C9;
+    Jagd_Doga.IngameImage = 0xDA87F3D5;
     Jagd_Doga.KPKP = 0x9BBEBD30;
     Jagd_Doga.VoiceFileList = 0x02C76B6C;
     Jagd_Doga.Stream = 0x70E8A411;

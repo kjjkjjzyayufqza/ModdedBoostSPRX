@@ -93,7 +93,7 @@ unit_hash_info Extreme_Gundam_Dystopia_Phase_inject_unit_hash_info()
     Extreme_Gundam_Dystopia_Phase.Sound = 0x64B79627;
     Extreme_Gundam_Dystopia_Phase.GlobalPilotVoice = 0x087232F1;
     Extreme_Gundam_Dystopia_Phase.WeaponImage = 0x5A536424;
-    Extreme_Gundam_Dystopia_Phase.IngameImage = 0x5A536424;
+    Extreme_Gundam_Dystopia_Phase.IngameImage = 0x8C1E5C87;
     Extreme_Gundam_Dystopia_Phase.KPKP = 0x496084A9;
     Extreme_Gundam_Dystopia_Phase.VoiceFileList = 0x4994B39E;
     Extreme_Gundam_Dystopia_Phase.Stream = 0x4ECEAC74;
