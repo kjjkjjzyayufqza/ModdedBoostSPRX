@@ -11,7 +11,6 @@ int nu_gundam_hws_re_gz_sbaer_throw_spawn_script_pointers_2[500];
 bool nu_gundam_hws_re_gz_sbaer_throw_spawn_script_pointers_initialized;
 bool nu_gundam_hws_re_gz_sbaer_throw_spawn_script_pointers_2_initialized;
 
-
 void nu_gundam_hws_re_gz_shoot_assist_spawn_model_hash()
 {
 	int hash = 0xE22E8826;

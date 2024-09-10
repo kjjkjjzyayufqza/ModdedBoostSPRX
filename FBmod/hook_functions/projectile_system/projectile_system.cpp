@@ -42,6 +42,7 @@
 #include "unit_projectiles/crossbone_gundam_x2_custom.h"
 #include "unit_projectiles/f91.h"
 #include "unit_projectiles/fazz.h"
+#include "unit_projectiles/forbidden_gundam.h"
 #include "unit_projectiles/gouf_ignited.h"
 #include "unit_projectiles/gundam_legilis.h"
 #include "unit_projectiles/gundam_x_divider.h"
@@ -50,6 +51,7 @@
 #include "unit_projectiles/mack_knife.h"
 #include "unit_projectiles/sazabi.h"
 #include "unit_projectiles/sinanju.h"
+#include "unit_projectiles/v2_gundam.h"
 #include "unit_projectiles/xi_gundam.h"
 #include "unit_projectiles/zeydra.h"
 
@@ -76,6 +78,12 @@ void projectile_id_check_hook()
             break;
         case 0x105F:
             f91_melee_assist_spawn();
+            break;
+        case 0x1400:
+            v2_gundam_melee_assist_spawn();
+            break;
+        case 0x140a:
+            v2_gundam_gerobi_assist_spawn();
             break;
         case 0x1BF8:
             double_x_javelin_throw_spawn();
@@ -122,6 +130,12 @@ void projectile_id_check_hook()
             break;
         case 0x42cc: // nu gundam's funnel, to be changed in the future.
             nu_hws_funnels_launch_spawn();
+            break;
+        case 0x4f06:
+            forbidden_gundam_flight_machine_gun_assist_spawn();
+            break;
+        case 0x4efc:
+            forbidden_gundam_gerobi_assist_spawn();
             break;
         case 0x514A:
             perfect_strike_hook_spawn();
@@ -286,13 +300,15 @@ void projectile_id_check_hook()
             gundam_legilis_fawn_farsia_funnel_spawn();
             break;
         case 0x53214:
-        case 0x53246:
             excellia_boomerang_spawn();
             break;
         // 0x5321E: typhoon, changed to 0x70 since the original typhoon func for extreme mystic at 0x9F1348 has vector instructions, and is un-decompile-able
         // See the explanation in the function for why this is disabled for now
         // case 0x5323C:
         //     excellia_shield_bits_spawn();
+        //     break;
+        // case 0x53246:
+        //     excellia_ally_shield_bits_spawn();
         //     break;
         case 0x53228:
             excellia_link_rephaser_spawn();
@@ -532,6 +548,10 @@ void init_custom_projectile_id()
     custom_projectile_id[108] = 0x434E;
     custom_projectile_id[109] = 0x4353;
     custom_projectile_id[110] = 0x299A0;
+    custom_projectile_id[111] = 0x1400;
+    custom_projectile_id[112] = 0x140a;
+    custom_projectile_id[113] = 0x4EFC;
+    custom_projectile_id[114] = 0x4F06;
     
     //after 1000 is for other
     custom_projectile_id[1000] = 0xB00000;

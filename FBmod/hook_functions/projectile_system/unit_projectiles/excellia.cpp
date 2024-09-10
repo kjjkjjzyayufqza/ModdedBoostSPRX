@@ -100,13 +100,13 @@ void excellia_link_rephaser_spawn()
 	temp_registers[3] = result;
 }
 
-int excellia_shield_bits_spawn_script_pointers[500];
-bool is_excellia_shield_bits_initialized = false;
-
 unsigned int excellia_shield_bits_spawn_model_hash()
 {
 	return 0xB7823D2F;
 }
+
+int excellia_shield_bits_spawn_script_pointers[500];
+bool is_excellia_shield_bits_initialized = false;
 
 // TODO: This is unusable since the game will crash trying to read the unit's model hash to "attach" the shield bits to.
 // The only way to set the shield bits to yourself is to initialize the model hash when the unit is loaded, related to unit_initializations
@@ -133,6 +133,39 @@ void excellia_shield_bits_spawn()
 	const unsigned int script_pointer = reinterpret_cast<unsigned int>(excellia_shield_bits_spawn_script_pointers);
 	*reinterpret_cast<unsigned int*>(temp_memory_ptr) = script_pointer;
 	*reinterpret_cast<unsigned int*>(temp_memory_ptr + 0x44f0) = 0xCBF018;
+	*reinterpret_cast<unsigned int*>(temp_memory_ptr + 0x44f0 + 4) = temp_memory_ptr;
+    
+	*reinterpret_cast<float*>(temp_memory_ptr + 0x44e0) = 0.0f;
+	*reinterpret_cast<float*>(temp_memory_ptr + 0x44e0 + 0x4) = 0.0f;
+	*reinterpret_cast<float*>(temp_memory_ptr + 0x44e0 + 0x8) = 0.0f;
+	*reinterpret_cast<float*>(temp_memory_ptr + 0x44e0 + 0xc) = 1.0f;
+
+	*r3_pointer = temp_memory_ptr;
+	temp_registers[3] = result;
+}
+
+int excellia_ally_shield_bits_spawn_script_pointers[500];
+bool is_excellia_ally_shield_bits_initialized = false;
+
+void excellia_ally_shield_bits_spawn()
+{
+	_DWORD* r3_pointer = reinterpret_cast<uint32*>(temp_registers[3]);
+
+	char list[4];
+	list[0] = -1;
+	list[1] = 0;
+	const unsigned int temp_memory_ptr = GameCall<int>(0x9EE338, 0xd8fe60)(0x4780, 0x80, list);
+	const unsigned int result = GameCall<int>(0x7D9E7C, 0xd8fe60)(reinterpret_cast<uint32*>(temp_memory_ptr), 0x13854);
+	
+	if (is_excellia_ally_shield_bits_initialized == false) {
+		copyJumptable(reinterpret_cast<int*>(0xC963A8), excellia_ally_shield_bits_spawn_script_pointers);
+		excellia_ally_shield_bits_spawn_script_pointers[58] = reinterpret_cast<int>(excellia_shield_bits_spawn_model_hash);
+		is_excellia_ally_shield_bits_initialized = true;
+	}
+	
+	const unsigned int script_pointer = reinterpret_cast<unsigned int>(excellia_ally_shield_bits_spawn_script_pointers);
+	*reinterpret_cast<unsigned int*>(temp_memory_ptr) = script_pointer;
+	*reinterpret_cast<unsigned int*>(temp_memory_ptr + 0x44f0) = 0xCBEF98;
 	*reinterpret_cast<unsigned int*>(temp_memory_ptr + 0x44f0 + 4) = temp_memory_ptr;
     
 	*reinterpret_cast<float*>(temp_memory_ptr + 0x44e0) = 0.0f;

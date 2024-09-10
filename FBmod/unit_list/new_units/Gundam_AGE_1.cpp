@@ -1,5 +1,3 @@
-
-
 #include "Gundam_AGE_1.h"
 #include "../unit_list_structs.h"
 #include "../unit_list_common.h"
@@ -18,15 +16,15 @@ unit_voice_hash_list_0x28 Gundam_AGE_1_inject_arcade_select_hash()
 {
     unit_voice_hash_list_0x28 Gundam_AGE_1_ArcadeSelectHash;
     Gundam_AGE_1_ArcadeSelectHash.hash_1 = 0x17A893F5; // VO_33_P01_CHARA_SELECT_01
-Gundam_AGE_1_ArcadeSelectHash.hash_2 = 0x8EA1C24F; // VO_33_P01_CHARA_SELECT_02
-Gundam_AGE_1_ArcadeSelectHash.hash_3 = 0xF9A6F2D9; // VO_33_P01_CHARA_SELECT_03
-Gundam_AGE_1_ArcadeSelectHash.hash_4 = 0x67C2677A; // VO_33_P01_CHARA_SELECT_04
-Gundam_AGE_1_ArcadeSelectHash.hash_5 = 0x10C557EC; // VO_33_P01_CHARA_SELECT_05
-Gundam_AGE_1_ArcadeSelectHash.hash_6 = 0x89CC0656; // VO_33_P01_CHARA_SELECT_06
-Gundam_AGE_1_ArcadeSelectHash.hash_7 = 0;
-Gundam_AGE_1_ArcadeSelectHash.hash_8 = 0;
-Gundam_AGE_1_ArcadeSelectHash.hash_9 = 0;
-Gundam_AGE_1_ArcadeSelectHash.hash_10 = 0;
+    Gundam_AGE_1_ArcadeSelectHash.hash_2 = 0x8EA1C24F; // VO_33_P01_CHARA_SELECT_02
+    Gundam_AGE_1_ArcadeSelectHash.hash_3 = 0xF9A6F2D9; // VO_33_P01_CHARA_SELECT_03
+    Gundam_AGE_1_ArcadeSelectHash.hash_4 = 0x67C2677A; // VO_33_P01_CHARA_SELECT_04
+    Gundam_AGE_1_ArcadeSelectHash.hash_5 = 0x10C557EC; // VO_33_P01_CHARA_SELECT_05
+    Gundam_AGE_1_ArcadeSelectHash.hash_6 = 0x89CC0656; // VO_33_P01_CHARA_SELECT_06
+    Gundam_AGE_1_ArcadeSelectHash.hash_7 = 0;
+    Gundam_AGE_1_ArcadeSelectHash.hash_8 = 0;
+    Gundam_AGE_1_ArcadeSelectHash.hash_9 = 0;
+    Gundam_AGE_1_ArcadeSelectHash.hash_10 = 0;
 
     return Gundam_AGE_1_ArcadeSelectHash;
 }
@@ -35,10 +33,10 @@ unit_voice_hash_list_0x14 Gundam_AGE_1_inject_arcade_continue_no_hash()
 {
     unit_voice_hash_list_0x14 Gundam_AGE_1_ArcadeContinueNoHash;
     Gundam_AGE_1_ArcadeContinueNoHash.hash_1 = 0x670E3AF5; // VO_33_P01_GAME_OVER_01
-Gundam_AGE_1_ArcadeContinueNoHash.hash_2 = 0xFE076B4F; // VO_33_P01_GAME_OVER_02
-Gundam_AGE_1_ArcadeContinueNoHash.hash_3 = 0;
-Gundam_AGE_1_ArcadeContinueNoHash.hash_4 = 0;
-Gundam_AGE_1_ArcadeContinueNoHash.hash_5 = 0;
+    Gundam_AGE_1_ArcadeContinueNoHash.hash_2 = 0xFE076B4F; // VO_33_P01_GAME_OVER_02
+    Gundam_AGE_1_ArcadeContinueNoHash.hash_3 = 0;
+    Gundam_AGE_1_ArcadeContinueNoHash.hash_4 = 0;
+    Gundam_AGE_1_ArcadeContinueNoHash.hash_5 = 0;
 
     return Gundam_AGE_1_ArcadeContinueNoHash;
 }
@@ -47,10 +45,10 @@ unit_voice_hash_list_0x18 Gundam_AGE_1_inject_arcade_continue_prompt_hash()
 {
     unit_voice_hash_list_0x18 Gundam_AGE_1_ArcadeContinueHash;
     Gundam_AGE_1_ArcadeContinueHash.hash_1 = 0x6479F489; // VO_33_P01_CONTINUE_DEC_01
-Gundam_AGE_1_ArcadeContinueHash.hash_2 = 0xFD70A533; // VO_33_P01_CONTINUE_DEC_02
-Gundam_AGE_1_ArcadeContinueHash.hash_3 = 0x8A7795A5; // VO_33_P01_CONTINUE_DEC_03
-Gundam_AGE_1_ArcadeContinueHash.hash_4 = 0x14130006; // VO_33_P01_CONTINUE_DEC_04
-Gundam_AGE_1_ArcadeContinueHash.hash_5 = 0;
+    Gundam_AGE_1_ArcadeContinueHash.hash_2 = 0xFD70A533; // VO_33_P01_CONTINUE_DEC_02
+    Gundam_AGE_1_ArcadeContinueHash.hash_3 = 0x8A7795A5; // VO_33_P01_CONTINUE_DEC_03
+    Gundam_AGE_1_ArcadeContinueHash.hash_4 = 0x14130006; // VO_33_P01_CONTINUE_DEC_04
+    Gundam_AGE_1_ArcadeContinueHash.hash_5 = 0;
 
     return Gundam_AGE_1_ArcadeContinueHash;
 }
@@ -59,15 +57,15 @@ unit_voice_hash_list_0x28 Gundam_AGE_1_inject_arcade_continue_yes_hash()
 {
     unit_voice_hash_list_0x28 Gundam_AGE_1_ArcadeContinueYesHash;
     Gundam_AGE_1_ArcadeContinueYesHash.hash_1 = 0xEEDED3E1; // VO_33_P01_CONTINUE_01
-Gundam_AGE_1_ArcadeContinueYesHash.hash_2 = 0x77D7825B; // VO_33_P01_CONTINUE_02
-Gundam_AGE_1_ArcadeContinueYesHash.hash_3 = 0x00D0B2CD; // VO_33_P01_CONTINUE_03
-Gundam_AGE_1_ArcadeContinueYesHash.hash_4 = 0x6479F489; // VO_33_P01_CONTINUE_DEC_01
-Gundam_AGE_1_ArcadeContinueYesHash.hash_5 = 0xFD70A533; // VO_33_P01_CONTINUE_DEC_02
-Gundam_AGE_1_ArcadeContinueYesHash.hash_6 = 0x8A7795A5; // VO_33_P01_CONTINUE_DEC_03
-Gundam_AGE_1_ArcadeContinueYesHash.hash_7 = 0x14130006; // VO_33_P01_CONTINUE_DEC_04
-Gundam_AGE_1_ArcadeContinueYesHash.hash_8 = 0;
-Gundam_AGE_1_ArcadeContinueYesHash.hash_9 = 0;
-Gundam_AGE_1_ArcadeContinueYesHash.hash_10 = 0;
+    Gundam_AGE_1_ArcadeContinueYesHash.hash_2 = 0x77D7825B; // VO_33_P01_CONTINUE_02
+    Gundam_AGE_1_ArcadeContinueYesHash.hash_3 = 0x00D0B2CD; // VO_33_P01_CONTINUE_03
+    Gundam_AGE_1_ArcadeContinueYesHash.hash_4 = 0x6479F489; // VO_33_P01_CONTINUE_DEC_01
+    Gundam_AGE_1_ArcadeContinueYesHash.hash_5 = 0xFD70A533; // VO_33_P01_CONTINUE_DEC_02
+    Gundam_AGE_1_ArcadeContinueYesHash.hash_6 = 0x8A7795A5; // VO_33_P01_CONTINUE_DEC_03
+    Gundam_AGE_1_ArcadeContinueYesHash.hash_7 = 0x14130006; // VO_33_P01_CONTINUE_DEC_04
+    Gundam_AGE_1_ArcadeContinueYesHash.hash_8 = 0;
+    Gundam_AGE_1_ArcadeContinueYesHash.hash_9 = 0;
+    Gundam_AGE_1_ArcadeContinueYesHash.hash_10 = 0;
 
     return Gundam_AGE_1_ArcadeContinueYesHash;
 }
@@ -76,7 +74,7 @@ unit_voice_hash_list_0x8 Gundam_AGE_1_inject_bandai_namco_games_serifu_hash()
 {
     unit_voice_hash_list_0x8 Gundam_AGE_1_BandaiNamcoGamesHash;
     Gundam_AGE_1_BandaiNamcoGamesHash.hash_1 = 0xDDA21596; // VO_33_P01_BNG_LOGO_01
-Gundam_AGE_1_BandaiNamcoGamesHash.hash_2 = 0;
+    Gundam_AGE_1_BandaiNamcoGamesHash.hash_2 = 0;
 
     return Gundam_AGE_1_BandaiNamcoGamesHash;
 }
@@ -140,4 +138,3 @@ unit_string_info Gundam_AGE_1_inject_string()
 
     return Gundam_AGE_1_Gundam_String;
 }
-                        

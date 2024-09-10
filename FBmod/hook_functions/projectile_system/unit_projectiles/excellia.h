@@ -6,3 +6,5 @@ void excellia_link_rephaser_spawn();
 
 // TODO: Complete
 void excellia_shield_bits_spawn();
+
+void excellia_ally_shield_bits_spawn();
