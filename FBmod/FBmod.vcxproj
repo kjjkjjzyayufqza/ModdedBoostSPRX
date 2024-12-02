@@ -107,6 +107,7 @@
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\fazz.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\forbidden_gundam.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\full_armor_gundam.h" />
+    <ClInclude Include="hook_functions\projectile_system\unit_projectiles\g_self.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\gato_gelgoog.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\gouf_ignited.h" />
     <ClInclude Include="hook_functions\projectile_system\unit_projectiles\gundam_legilis.h" />
@@ -262,6 +263,7 @@
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\fazz.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\forbidden_gundam.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\full_armor_gundam.cpp" />
+    <ClCompile Include="hook_functions\projectile_system\unit_projectiles\g_self.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\gato_gelgoog.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\gouf_ignited.cpp" />
     <ClCompile Include="hook_functions\projectile_system\unit_projectiles\gundam_legilis.cpp" />

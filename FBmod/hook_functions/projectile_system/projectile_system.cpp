@@ -47,6 +47,7 @@
 #include "unit_projectiles/gundam_legilis.h"
 #include "unit_projectiles/gundam_x_divider.h"
 #include "unit_projectiles/gunner_zaku_warrior.h"
+#include "unit_projectiles/g_self.h"
 #include "unit_projectiles/jagd_doga.h"
 #include "unit_projectiles/mack_knife.h"
 #include "unit_projectiles/sazabi.h"
@@ -313,6 +314,9 @@ void projectile_id_check_hook()
         case 0x53228:
             excellia_link_rephaser_spawn();
             break;
+        case 0x66904:
+            g_self_melee_assist_spawn();
+            break;
         case 0x66a94:
             montero_JAVELIN_MADA_ARU_spawn();
             break;
@@ -552,7 +556,8 @@ void init_custom_projectile_id()
     custom_projectile_id[112] = 0x140a;
     custom_projectile_id[113] = 0x4EFC;
     custom_projectile_id[114] = 0x4F06;
-    
+    custom_projectile_id[115] = 0x66904;
+
     //after 1000 is for other
     custom_projectile_id[1000] = 0xB00000;
     custom_projectile_id[1001] = 0x420A4;
